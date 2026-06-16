@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクへのお問い合わせはこちら。完全無料のオンラインCADスクールに関するご質問・ご相談を承っております。お気軽にお問い合わせください。">
+    <link rel="canonical" href="https://cadgaku.jp/contact/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/contact/">
+    <meta property="og:title" content="お問い合わせ | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="キャドガクへのお問い合わせ・ご相談はこちらから。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お問い合わせ | キャドガク">
+    <meta name="twitter:description" content="キャドガクへのお問い合わせ・ご相談はこちらから。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    お問い合わせ
+                </h1>
+            </div>
+        </div>
+
+
+
+        <section class="py-16 lg:py-24 px-4 bg-gray-50">
+            <div class="max-w-2xl mx-auto">
+
+                <div class="bg-white rounded-2xl p-6 md:p-12 shadow-sm border border-gray-100">
+
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6 md:space-y-8">
+                        <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+                            スクール生の採用に関するご相談、その他のお問い合わせは下記のフォームよりお願いいたします。内容を確認の上、担当者より折り返しご連絡いたします。
+                        </p>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="name" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                お名前 <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <input type="text" id="name" name="name" required placeholder="山田 太郎"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition">
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="company" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                会社名 <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <input type="text" id="company" name="company" required placeholder="株式会社keeQ"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition">
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="tel" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                電話番号（ハイフン不要） <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <input type="tel" id="tel" name="tel" required placeholder="09012345678" inputmode="numeric"
+                                pattern="\d+"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition">
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="email" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                メールアドレス <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="example@keeq.co.jp"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition">
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="type" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                お問い合わせ種類 <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <div class="relative">
+                                <select id="type" name="type" required
+                                    class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base appearance-none bg-white focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition text-gray-700">
+                                    <option value="" disabled selected>選択してください</option>
+                                    <option value="企業担当者様：人材紹介サービスについて">企業担当者様：人材紹介サービスについて</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col space-y-2">
+                            <label for="message" class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                                お問い合わせ内容 <span
+                                    class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-normal">必須</span>
+                            </label>
+                            <textarea id="message" name="message" required rows="6" placeholder="ご相談内容やご要望をご自由にご記入ください。"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[#05A85E] focus:ring-1 focus:ring-[#05A85E] transition resize-y"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="flex items-start gap-3 cursor-pointer group select-none">
+                                <input type="checkbox" required name="privacy"
+                                    class="mt-1 accent-[#05A85E] w-4 h-4 rounded border-gray-300 transition">
+                                <span class="text-sm text-gray-600 leading-relaxed group-hover:text-gray-900">
+                                    <a href="https://keeq.co.jp/privacy-policy/" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-[#05A85E] underline font-medium">個人情報の取り扱い（プライバシーポリシー）</a>について同意する
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="pt-4 flex justify-center">
+                            <button type="submit" id="submitBtn"
+                                class="btn-reserve w-full max-w-sm py-4 rounded-xl font-bold text-lg md:text-xl shadow-xl active:scale-95 flex items-center justify-center tracking-widest transition">
+                                <span id="btnText" class="flex items-center gap-2">
+                                    入力内容を送信する
+                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="thanksMessage" class="hidden text-center py-8 md:py-12 space-y-6 animate-fade-in">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 bg-green-50 rounded-full text-[#05A85E] mb-2">
+                            <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-950">
+                            お問い合わせありがとうございます
+                        </h3>
+                        <div class="text-sm md:text-base text-gray-600 leading-loose max-w-lg mx-auto space-y-4">
+                            <p>
+                                内容を確認の上、弊社担当者より速やかに折り返しご連絡をさせていただきます。
+                            </p>
+                            <p class="text-xs text-gray-400">
+                                ※送信された内容は正常に記録され、通知されました。数日経っても返信がない場合は、お手数ですが再度お問い合わせいただくか、メールアドレスをご確認ください。
+                            </p>
+                        </div>
+                        <div class="pt-8">
+                            <a href="/"
+                                class="inline-flex items-center gap-2 text-[#05A85E] font-bold border-b-2 border-[#05A85E] hover:opacity-70 transition pb-0.5">
+                                トップページへ戻る
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <script>
+            function handleFormSubmit(event) {
+                event.preventDefault(); // 通常のページリロードをブロック
+
+                const form = document.getElementById('contactForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const btnText = document.getElementById('btnText');
+                const thanksMessage = document.getElementById('thanksMessage');
+
+                // 誤連打防止のためにボタンを無効化し、ローディング状態にする
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                btnText.innerHTML = '送信中...';
+
+                const formData = new FormData(form);
+
+                // 【重要】Step 2-4でコピーしたGASのウェブアプリURLをここに貼り付けてください
+                const gasUrl = 'https://script.google.com/macros/s/AKfycbyzpy8DaXNJG8pH7M5TYfcqRfzRXuUaAibxHFeVOweJG6Bd2YPfevutsaG01cCJaBpf/exec';
+
+                // GASへ非同期でデータをポスト送信
+                fetch(gasUrl, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // ブラウザのCORSエラーを完全に回避して裏で確実に届ける設定
+                })
+                    .then(() => {
+                        // 送信が成功したら、フォームを隠してお礼メッセージ（完了画面）を表示
+                        form.classList.add('hidden');
+                        thanksMessage.classList.remove('hidden');
+
+                        // アイコンの再レンダリング（Lucide用）
+                        if (window.lucide) {
+                            window.lucide.createIcons();
+                        }
+
+                        // 完了画面の位置までスムーズにスクロール
+                        thanksMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(err => {
+                        console.error('送信エラー:', err);
+                        alert('通信エラーが発生しました。お手数ですが、時間をおいて再度お試しください。');
+
+                        // 失敗時はボタンを元に戻す
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        btnText.innerHTML = '入力内容を送信する';
+                    });
+            }
+        </script>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

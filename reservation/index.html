@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料オンライン説明会のご予約 | キャドガク完全無料のオンラインCADスクール</title>
+    <meta name="description"
+        content="キャドガクの無料オンライン説明会のご予約はこちら。未経験から最短30日で就職を目指せる完全無料のCADスクールについて、詳しくご説明します。">
+    <link rel="canonical" href="https://cadgaku.jp/reservation/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/reservation/">
+    <meta property="og:title" content="無料オンライン説明会のご予約 | キャドガク">
+    <meta property="og:description" content="未経験から最短30日で就職を目指せる完全無料CADスクールの無料説明会をご予約いただけます。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="無料オンライン説明会のご予約 | キャドガク">
+    <meta name="twitter:description" content="未経験から最短30日で就職を目指せる完全無料CADスクールの無料説明会をご予約いただけます。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .option-card {
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #E5E7EB;
+        }
+
+        input[type="radio"]:checked+.option-card {
+            border-color: #05A85E;
+            background-color: #F0FDF4;
+            color: #05A85E;
+        }
+
+        .bubble {
+            position: relative;
+            background: #FFFFFF;
+            border-radius: 1.5rem;
+            border-top-left-radius: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* カレンダー・スライダー */
+        .date-item {
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #F3F4F6;
+            min-width: 70px;
+        }
+
+        .date-item:hover:not(.disabled) {
+            border-color: #05A85E;
+            background-color: #F0FDF4;
+        }
+
+        .date-item.selected {
+            background-color: #05A85E;
+            color: white;
+            border-color: #05A85E;
+            font-weight: bold;
+        }
+
+        .date-item.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background-color: #F9FAFB;
+        }
+
+        .calendar-wrapper {
+            display: flex;
+            transition: transform 0.3s ease;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm h-16 flex items-center px-4 lg:px-8">
+        <div class="w-full max-w-4xl mx-auto flex items-center justify-between">
+            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】" class="h-8 lg:h-10">
+            <div class="flex items-center space-x-2">
+                <div id="dot-1" class="w-3 h-3 rounded-full bg-[#05A85E]"></div>
+                <div id="dot-2" class="w-3 h-3 rounded-full bg-gray-200 transition-colors duration-500"></div>
+                <div id="dot-3" class="w-3 h-3 rounded-full bg-gray-200 transition-colors duration-500"></div>
+                <div id="dot-4" class="w-3 h-3 rounded-full bg-gray-200 transition-colors duration-500"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-20 px-4">
+        <div class="max-w-xl mx-auto space-y-10">
+
+            <section id="step-1" class="fade-in space-y-6">
+                <div class="flex items-start space-x-3">
+                    <img src="images/navigator.png"
+                        class="w-16 h-16 rounded-full border-2 border-[#6CC78B] bg-white shadow-sm">
+                    <div class="bubble p-5 border border-gray-100 w-full font-medium text-gray-700 bg-[#DAF2E7]">
+                        こんにちは！<br>キャドガク運営局の内田です。<br>まずはお住まいの地域を教えてください。
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-3 md:pl-14">
+                    <label><input type="radio" name="area" value="東京（神奈川・埼玉・千葉）" class="sr-only" onchange="next(2)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">東京（神奈川・埼玉・千葉）</div>
+                    </label>
+                    <label><input type="radio" name="area" value="愛知（岐阜・三重・静岡）" class="sr-only" onchange="next(2)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">愛知（岐阜・三重・静岡）</div>
+                    </label>
+                    <label><input type="radio" name="area" value="大阪（兵庫・京都・奈良）" class="sr-only" onchange="next(2)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">大阪（兵庫・京都・奈良）</div>
+                    </label>
+                    <label><input type="radio" name="area" value="福岡" class="sr-only" onchange="next(2)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">福岡</div>
+                    </label>
+                    <label><input type="radio" name="area" value="その他エリア" class="sr-only" onchange="next(2)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">その他エリア</div>
+                    </label>
+                </div>
+            </section>
+
+            <section id="step-2" style="display:none;" class="space-y-6">
+                <div class="flex items-start space-x-3">
+                    <img src="images/navigator.png" alt="キャドガク運営局の担当者" class="w-16 h-16 rounded-full border-2 border-[#6CC78B] bg-white">
+                    <div class="bubble p-5 border border-gray-100 w-full font-medium bg-[#DAF2E7]">ありがとうございます。<br>次に、ご年齢を教えてください。</div>
+                </div>
+                <div class="grid grid-cols-1 gap-3 md:pl-14">
+                    <label><input type="radio" name="age" value="19-21歳" class="sr-only" onchange="next(3)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">19～21歳</div>
+                    </label>
+                    <label><input type="radio" name="age" value="22-25歳" class="sr-only" onchange="next(3)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">22～25歳</div>
+                    </label>
+                    <label><input type="radio" name="age" value="26-29歳" class="sr-only" onchange="next(3)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">26～29歳</div>
+                    </label>
+                    <label><input type="radio" name="age" value="30-32歳" class="sr-only" onchange="next(3)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">30～32歳</div>
+                    </label>
+                    <label><input type="radio" name="age" value="33歳以上" class="sr-only" onchange="next(3)">
+                        <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">33歳以上</div>
+                    </label>
+                </div>
+            </section>
+
+            <section id="step-3" style="display:none;" class="space-y-6">
+                <div class="flex items-start space-x-3">
+                    <img src="images/navigator.png"
+                        class="w-16 h-16 rounded-full border-2 border-[#6CC78B] bg-white shadow-sm">
+                    <div class="bubble p-5 border border-gray-100 w-full font-medium text-gray-700 bg-[#DAF2E7]">
+                        ありがとうございます！<br>最後に連絡先を入力してください。<br>ご案内を送付するので、入力ミスにお気をつけください。
+                    </div>
+                </div>
+                <div class="md:pl-14 space-y-4">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                        <input type="text" id="name" placeholder="お名前"
+                            class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]">
+                        <input type="tel" id="tel" placeholder="電話番号"
+                            class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]">
+                        <input type="email" id="email" placeholder="メールアドレス"
+                            class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]">
+
+                        <div class="flex items-start space-x-2 border-t pt-4">
+                            <input type="checkbox" id="agree" class="w-5 h-5 accent-[#05A85E] cursor-pointer">
+                            <label for="agree" class="text-sm text-gray-600 cursor-pointer">
+                                <a href="https://keeq.co.jp/privacy-policy/" target="_blank"
+                                    class="text-[#05A85E] underline font-bold">プライバシーポリシー</a>に同意する。
+                            </label>
+                        </div>
+                        <button type="button" id="btn-to-step4" onclick="goToStep4()"
+                            class="w-full py-4 bg-[#05A85E] text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition">日程の選択に進む</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-4" style="display:none;" class="space-y-6 fade-in">
+                <div class="flex items-start space-x-3">
+                    <img src="images/navigator.png"
+                        class="w-w-16 h-16 rounded-full border-2 border-[#6CC78B] bg-white shadow-sm">
+                    <div class="bubble p-5 border border-gray-100 w-full font-medium text-gray-700 bg-[#DAF2E7]">
+                        オンライン説明会の日程を指定してください。<br>あとからでも変更可能です。
+                    </div>
+                </div>
+
+                <div class="md:pl-14">
+                    <div id="calendar-area" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold text-gray-700 text-sm">希望日の選択（15日先まで）</h4>
+                            <div class="flex space-x-1">
+                                <button type="button" onclick="slideCal(-1)"
+                                    class="p-2 border rounded-lg bg-gray-50 hover:bg-white text-lg font-bold">←</button>
+                                <button type="button" onclick="slideCal(1)"
+                                    class="p-2 border rounded-lg bg-gray-50 hover:bg-white text-lg font-bold">→</button>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden">
+                            <div id="calendar-wrapper" class="calendar-wrapper"></div>
+                        </div>
+
+                        <div id="time-area" style="display:none;" class="space-y-4 fade-in">
+                            <p class="text-sm font-bold text-gray-500">希望の時間帯</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button"
+                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
+                                    onclick="setTime(this, '11:00〜')">11:00〜12：30</button>
+                                <button type="button"
+                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
+                                    onclick="setTime(this, '14:00〜')">14:00〜15：30</button>
+                                <button type="button"
+                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
+                                    onclick="setTime(this, '19:00〜')">19:00〜20：30</button>
+                                <button type="button"
+                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
+                                    onclick="setTime(this, 'その他')">その他を希望したい</button>
+                            </div>
+                            <textarea id="memo" rows="2" placeholder="ご質問などあれば記入してください（任意）"
+                                class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]"></textarea>
+                            <button type="button" id="final-submit" onclick="submit()"
+                                class="w-full py-5 bg-[#FF8C00] text-white font-Bold rounded-xl text-xl shadow-xl hover:bg-[#FE770D] transition active:scale-95">この内容で相談する</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        let currentPos = 0;
+        let selectedDate = "";
+        let selectedTime = "";
+
+        // ★金子代表のGAS URLをセット済み
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbzddL7W8EEtfG3T2WYi5P36Zko7VnQbeUEfdw3JD5-XvVzcFbEAS8UeKCG0uejIRwlPiA/exec";
+
+        // 共通の次へ進むアニメーション（Step1, Step2用）
+        function next(n) {
+            const el = document.getElementById('step-' + n);
+            el.style.display = 'block';
+
+            // ドットの色を変更する処理を追加
+            const dot = document.getElementById('dot-' + n);
+            if (dot) {
+                dot.classList.remove('bg-gray-200'); // グレーを消す
+                dot.classList.add('bg-[#05A85E]');    // 緑を足す
+            }
+
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+
+        // 新設：連絡先(Step3)から日程選択(Step4)へ進む処理
+        function goToStep4() {
+            // 1. 各入力値を取得
+            const name = document.getElementById('name').value.trim();
+            const tel = document.getElementById('tel').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const agree = document.getElementById('agree').checked;
+
+            // 2. 入力チェック（空欄やチェック漏れがないか）
+            if (!name) {
+                alert('お名前を入力してください');
+                return;
+            }
+            if (!tel) {
+                alert('電話番号を入力してください');
+                return;
+            }
+            if (!email) {
+                alert('メールアドレスを入力してください');
+                return;
+            }
+            // 簡易的なメール形式チェック
+            if (!email.includes('@')) {
+                alert('有効なメールアドレスを入力してください');
+                return;
+            }
+            if (!agree) {
+                alert('プライバシーポリシーへの同意をお願いします');
+                return;
+            }
+
+            // 3. 全て入力されていればステップ4を表示
+            const s4 = document.getElementById('step-4');
+            s4.style.display = 'block';
+            document.getElementById('btn-to-step4').style.display = 'none';
+
+            // 4番目のドットを緑にする
+            const dot4 = document.getElementById('dot-4');
+            if (dot4) {
+                dot4.classList.remove('bg-gray-200');
+                dot4.classList.add('bg-[#05A85E]');
+            }
+
+            // カレンダーの生成を実行
+            generateCalendar();
+
+            setTimeout(() => {
+                s4.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+
+        // カレンダー自動生成ロジック
+        function generateCalendar() {
+            const wrapper = document.getElementById('calendar-wrapper');
+            wrapper.innerHTML = "";
+            const days = ['日', '月', '火', '水', '木', '金', '土'];
+            const today = new Date();
+
+            for (let i = 1; i <= 15; i++) {
+                const date = new Date();
+                date.setDate(today.getDate() + i);
+                const dayName = days[date.getDay()];
+                const isSun = date.getDay() === 0;
+
+                const div = document.createElement('div');
+                div.className = `date-item p-3 rounded-xl flex flex-col items-center bg-white shadow-sm flex-shrink-0 ${isSun ? 'disabled' : ''}`;
+                div.innerHTML = `<span class="text-xs">${date.getMonth() + 1}/${date.getDate()}</span><span class="font-bold">${dayName}</span>`;
+
+                if (!isSun) {
+                    div.onclick = () => selectDate(div, `${date.getMonth() + 1}/${date.getDate()}(${dayName})`);
+                }
+                wrapper.appendChild(div);
+            }
+        }
+
+        function slideCal(dir) {
+            const wrapper = document.getElementById('calendar-wrapper');
+            const itemWidth = 78; // item(70) + gap(8)
+            currentPos = Math.max(0, Math.min(currentPos + dir, 11));
+            wrapper.style.transform = `translateX(-${currentPos * itemWidth}px)`;
+        }
+
+        function selectDate(el, val) {
+            document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedDate = val;
+            document.getElementById('time-area').style.display = 'block';
+        }
+
+        function setTime(el, val) {
+            document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('bg-[#05A85E]', 'text-white', 'border-[#05A85E]'));
+            el.classList.add('bg-[#05A85E]', 'text-white', 'border-[#05A85E]');
+            selectedTime = val;
+        }
+
+        // 最終的な送信処理
+        async function submit() {
+            if (!selectedDate || !selectedTime) {
+                alert('希望の日時を選択してください');
+                return;
+            }
+
+            const btn = document.getElementById('final-submit');
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            const data = {
+                area: document.querySelector('input[name="area"]:checked')?.value,
+                age: document.querySelector('input[name="age"]:checked')?.value,
+                name: document.getElementById('name').value,
+                tel: document.getElementById('tel').value,
+                email: document.getElementById('email').value,
+                selectedDate: selectedDate,
+                selectedTime: selectedTime,
+                memo: document.getElementById('memo').value
+            };
+
+            try {
+                await fetch(GAS_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                window.location.href = "../thanks/";
+
+            } catch (e) {
+                console.error(e);
+                alert('送信に失敗しました。時間をおいて再度お試しください。');
+                btn.disabled = false;
+                btn.innerText = "この内容で予約する";
+            }
+        }
+    </script>
+</body>
+
+</html>

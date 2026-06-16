@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運営会社 | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクを運営するkeeQ株式会社の会社概要です。完全無料のオンラインCADスクールとして、未経験から就職を目指す20代を専任講師とキャリアアドバイザーが徹底サポートします。">
+    <link rel="canonical" href="https://cadgaku.jp/company/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/company/">
+    <meta property="og:title" content="運営会社 | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="キャドガクを運営するkeeQ株式会社の会社概要です。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="運営会社 | キャドガク">
+    <meta name="twitter:description" content="キャドガクを運営するkeeQ株式会社の会社概要です。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    運営会社
+                </h1>
+            </div>
+        </div>
+
+
+
+        <section class="py-12 lg:py-18 px-4 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h3
+                    class="text-xl lg:text-2xl font-bold text-[#05A85E] border-b-2 border-[#05A85E]/20 pb-3 mb-8 tracking-wider flex items-center">
+                    <span class="border-l-4 border-[#05A85E] pl-3">会社概要</span>
+                </h3>
+
+                <div class="border-t border-gray-100 divide-y divide-gray-100 text-base">
+
+                    <div class="py-5 lg:py-6 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 items-baseline">
+                        <div class="font-bold text-gray-900 md:col-span-1">社名</div>
+                        <div class="text-gray-700 md:col-span-3"><a href="https://keeq.co.jp/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-[#05A85E] font-bold hover:underline inline-flex items-center gap-1">
+                                株式会社keeQ（キーク）
+                                <i data-lucide="external-link" class="w-4 h-4 opacity-60"></i>
+                            </a></div>
+                    </div>
+
+                    <div class="py-5 lg:py-6 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 items-baseline">
+                        <div class="font-bold text-gray-900 md:col-span-1">設立</div>
+                        <div class="text-gray-700 md:col-span-3">2024年11月26日</div>
+                    </div>
+
+                    <div class="py-5 lg:py-6 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 items-baseline">
+                        <div class="font-bold text-gray-900 md:col-span-1">代表者</div>
+                        <div class="text-gray-700 md:col-span-3">代表取締役社長　金子 聖</div>
+                    </div>
+
+                    <div class="py-5 lg:py-6 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 items-baseline">
+                        <div class="font-bold text-gray-900 md:col-span-1">資本金</div>
+                        <div class="text-gray-700 md:col-span-3">5,000,000円</div>
+                    </div>
+
+                    <div class="py-5 lg:py-6 grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
+                        <div class="font-bold text-gray-900 md:col-span-1 pt-1">所在地・アクセス</div>
+                        <div class="text-gray-700 md:col-span-3 space-y-4">
+                            <div>
+                                <p class="font-bold text-gray-900 text-lg">豊洲営業所</p>
+                                <p class="mt-1.5 leading-relaxed">
+                                    〒135-0061<br>
+                                    東京都江東区豊洲5丁目6-36 豊洲プライムスクエア10F
+                                </p>
+                                <p class="text-sm text-gray-500 mt-2 flex items-center gap-1">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-[#05A85E]"></i>
+                                    東京メトロ有楽町線「豊洲」駅 6a番出口から徒歩5分
+                                </p>
+                            </div>
+
+                            <div
+                                class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md border border-gray-100 max-w-2xl mt-4">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.0073303355593!2d139.79532157578237!3d35.65219103156869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601889bca4520c99%3A0x9e56cb257cc78b58!2z6LGK5rSy44OX44Op44Kk44Og44K544Kv44Ko44Ki!5e0!3m2!1sja!2sjp!4v1778946912951!5m2!1sja!2sjp"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="absolute inset-0 w-full h-full"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6 lg:py-10 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h3
+                    class="text-xl lg:text-2xl font-bold text-[#05A85E] border-b-2 border-[#05A85E]/20 pb-3 mb-8 tracking-wider">
+                    <span class="border-l-4 border-[#05A85E] pl-3">keeQについて</span>
+                </h3>
+
+                <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-gray-100 text-gray-800 space-y-8">
+
+                    <div class="text-center md:text-left">
+                        <h4 class="text-xl lg:text-2xl font-black text-[#05A85E] leading-snug tracking-wide">
+                            「皆さまが理想のキャリアを実現させるための鍵（key）になる」
+                        </h4>
+                    </div>
+
+                    <div class="text-sm lg:text-base text-gray-700 leading-loose space-y-6 tracking-wide text-justify">
+                        <p>
+                            株式会社keeQ（キーク）の社名は、未知の扉を開く「鍵（Key）」と、私たちの行動指針である「Quest（探求）」「Question（問い）」「Quality（品質）」という3つの頭文字「Q」を組み合わせた造語です。この社名には、「常に探求心と問題意識を持ち、品質にこだわる」という理念が込められています。
+                        </p>
+                        <p>
+                            今回、私たちが完全無料の就職直結型CADスクール「キャドガク」を立ち上げた背景には、「挑戦の格差をなくす」という思いから実現しました。
+                            「新しいスキルを身につけてキャリアを変えたい」という強い熱意を持ちながらも、高額な受講料といった経済的・環境的な理由による、教育の機会損失、将来への不安はあるものの、何から始めて良いかわからず、一歩を踏み出せない20代の若者が数多く存在します。一方で、日本のものづくりやインフラを支える産業界では、深刻な技術者不足が大きな課題となっています。
+                        </p>
+                        <p>
+                            私たちは、この「挑戦したい若者」と「若手の技術者人材を求める企業」の間に生じるギャップを埋めたいという想いから、キャドガクの運営をスタートしました。
+                            学びを諦めない環境をつくり、誰もが正当に評価され、望むキャリアに挑戦できるよう、株式会社keeQは、キャドガクを通じて、人と企業の未来を切り拓く最高のパートナーであり続けます。
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-gray-100 text-center">
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <span class="text-xs font-bold text-[#05A85E] uppercase tracking-widest block mb-1">Value
+                                01</span>
+                            <p class="font-bold text-gray-900 text-base">挑戦の格差をなくす</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                経済的・環境的な理由による教育の機会損失をなくし、誰もが平等に学べる環境を提供します。</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <span class="text-xs font-bold text-[#05A85E] uppercase tracking-widest block mb-1">Value
+                                02</span>
+                            <p class="font-bold text-gray-900 text-base">本質的なスキルの育成</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                形だけの資格取得ではなく、企業が今まさに現場で求めている「生きたスキル」を徹底教育します。</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <span class="text-xs font-bold text-[#05A85E] uppercase tracking-widest block mb-1">Value
+                                03</span>
+                            <p class="font-bold text-gray-900 text-base">一気通貫の伴走支援</p>
+                            <p class="text-xs text-gray-500 mt-2 leading-relaxed">教育から就職まで、一人の生徒にプロ2名体制で寄り添い、伴走します。</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="w-full max-w-4xl mx-auto flex flex-col items-center mb-20 mt-20 px-4">
+            <a href="/reservation/" class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl 
+                shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] 
+                -mt-8 lg:-mt-12 relative z-10 w-fit">
+                <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に予約する</span>
+            </a>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+   <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

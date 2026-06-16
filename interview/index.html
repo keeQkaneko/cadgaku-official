@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卒業生の就職実績 | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガク卒業生の就職実績・体験談。未経験からCADオペレーターや機械エンジニアへの転職を成功させた20代のリアルなインタビューをご紹介します。">
+    <link rel="canonical" href="https://cadgaku.jp/interview/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/interview/">
+    <meta property="og:title" content="卒業生の就職実績 | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="未経験から転職を成功させた卒業生のリアルな体験談をご紹介します。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="卒業生の就職実績 | キャドガク">
+    <meta name="twitter:description" content="未経験から転職を成功させた卒業生のリアルな体験談をご紹介します。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    卒業生の就職実績
+                </h1>
+            </div>
+        </div>
+
+        <section id="interview-section" class="max-w-6xl mx-auto px-5 mt-16">
+
+            <div id="graduates-page-1" class="grid md:grid-cols-3 gap-8 md:gap-10 transition-all duration-300">
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">未経験から40日で転職</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-16.png" alt="機械エンジニアに転職した大橋さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：大橋さん（24歳）前職：風力発電機の部品検査
+                                ➔ 転職：機械エンジニア】</span>
+                            現場で図面を見ながら部品を検査するなかで、「自分も設計側（上流工程）に挑戦したい」と思い、未経験からキャドガクで学習を決意。働きながらでもスキマ時間で、いつでもオンライン上で講師と学べたので、入校から40日間で機械エンジニアとして正社員転職ができました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">20代最後の異業種キャリアチェンジ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-2.png" alt="建築CADオペレーターに転職した佐々木さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：佐々木さん（29歳）前職：アパレル店長
+                                ➔ 転職：建築CADオペレーター】</span>
+                            販売職を5年間経験し、20代最後に「将来のために、手に職をつけたい」と一念発起。完全未経験からでしたが、キャドガクの平日10時〜22時までいつでも講師に質問できる環境が大きな支えになりました。年齢や職歴の不安も、専任のアドバイザーが企業目線の選考対策でカバーしてくれたおかげで、無事に建築CADオペレーターとして、新しいキャリアへの一歩を踏み出せました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">現場経験を活かして上流工程へ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-15.png" alt="機械エンジニアに転職した黒光さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：黒光さん（26歳）前職：大手住宅設備メーカー（鋳造・成形）
+                                ➔ 転職：機械エンジニア】</span>
+                            高校卒業後、約7年間製造に携わってきましたが、「より上流工程の設計職を目指し、市場価値を高めたい」と考えキャドガクを受講。現場経験という強みと、業界シェアの高い「AutoCAD」の基礎を徹底的に学習したことで、採用企業から高い評価を獲得。プロ2名体制のサポートが自信に繋がり、未経験から憧れの機械エンジニアへ転職ができました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">機械・建築のW内定獲得</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-8.png" alt="建築CADオペレーターに転職した蒲田さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：蒲田さん（27歳）前職：冠婚葬祭会社で事務職
+                                ➔ 転職：建築CADオペレーター】</span>
+                            火葬場運営会社の事務職を続ける中で「一生モノの手に職をつけ、就職まで一気通貫でサポートしてくれるスクール」を探していました。何となく選んだCADでしたが、学習を進めるうちに面白さにのめり込み、機械と建築の両方で内定を獲得！一番家から近く条件の良い会社の建築CADオペレーターに転職を決定しました。
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">派遣から正社員の施工管理へ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-4.png" alt="施工管理に転職した寺田さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：寺田さん（30歳）前職：接客業（派遣社員）
+                                ➔ 転職：建築施工管理】</span>
+                            大学卒業後は派遣を転々とし、正社員経験がないことに強い焦りを感じていました。需要がある専門性の高い仕事に就くためCADの学習を決意。図面を見る楽しさやモノづくりの奥深さに触れて興味関心が増し、前職の接客業で培ったコミュニケーション力を武器に、未経験から施工管理職への正社員就職を勝ち取りました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">AutoCADを再学習しステップアップ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-1.png" alt="機械エンジニアに転職した三島さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：三島さん（23歳）前職：半導体製造メーカーの製品検査業務（派遣社員）
+                                ➔ 転職：機械エンジニア】</span>
+                            専門学校を卒業後、派遣で半導体製造の製品検査をしていました。学生時代に少し触れたAutoCADの楽しさを思い出し、「もっと手に職をつけて、より上流工程の設計職として働きたい」とキャドガクで再学習。20代前半での未経験転職でしたが、手厚いサポートで見事に機械エンジニアへのキャリアアップを果たしました。
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">服飾CADから機械系CADへ業界チェンジ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-18.png" alt="インテリアデザイナーに転職した吉田さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：吉田さん（26歳）前職：アパレルパタンナー（服飾専門卒）
+                                ➔ 転職：インテリアデザイナー】</span>
+                            服飾専門学校を卒業しパタンナーとしてアパレル用CADを使用していましたが、業界の競争激化や縮小を感じて他業界への転身を決意。まずは幅広く業界を見たいと思い、汎用性が高いキャドガクでCADを学習しました。CADの経験があることが企業に評価され、未経験では難関のインテリアデザイナーへ転職を成功させました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">スピード転職！入校から32日</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-5.png" alt="32日で機械エンジニアに転職した杉内さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：杉内さん（29歳）前職：法律事務所の事務職
+                                ➔ 転職：機械エンジニア】</span>
+                            法律事務所の事務職として勤務していましたが、激務のわりに将来的なスキルが残らない現状に不満を抱いていました。趣味の3Dプリンターでのモノづくりをきっかけに機械エンジニアを目指してキャドガクに入校。有給消化の期間をフル活用して集中学習した結果、なんと入校からわずか32日間で機械エンジニアとしての転職を成功させました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">ITから脱却・AIに負けないモノづくり</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-13.png" alt="大手住宅メーカーの住宅設計職に転職した中川さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：中川さん（26歳）前職：ITエンジニア
+                                ➔ 転職：大手住宅メーカーの住宅設計職】</span>
+                            大学卒業後、ITエンジニアをしていましたが、仕事がAIに代替されていくのを実感し将来性に不安を覚えていました。「AIに奪われない、現実世界のモノづくりの技術」を求めてCADに出会い入校。ITで培った論理的思考とモノづくりマインドが高く評価され、大手住宅メーカーから住宅設計職の内定をいただきました！
+                        </blockquote>
+                    </div>
+                </article>
+
+            </div>
+
+            <div id="graduates-page-2" class="grid md:grid-cols-3 gap-8 md:gap-10 transition-all duration-300 hidden">
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">職歴10年のパティシエから転身</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-17.png" alt="施工管理に転職した加藤さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：加藤さん（30歳）前職：パティシエ（約10年間）
+                                ➔ 転職：建築施工管理】</span>
+                            パティシエとして10年間勤め、マネージャーまで昇格しキャリアも順調でしたが、業界の縮小に不安を感じ「長く続けられる手に職」を求め入校。1から壮大な建造物を作り上げる施工管理に魅力を感じ転職しました。現場ではCADによる図面修正の作業も多く、キャドガクで身につけたスキルをそのまま活かせています！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">自衛隊の整備から「設計」のプロへ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-6.png" alt="機械エンジニアに転職した梅岡さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：梅岡さん（25歳）前職：海上自衛隊（機械整備員）
+                                ➔ 転職：機械エンジニア】</span>
+                            前職は海上自衛隊で機械整備員としてマシンのメンテナンスに従事していました。「壊れたものを直す現場作業ではなく、1から製品を生み出す設計の領域に行きたい」という熱意を持ってキャドガクへ入校。現場の知見にスクールで得たCAD設計スキルを掛け合わせ、憧れの機械エンジニアへの転職を決定させました。
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">単純な工場作業から頭脳派の設計へ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-7.png" alt="機械エンジニアに転職した野田さん。本人写真の使用は断られたのでイラストにしています"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：野田さん（28歳）前職：部品製造と梱包作業
+                                ➔ 転職：機械エンジニア】</span>
+                            工場での部品製造や梱包といった単純な現場作業の毎日から、「もっと頭を使うクリエイティブな仕事に就きたい」と悩んでいました。現場でCAD図面を見ながら作業していた経験からキャドガクに入校。実際のモノづくりを知っている現場経験と、高い学習意欲が評価され、未経験から機械エンジニアとして転職を果たしました。
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">完全未経験から3社同時内定</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-7.png" alt="設備CADオペレーターに転職した青柳さん。本人写真の使用は断られたのでイラストにしています"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：青柳さん（26歳）前職：管理栄養士
+                                ➔ 転職：設備CADオペレーター】</span>
+                            前職は管理栄養士でしたが、将来のために一生モノの専門職を身につけたいと考えていました。自分の「コツコツと細かな作業に集中できる強み」を活かせるCADに出会い入校。完全未経験からでかなり不安もありましたが、手厚い就職サポートと個別指導のおかげで、なんと3社から内定を獲得し、設備CADオペレーターに転職できました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">営業から需要高の土木CADへ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-10.png" alt="土木CADオペレーターに転職した遠藤さん。本人写真の使用は断られたのでイラストにしています"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：遠藤さん（24歳）前職：人材派遣の営業職
+                                ➔ 転職：土木CADオペレーター】</span>
+                            大学卒業後、人材派遣会社の営業職として従事。前職でCADやエンジニア案件を多く扱う中で「自分自身がプレイヤーになりたい」と思いキャドガクに入校しました。インフラ業界としての市場規模が非常に大きく、未経験から入りやすくて需要も高い「土木CADオペレーター」として戦略的な転職を成功させました。
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">最難関・航空機・戦闘機設計に内定</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-3.png" alt="航空機系機械エンジニアに転職した高橋さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：高橋さん（22歳）前職：雑貨ブランド会社で営業事務
+                                ➔ 転職：機械エンジニア（航空機設計）】</span>
+                            高校卒業後に営業事務として就職しましたが、「事務職はいずれAIに代替されるのでは」という強い危機感から手に職をつけたいと思い入校。学習や就活に不安がありましたが、手厚いサポートと高い学習意欲で急速に成長。就職難易度の極めて高い、航空機をメインに設計している大手企業に機械エンジニアとして転職できました！
+                        </blockquote>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="flex justify-center items-center space-x-3 mt-14 md:mt-20">
+                <button id="btn-page-1" onclick="switchGraduatesPage(1)"
+                    class="w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-[#22C55E] text-white font-bold text-base rounded shadow-sm hover:opacity-90 transition duration-200 focus:outline-none">
+                    1
+                </button>
+                <button id="btn-page-2" onclick="switchGraduatesPage(2)"
+                    class="w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-white text-[#22C55E] font-bold text-base rounded shadow-sm hover:bg-[#22C55E] hover:text-white transition duration-200 focus:outline-none">
+                    2
+                </button>
+            </div>
+
+        </section>
+
+
+        <section class="py-16 lg:py-24 px-4">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="w-full max-w-4xl mx-auto flex flex-col items-center px-4">
+
+                    <img src="images/seminar-guidance-2.png" alt="キャドガクの無料オンライン説明会にご参加ください"
+                        class="w-full h-auto drop-shadow-sm" />
+
+                    <a href="/reservation/"
+                        class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-3">
+                        <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                        <span>無料オンライン説明会に予約する</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        /**
+     * 実績ページの表示・非表示、およびボタンのアクティブ状態をトグルする関数
+     * @param {number} pageNumber - 表示したいページ番号 (1 または 2)
+     */
+        function switchGraduatesPage(pageNumber) {
+            const page1 = document.getElementById('graduates-page-1');
+            const page2 = document.getElementById('graduates-page-2');
+            const btn1 = document.getElementById('btn-page-1');
+            const btn2 = document.getElementById('btn-page-2');
+            const section = document.getElementById('interview-section');
+
+            // 各状態のTailwindスタイル（トップページのトンマナ・キャドガク緑に準拠）
+            const activeClass = "w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-[#22C55E] text-white font-bold text-base rounded shadow-sm hover:opacity-90 transition duration-200 focus:outline-none";
+            const inactiveClass = "w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-white text-[#22C55E] font-bold text-base rounded shadow-sm hover:bg-[#22C55E] hover:text-white transition duration-200 focus:outline-none";
+
+            if (pageNumber === 1) {
+                // コンテンツの切り替え
+                if (page1) page1.classList.remove('hidden');
+                if (page2) page2.classList.add('hidden');
+
+                // ボタンのアクティブ状態切り替え
+                if (btn1) btn1.className = activeClass;
+                if (btn2) btn2.className = inactiveClass;
+            } else if (pageNumber === 2) {
+                // コンテンツの切り替え
+                if (page1) page1.classList.add('hidden');
+                if (page2) page2.classList.remove('hidden');
+
+                // ボタンのアクティブ状態切り替え
+                if (btn1) btn1.className = inactiveClass;
+                if (btn2) btn2.className = activeClass;
+            }
+
+            // クリエイター視点のUX強化：ページ切り替え後、ユーザーを迷わせないために実績の一番上へスムーススクロール
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャドガク | 完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクは、未経験から最短30日でCADスキルの習得から就職まで目指せる20代向け完全無料のオンラインCADスクールです。現役講師とキャリアアドバイザーが専任で徹底して就職サポートを行います。まずは無料オンライン説明会へ！">
+    <link rel="canonical" href="https://cadgaku.jp/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/">
+    <meta property="og:title" content="キャドガク | 完全無料のオンラインCADスクール【20代向け就職直結型】">
+    <meta property="og:description" content="未経験から最短30日で就職を目指せる20代向け完全無料のオンラインCADスクール。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="キャドガク | 完全無料のオンラインCADスクール">
+    <meta name="twitter:description" content="未経験から最短30日で就職を目指せる20代向け完全無料のオンラインCADスクール。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 卒業生の声 無限ループアニメーション */
+        @keyframes infinite-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-infinite-scroll {
+            display: flex;
+            animation: infinite-scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* FAQアコーディオンのアニメーション用 */
+        .faq-content {
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-content.open {
+            max-height: 500px;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "キャドガク",
+          "url": "https://cadgaku.jp/",
+          "logo": "https://cadgaku.jp/images/logo-cadgaku.png",
+          "description": "未経験から最短30日でCADスキルの習得から就職まで目指せる20代向け完全無料のオンラインCADスクール。",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://cadgaku.jp/contact/"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "どうして完全無料なのですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "当スクールは、提携する企業様からいただく協賛金や採用手数料によって運営が成り立っています。「専門技術を身につけたいけれど、高額な受講料が払えない」という方でも、無料で受講し、未経験から就職できる仕組みを作りました。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "なぜ未経験からでも就職できるのですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "業界事情に精通した専任のキャリアアドバイザーが在籍しているからです。企業が求める人物像を把握しており、履歴書・職務経歴書の添削から面接対策まで、あなたに合わせた個別の就職支援を徹底して行うため、高い内定獲得力を持っております。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "やむを得ず途中で辞めてしまった場合、違約金などはかかりますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "一切かかりません。何かしらの理由で、やむを得ず途中で辞めてしまった場合や、万が一就職に至らなかった場合でも、違約金やその他の費用をご請求することは一切ございませんのでご安心ください。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "学歴や職歴に自信がないのですが大丈夫でしょうか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "学歴や職歴に自信がなくても受講可能です。実際にニートやフリーター、他業界の方が未経験から学習し、就職を目指している方がいらっしゃいます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "オンラインだと学習のモチベーションが続くか心配です。",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "当スクールでは、平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。「わからない所で立ち止まる」ことがないため、自己学習にありがちなモチベーションの低下を防ぎ、スムーズに学習を進められます。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+
+
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen">
+        <section
+            class="relative w-full lg:min-h-[600px] lg:h-[calc(100vh-80px)] mt-20 flex flex-col lg:flex-row lg:items-center justify-start overflow-hidden bg-white">
+
+            <div class="absolute top-0 left-0 lg:left-auto lg:right-0 w-full lg:w-[60%] h-[65vh] lg:h-full z-0">
+                <div
+                    class="absolute inset-y-0 left-0 w-full lg:w-[40%] bg-gradient-to-r from-white via-white/95 to-transparent z-10 hidden lg:block">
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 w-full h-[65%] sm:h-[60%] bg-gradient-to-t from-white via-white/95 to-transparent z-10 lg:hidden">
+                </div>
+
+                <picture class="block w-full h-full">
+                    <img src="images/firstview.png" alt="キャドガクの学習イメージ画像" class="w-full h-full object-cover object-[85%_top] lg:object-[80%_top]" fetchpriority="high" decoding="async">
+                </picture>
+            </div>
+
+            <div
+                class="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
+                mt-[30vh] sm:mt-[38vh] lg:mt-0 pt-8 pb-10 lg:pt-0 lg:pb-0 flex flex-col lg:flex-row 
+                items-center justify-between lg:gap-4 xl:gap-8 bg-white/1 lg:bg-transparent 
+                backdrop-blur-sm lg:backdrop-blur-none border-t border-white/50 lg:border-none shadow-[0_-10px_30px_rgba(0,0,0,0.05)] lg:shadow-none">
+
+                <div class="w-full lg:w-[72%] xl:w-[73%] flex flex-col items-center lg:items-start shrink-0">
+
+                    <div
+                        class="relative inline-flex items-center justify-center bg-[#0B894F] rounded-xl px-6 py-3 sm:px-7 sm:py-5 lg:px-12 lg:py-5 shadow-md lg:ml-20 lg:-mt-14 text-center sm:text-left">
+                        <h2
+                            class="font-extrabold text-white text-[17px] sm:text-[24px] lg:text-[22px] tracking-widest sm:whitespace-nowrap [text-shadow:2px_2px_0px_rgba(0,0,0,0.10)] leading-relaxed sm:leading-none">
+                            未経験から最短30日間で就職できる
+                        </h2>
+                        <div
+                            class="absolute -bottom-[10px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[14px] border-t-[#0B894F]">
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center justify-center lg:justify-start gap-1 sm:gap-3 lg:gap-4 w-full my-2 sm:my-8 lg:my-6">
+                        <img src="images/online-icon.png" alt="キャドガクの学習は全てオンラインで完結します。"
+                            class="h-[80px] sm:h-[100px] lg:h-[clamp(100px,11vw,140px)] object-contain shrink-0 drop-shadow-md z-10 relative" />
+
+                        <div class="relative my-4 lg:my-5">
+                            <h1
+                                class="text-left leading-[1.3] tracking-wider text-gray-800 mb-2 lg:mb-1 whitespace-nowrap [text-shadow:2px_2px_0px_rgba(0,0,0,0.10)]">
+
+                                <span class="block text-[clamp(16px,3.5vw,25px)] font-black text-gray-700 mb-1">
+                                    20代向け就職直結型
+                                </span>
+
+                                <span
+                                    class="inline-block bg-gradient-to-t from-[#FFE600]/80 via-[#FFE600]/80 to-transparent bg-[length:100%_35%] md:bg-[length:100%_40%] bg-no-repeat bg-bottom">
+                                    <span class="text-[clamp(32px,7.8vw,60px)] font-black">完全無料</span><span
+                                        class="text-[clamp(20px,4.5vw,32px)] font-black mx-1">の</span><span
+                                        class="text-[clamp(32px,7.8vw,60px)] font-black">CAD講座</span>
+                                </span>
+
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-[62%] xl:w-[65%] lg:my-1 lg:ml-7 shrink-0">
+                        <div class="w-full text-center mb-4 lg:mb-6 px-2">
+                            <h2
+                                class="inline-block relative text-[20px] sm:text-[35px] lg:text-[clamp(18px,4vw,28px)] font-bold text-gray-700 tracking-widest">
+                                ＼ キャドガクが選ばれる理由 ／
+
+                            </h2>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 gap-x-1 sm:gap-x-2 lg:gap-x-2 w-full items-stretch pt-4 sm:pt-8 lg:pt-6 lg:-mb-5">
+
+                            <div
+                                class="relative h-full lg:h-[110px] flex flex-col justify-end lg:justify-center bg-white rounded-xl sm:rounded-2xl p-1 pt-6 sm:p-2 sm:pt-10 lg:p-2 lg:pt-6 text-center shadow-[0_5px_15px_rgba(0,0,0,0.1)] sm:shadow-[0_10px_30px_rgba(0,0,0,0.2)] border border-gray-100 border-b-[3px] sm:border-b-4 border-b-[#05A85E]">
+                                <div
+                                    class="absolute -top-5 sm:-top-8 lg:-top-8 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-16 sm:h-16 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] flex items-center justify-center border-2 sm:border-4 border-[#05A85E]">
+                                    <img src="images/icon-1.png" alt="キャドガクの生徒の9割以上は未経験から学習をスタートしています。"
+                                        class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 object-contain">
+                                </div>
+                                <h3
+                                    class="mt-1 sm:mt-2 lg:mt-2 text-[14px] sm:text-[24px] lg:text-xs xl:text-base font-black text-[#0B894F] tracking-tighter sm:tracking-widest whitespace-nowrap">
+                                    未経験歓迎<br>手に職が就く
+                                </h3>
+                            </div>
+
+                            <div
+                                class="relative h-full lg:h-[110px] flex flex-col justify-end lg:justify-center bg-white rounded-xl sm:rounded-2xl p-1 pt-6 sm:p-2 sm:pt-10 lg:p-2 lg:pt-6 text-center shadow-[0_5px_15px_rgba(0,0,0,0.1)] sm:shadow-[0_10px_30px_rgba(0,0,0,0.2)] border border-gray-100 border-b-[3px] sm:border-b-4 border-b-[#05A85E]">
+                                <div
+                                    class="absolute -top-5 sm:-top-8 lg:-top-8 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-16 sm:h-16 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] flex items-center justify-center border-2 sm:border-4 border-[#05A85E]">
+                                    <img src="images/icon-2.png" alt="キャドガクの生徒の9割以上は未経験から学習をスタートしています。"
+                                        class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 object-contain">
+                                </div>
+                                <h3
+                                    class="mt-1 sm:mt-2 lg:mt-2 text-[14px] sm:text-[24px] lg:text-xs xl:text-base font-black text-[#0B894F] tracking-tighter sm:tracking-widest whitespace-nowrap underline decoration-[#FFE600] decoration-[3px] sm:decoration-[4px] lg:decoration-[4px] underline-offset-[-1px] sm:underline-offset-[-2px] lg:underline-offset-[-2px] pb-0.5 sm:pb-0">
+                                    追加請求<br>一切なし
+                                </h3>
+                            </div>
+
+                            <div
+                                class="relative h-full lg:h-[110px] flex flex-col justify-end lg:justify-center bg-white rounded-xl sm:rounded-2xl p-1 pt-6 sm:p-2 sm:pt-10 lg:p-2 lg:pt-6 text-center shadow-[0_5px_15px_rgba(0,0,0,0.1)] sm:shadow-[0_10px_30px_rgba(0,0,0,0.2)] border border-gray-100 border-b-[3px] sm:border-b-4 border-b-[#05A85E]">
+                                <div
+                                    class="absolute -top-5 sm:-top-8 lg:-top-8 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-16 sm:h-16 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] flex items-center justify-center border-2 sm:border-4 border-[#05A85E]">
+                                    <img src="images/icon-3.png" alt="キャドガクの学習は全てオンラインで完結します。"
+                                        class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 object-contain">
+                                </div>
+                                <h3
+                                    class="mt-1 sm:mt-2 lg:mt-2 text-[14px] sm:text-[24px] lg:text-xs xl:text-base font-black text-[#0B894F] tracking-tighter sm:tracking-widest whitespace-nowrap">
+                                    平日22時まで<br>個別指導OK
+                                </h3>
+                            </div>
+
+                            <div
+                                class="relative h-full lg:h-[110px] flex flex-col justify-end lg:justify-center bg-white rounded-xl sm:rounded-2xl p-1 pt-6 sm:p-2 sm:pt-10 lg:p-2 lg:pt-6 text-center shadow-[0_5px_15px_rgba(0,0,0,0.1)] sm:shadow-[0_10px_30px_rgba(0,0,0,0.2)] border border-gray-100 border-b-[3px] sm:border-b-4 border-b-[#05A85E]">
+                                <div
+                                    class="absolute -top-5 sm:-top-8 lg:-top-8 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-16 sm:h-16 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] flex items-center justify-center border-2 sm:border-4 border-[#05A85E]">
+                                    <img src="images/icon-4.png" alt="キャドガクは学習から就職まで一気通貫でサポートしてます。"
+                                        class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 object-contain">
+                                </div>
+                                <h3
+                                    class="mt-1 sm:mt-2 lg:mt-2 text-[14px] sm:text-[24px] lg:text-xs xl:text-base font-black text-[#0B894F] tracking-tighter sm:tracking-widest whitespace-nowrap">
+                                    就職まで<br>徹底サポート
+                                </h3>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-2 sm:mt-8 lg:mt-8 pb-10 lg:pb-20 text-center px-4 flex flex-col items-center">
+
+            <!-- セミナー案内画像 -->
+            <div class="mb-1 sm:mb-1 lg:mb-1 w-full max-w-4xl mx-auto">
+                <img src="images/seminar-guidance.png" alt="キャドガクの無料オンライン説明会にご参加ください"
+                    class="w-full h-auto drop-shadow-sm" />
+            </div>
+
+            <!-- CTAボタン -->
+            <a href="/reservation/"
+                class="btn-reserve px-8 py-3 md:px-16 md:py-5 lg:px-20 lg:py-4 rounded-2xl font-bold text-base md:text-xl lg:text-2xl shadow-2xl active:scale-95 mb-8 md:mb-10 lg:mb-12 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mx-auto">
+                <span class="text-[14px] md:text-[18px] lg:text-[20px] md:mb-1">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に予約する</span>
+            </a>
+
+            <!-- 新規追加：実績・表彰画像（権威性の提示によるCVR向上・安心感醸成） -->
+            <div
+                class="w-full max-w-[100%] sm:max-w-4xl lg:max-w-4xl mx-auto mb-6 mt-1 md:mb-14 md:mt-4 relative z-20 flex flex-col justify-center items-center">
+                <div class="w-full relative z-20 px-2 sm:px-0">
+                    <img src="images/achievement.png" alt="受講生満足度95.5%、追加請求一切なし、文系卒率81.8%、就職まで徹底サポート、未経験が約9割、パソコン貸出OK"
+                        class="w-full h-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-shadow duration-300">
+                </div>
+            </div>
+
+            <!-- リード文 -->
+            <p
+                class="text-[16px] md:text-xl lg:text-2xl font-bold text-gray-700 tracking-wider mt-0 lg:mt-1 leading-relaxed text-center">
+
+                キャドガクは<br class="lg:hidden"><span class="hidden lg:inline">&nbsp;</span><span
+                    class="text-[#FF8C00] text-[1.1em]">最短30日間</span>で<br class="hidden lg:block">CADスキルの習得から、<br
+                    class="lg:hidden"><span class="text-[#FF8C00] text-[1.1em]">就職まで目指す</span>ことができる<br>
+                <span
+                    class="block mt-4 lg:mt-6 text-[#05A85E] text-[1.4em] lg:text-4xl leading-loose lg:leading-normal">
+                    <span
+                        class="underline decoration-double decoration-[#05A85E] underline-offset-[8px] lg:underline-offset-[12px] decoration-[3px]">完全無料の</span><br
+                        class="md:hidden"><span
+                        class="underline decoration-double decoration-[#05A85E] underline-offset-[8px] lg:underline-offset-[12px] decoration-[3px]">オンラインCADスクールです</span>
+                </span>
+            </p>
+
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-3xl font-semibold text-white tracking-widest leading-tight">
+                    未経験かつ様々な異業種から<br class="md:hidden">転職に成功しています!!</h2>
+            </div>
+        </div>
+
+        <section class="pt-10 pb-16 bg-white px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="hidden md:flex md:flex-wrap justify-center gap-4 lg:gap-6 mb-20 mt-0">
+                    <div
+                        class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-[18%]">
+                        <div
+                            class="w-28 h-28 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-[#05A85E] p-1 bg-white mb-4 mx-auto flex-shrink-0">
+                            <img src="images/image1.png" alt="事務職からの転職"
+                                class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold text-[#05A85E] bg-[#DAF2E7] px-2 py-0.5 rounded-full">前職</span>
+                            <p class="font-bold text-gray-800 text-base">事務職</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-[18%]">
+                        <div
+                            class="w-28 h-28 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-[#05A85E] p-1 bg-white mb-4 mx-auto flex-shrink-0">
+                            <img src="images/image5.png" alt="飲食定員からの転職"
+                                class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold text-[#05A85E] bg-[#DAF2E7] px-2 py-0.5 rounded-full">前職</span>
+                            <p class="font-bold text-gray-800 text-base">飲食店員</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-[18%]">
+                        <div
+                            class="w-28 h-28 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-[#05A85E] p-1 bg-white mb-4 mx-auto flex-shrink-0">
+                            <img src="images/image2.png" alt="営業職からの転職"
+                                class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold text-[#05A85E] bg-[#DAF2E7] px-2 py-0.5 rounded-full">前職</span>
+                            <p class="font-bold text-gray-800 text-base">営業職</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-[18%]">
+                        <div
+                            class="w-28 h-28 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-[#05A85E] p-1 bg-white mb-4 mx-auto flex-shrink-0">
+                            <img src="images/image3.png" alt="製造業からの転職"
+                                class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold text-[#05A85E] bg-[#DAF2E7] px-2 py-0.5 rounded-full">前職</span>
+                            <p class="font-bold text-gray-800 text-base">製造業</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-[18%]">
+                        <div
+                            class="w-28 h-28 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-[#05A85E] p-1 bg-white mb-4 mx-auto flex-shrink-0">
+                            <img src="images/image4.png" alt="コンビニ店員からの転職"
+                                class="w-full h-full object-cover rounded-full" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold text-[#05A85E] bg-[#DAF2E7] px-2 py-0.5 rounded-full">前職</span>
+                            <p class="font-bold text-gray-800 text-base">コンビニ店員</p>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="text-[10px] lg:text-xs text-gray-500 text-right font-medium -mt-14">※写真はイメージです</p>
+
+                <div class="md:hidden overflow-hidden -mx-4 mb-10 mt-10">
+                    <div class="flex animate-infinite-scroll w-max">
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image1.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">事務職</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image5.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">飲食店員</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image2.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">営業職</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image3.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">製造業</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image4.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">コンビニ</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image1.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">事務職</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image5.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">飲食店員</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image2.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">営業職</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image3.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">製造業</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-none w-[160px] mx-2 flex flex-col items-center bg-white p-4 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+                            <div
+                                class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#05A85E] p-0.5 bg-white mb-3">
+                                <img src="images/image4.png" alt="" class="w-full h-full object-cover rounded-full" />
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="text-[10px] font-bold text-[#05A85E] bg-[#DAF2E7] px-1.5 py-0.5 rounded-full">前職</span>
+                                <p class="font-bold text-gray-800 text-sm">コンビニ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="w-full max-w-6xl mx-auto my-10 md:my-16 px-4 md:px-0">
+                    <div
+                        class="relative w-full h-[450px] md:h-[550px] rounded-3xl border-2 border-[#05A85E] overflow-hidden shadow-2xl group">
+
+                        <img src="images/pc-rental.png" alt="ご自身のPCで受講可能・貸出もあり"
+                            class="absolute inset-0 w-full h-full object-cover" />
+
+                        <img src="images/online-icon-2.png" alt="オンラインで完結"
+                            class="absolute top-4 left-1/2 -translate-x-1/2 md:top-16 md:left-28 md:translate-x-0 w-48 md:w-80 z-10 drop-shadow-lg" />
+
+                        <div class="absolute inset-0 flex items-center justify-center md:justify-end p-4 md:p-12">
+
+                            <div class="w-full max-w-xl text-center border border-white/50 p-6 md:p-10 rounded-2xl shadow-lg"
+                                style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);">
+
+                                <h3 class="text-lg md:text-3xl font-black mb-6 tracking-wider leading-tight">
+                                    <span class="border-b-4 border-[#FF770D]">"パソコンがなくても受講可能"</span>
+                                </h3>
+                                <h3 class="text-base md:text-xl font-black mb-2 tracking-wider leading-tight">
+                                    自分のパソコンに<br>AutoCADをインストールできます！
+                                </h3>
+
+                                <p class="text-xs md:text-base font-bold tracking-wider leading-relaxed mb-6">
+                                    ※パソコン貸出しの相談も承っております。
+                                </p>
+
+                                <div class="inline-block rounded-lg p-4 text-left w-full"
+                                    style="background-color: rgba(243, 244, 246, 0.7);">
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        <span class="block">※レンタル台数に限りがございます。</span>
+                                        <span class="block text-gray-800 font-bold mt-1">詳しくは<span
+                                                class="text-[#05A85E]">無料オンライン説明会</span>でご確認ください。</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-1 lg:pt-12 text-center px-4 flex flex-col items-center">
+                    <p class="text-base md:text-lg lg:text-xl text-black drop-shadow-sm">
+                        キャドガクは、月～土曜日に（週5～6回・昼／夜）無料オンライン説明会を開催しています。
+                    </p>
+                    <p class="text-base md:text-lg lg:text-xl text-black drop-shadow-sm pt-3 pb-7">
+                        まずはお気軽に無料オンライン説明会にご参加ください。
+                    </p>
+
+                    <a href="/reservation/"
+                        class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-2xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 mb-0 lg:mb-7 flex flex-col items-center justify-center leading-tight tracking-[0.1vw]">
+                        <span class="text-[14px] lg:text-[20px]">＼ 簡単30秒‼ ／</span>
+                        <span>無料オンライン説明会に申し込む</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
+                    キャドガクが選ばれる理由</h2>
+            </div>
+        </div>
+
+        <section class="bg-[#DAF2E7] py-10 lg:py-16 px-4" id=" support">
+
+            <div class="max-w-6xl mx-auto">
+                <div class="space-y-12">
+
+                    <div class="bg-white p-8 md:p-12 shadow-md border border-[#05A85E]/10 rounded-2xl">
+                        <div class="text-center mb-8 md:mb-12">
+                            <span
+                                class="inline-block text-4xl italic opacity-50 font-black tracking-widest mb-2 text-[#05A85E]">01.</span>
+                            <h4 class="text-xl lg:text-3xl font-bold leading-tight text-[#05A85E] pt-5">
+                                就職まで最短ルートで学ぶ<br class="md:hidden">「高タイパ」カリキュラム
+                            </h4>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
+                            <div class="lg:w-3/4 text-left lg:text-left order-1">
+                                <p class="tracking-wide text-sm lg:text-lg !leading-relaxed">
+                                    未経験からの就職に<span
+                                        class="text-[#FF8C00] font-semibold">「本当に必要なスキル・知識」</span>を採用企業にヒアリングし、効率的で就職に有利なカリキュラムを受講できます。
+                                    余計なカリキュラムを含まないため、学習のモチベーションを維持し、<span
+                                        class="text-[#FF8C00] font-semibold">無駄なく最短ルート</span>で就職ができます。
+                                    また、当スクールでは、業界を問わず就職に有利と言われている<span
+                                        class="text-[#FF8C00] font-semibold">「AutoCAD」を使用</span>します。
+                                    圧倒的な汎用性と、あらゆる設計業務の基礎となるソフトなので、他のCADソフトにもスムーズに対応できる土台が身に付きます。
+                                    採用企業が未経験者にまず求めているのは<span
+                                        class="text-[#FF8C00] font-semibold">「AutoCADを使用した基礎力」</span>なので、キャドガクでは最短ルートで徹底的に基礎力を身に付けていきます。
+                                </p>
+                            </div>
+                            <div class="lg:w-1/2 w-full order-2">
+                                <img src="images/reason1.png" alt=""
+                                    class="w-full h-80 md:h-80 object-cover border-2 border-[#05A85E] rounded-2xl" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 md:p-12 shadow-md border border-[#05A85E]/10 rounded-2xl">
+                        <div class="text-center mb-8 md:mb-12">
+                            <span
+                                class="inline-block text-4xl italic opacity-50 font-black tracking-widest mb-2 text-[#05A85E]">02.</span>
+                            <h4 class="text-xl lg:text-3xl font-bold leading-tight text-[#05A85E] pt-5">
+                                完全無料なので受講料を<br class="md:hidden">気にせず学習できる！<br>スキマ時間でオンライン完結！
+                            </h4>
+                        </div>
+                        <div class="flex flex-col items-center lg:items-start gap-8 lg:gap-16">
+
+                            <div class="w-full text-left order-1">
+                                <div class="space-y-6 text-sm lg:text-lg !leading-relaxed">
+
+                                    <div>
+                                        <span class="text-[#05A85E] font-semibold block mb-1">完全無料・違約金なしの理由</span>
+                                        <p>
+                                            当スクールは、採用企業様から<span
+                                                class="text-[#FF8C00] font-semibold">「採用手数料・協賛金」</span>をいただく仕組みで運営しています。<br>
+                                            そのため、受講生の皆様は受講料を一切負担することなく、研修を受けることができます。<br>
+                                            一部のスクールでは研修中の離脱や、就職できなかった場合に違約金が発生しますが、当スクールは就職支援に自信があるからこそ「無料」で運営しています。
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-[#05A85E] font-semibold block mb-1">学習のみに集中できる</span>
+                                        <p>
+                                            他社スクールでは30万〜70万円の費用がかかり、ローンの支払いに追われるケースも少なくありません。
+                                            <br>キャドガクなら<span
+                                                class="text-[#FF8C00] font-semibold">金銭的な不安</span>を感じることなく、精神的なゆとりを持って学習のみに集中いただけます。
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-[#05A85E] font-semibold block mb-1">スキマ時間でオンライン完結</span>
+                                        <p>
+                                            <span
+                                                class="text-[#FF8C00] font-semibold">平日10:00〜22:00の間</span>で、講師とのマンツーマン指導が<span
+                                                class="text-[#FF8C00] font-semibold">オンラインで受け放題</span>です。
+                                            <br>仕事終わりの帰宅後やカフェなど、場所を問わずスキマ時間を活用してスキルを習得できます。
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="w-full order-2">
+                                <img src="images/reason2.png" alt="キャドガクが受講費用無料で運営できている理由を仕組み図にして表した画像"
+                                    class="w-full h-auto border-2 border-[#05A85E] rounded-2xl" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 md:p-12 shadow-md border border-[#05A85E]/10 rounded-2xl">
+                        <div class="text-center mb-8 md:mb-12">
+                            <span
+                                class="inline-block text-4xl italic opacity-50 font-black tracking-widest mb-2 text-[#05A85E]">03.</span>
+                            <h4 class="text-xl lg:text-3xl font-bold leading-tight text-[#05A85E] pt-5">
+                                現役講師と経験者のキャリアアドバイザーが連携した<br>一気通貫の徹底サポートを実現
+                            </h4>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16">
+                            <div class="lg:w-3/4 text-left lg:text-left order-1">
+                                <div class="space-y-6 text-sm lg:text-lg !leading-relaxed">
+
+                                    <div>
+                                        <span class="text-[#05A85E] font-semibold block mb-1">プロ2名が専任伴走</span>
+                                        <p>
+                                            現役講師とキャリアアドバイザーが学習面と就活支援で、あなた専用のチームを結成。<span
+                                                class="text-[#FF8C00] font-semibold">受講生1名に対し、プロ2名体制</span>で就職まで伴走します。
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <span class="text-[#05A85E] font-semibold block mb-1">企業目線の選考対策</span>
+                                        <p>採用側の目線で、面接練習や書類作成のサポートが可能。企業に求められるポイントを的確に押さえた指導を行うため、
+                                            未経験からでも内定を獲得することができます。
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-6">
+                                    <a href="/course/lecturer/"
+                                        class="btn-instructor flex items-center justify-center px-8 lg:px-8 py-3 bg-[#05A85E] border-2 border-[#05A85E] text-white rounded-[30px] font-bold text-base lg:text-xl transition-all duration-300 ease-in-out hover:bg-[#f0fdf4] hover:text-[#05A85E] hover:border-[#05A85E] active:scale-95 tracking-wide">
+                                        講師の紹介
+                                    </a>
+                                    <a href="/support/adviser/"
+                                        class="btn-instructor flex items-center justify-center px-8 lg:px-8 py-3 bg-[#05A85E] border-2 border-[#05A85E] text-white rounded-[30px] font-bold text-base lg:text-xl transition-all duration-300 ease-in-out hover:bg-[#f0fdf4] hover:text-[#05A85E] hover:border-[#05A85E] active:scale-95 tracking-wide">
+                                        キャリアアドバイザーの紹介
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 w-full order-2">
+                                <img src="images/member.png" alt="キャドガクの一部メンバーの画像"
+                                    class="w-full h-80 md:h-80 object-cover border-2 border-[#05A85E] rounded-2xl" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-6xl mx-auto mt-16 mb-5 px-4">
+                <div class="overflow-x-auto border-2 border-[#05A85E] rounded-2xl">
+                    <table class="w-full min-w-[800px] text-base md:text-lg text-center border-collapse bg-white">
+
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-700 border-b-2 border-gray-300">
+                                <th class="p-5 md:p-6 border-r w-1/5">項目</th>
+                                <th class="p-5 md:p-6 border-r w-1/5 font-black text-xl md:text-2xl"
+                                    style="background-color: #05A85E; color: #FFFFFF !important;">キャドガク</th>
+                                <th class="p-5 md:p-6 border-r w-1/5">A社</th>
+                                <th class="p-5 md:p-6 border-r w-1/5">B社</th>
+                                <th class="p-5 md:p-6 w-1/5">C社</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="border-b">
+                                <th class="p-5 bg-gray-50 border-r text-gray-700 font-bold">受講料</th>
+                                <td class="p-5 border-r font-bold text-xl"
+                                    style="background-color: #05A85E; color: #FFFFFF !important;">完全無料</td>
+                                <td class="p-5 border-r text-gray-600">一部無料</td>
+                                <td class="p-5 border-r text-gray-600">20〜40万円</td>
+                                <td class="p-5 text-gray-600">40〜70万円</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <th class="p-5 bg-gray-50 border-r text-gray-700 font-bold">受講形式</th>
+                                <td class="p-5 border-r font-bold text-xl"
+                                    style="background-color: #05A85E; color: #FFFFFF !important;">オンライン</td>
+                                <td class="p-5 border-r text-gray-600">対面</td>
+                                <td class="p-5 border-r text-gray-600">オンライン</td>
+                                <td class="p-5 text-gray-600">対面／オンライン</td>
+                            </tr>
+
+                            <tr class="border-b">
+                                <th class="p-5 bg-gray-50 border-r text-gray-700 font-bold">就職先</th>
+                                <td class="p-5 border-r font-bold text-xl"
+                                    style="background-color: #05A85E; color: #FFFFFF !important;">正社員</td>
+                                <td class="p-5 border-r text-gray-600 leading-tight">派遣社員<br><span
+                                        class="text-xs md:text-sm text-gray-400">（スクールが派遣元）</span></td>
+                                <td class="p-5 border-r text-gray-600">記載なし</td>
+                                <td class="p-5 text-gray-600 leading-tight">派遣社員<br><span
+                                        class="text-xs md:text-sm text-gray-400">（グループ会社が派遣元）</span></td>
+                            </tr>
+
+                            <tr>
+                                <th class="p-5 bg-gray-50 border-r text-gray-700 font-bold">受講期間</th>
+                                <td class="p-5 border-r font-bold text-xl"
+                                    style="background-color: #05A85E; color: #FFFFFF !important;">1ヶ月以内</td>
+                                <td class="p-5 border-r text-gray-600">10日間</td>
+                                <td class="p-5 border-r text-gray-600">6か月〜12か月</td>
+                                <td class="p-5 text-gray-600">6か月〜12か月</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-4 text-[10px] lg:text-xs text-xs text-gray-500 text-right">※2026年5月時点の自社調査</p>
+            </div>
+
+            <div class="pt-3 lg:py-10 text-center px-5 flex flex-col items-center">
+                <a href="/reservation/"
+                    class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-2xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 mb-10 flex flex-col items-center justify-center leading-tight tracking-[0.1vw]">
+                    <span class="text-[14px] lg:text-[20px]">＼ 簡単30秒‼ ／</span>
+                    <span>無料オンライン説明会に予約する</span>
+                </a>
+            </div>
+
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
+                    学習後に目指せる職種・業界</h2>
+            </div>
+        </div>
+
+        <section class="py-10 lg:py-16 bg-gray-50 px-4 text-gray-800">
+
+            <div class="text-center mb-12 md:mb-16">
+                <p class="font-bold text-base md:text-2xl !leading-relaxed max-w-4xl mx-auto">
+                    当スクールのカリキュラムは、<br class="lg:hidden">特定の業界に偏ることなく</p>
+                <span class="text-[#05A85E] font-bold text-xl lg:text-3xl block mt-3">
+                    あなたの希望に合わせたキャリアを<br class="lg:hidden">選択することができます！
+                </span>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-1.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">建築CADオペレーター</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            マンションやビル、住宅などの建物図面を作成。未経験からの競争率は高いですが、身近な建物づくりに携われます。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-2.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">機械設計／機械エンジニア
+                        </h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            A×機械の商品需要が急増中。現在の日本において、市場価値と将来性が最も高い注目の職種です。IoT機器や家電、自動車、ロボットなどの設計。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-3.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">施工管理</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            現場の工程や安全を管理。CADが使える施工管理は、図面の修正や指示がスムーズに行えるため重宝されます。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-4.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">設備CADオペレーター</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            空調や給排水、電気配線などの図面を作成。建物の生命線を支える技術者として、需要が高い職種です。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-5.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">土木CADオペレーター</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            道路、橋、ダム、水道管などのインフラ図面を作成。公共事業に関わる案件が多く、将来にわたって安定性が高い職種です。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-6.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">電子設計／電子エンジニア
+                        </h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            スマートフォンや基板などの回路設計。最新デバイスの心臓部を設計する、需要と専門性の高い職種です。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-7.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">アパレル／インテリア系</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            アパレル業界では型紙のデジタル作成に使用。家具の設計や店舗レイアウトなど、空間を形にするインテリア系でも活かせます。</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white overflow-hidden transition group border border-[#22C55E] rounded-2xl drop-shadow-lg">
+                    <div class="h-32 md:h-48 overflow-hidden bg-gray-200">
+                        <img src="images/career-8.png" alt="" class="w-full h-full object-cover transition" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <h3 class="font-bold text-base md:text-xl text-[#05A85E] mb-2">その他</h3>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            福祉や介護業界で車椅子、義肢、装具の設計や、物流倉庫業界で倉庫内の棚の配置や、効率的な荷物の積み込みシミュレーションなど、さまざまな現場でCADが利用されています。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
+                    入校から内定を<br class="lg:hidden">獲得するまでの流れ</h2>
+            </div>
+        </div>
+
+        <section class="pt-1 pb-20 px-4">
+            <div class="py-10 text-center px-2 flex flex-col items-center">
+                <p class="text-base md:text-lg lg:text-xl text-black">
+                    ※学習スピードには個人差があります。<br class="lg:hidden">平均1ヶ月で研修が終了し、<br class="lg:hidden">就職活動に移行しています。
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <img src="images/step-mobile.png" alt="入校から内定を獲得するまでの流れを表した時系列画像"
+                    class="block md:hidden w-full h-auto drop-shadow-lg border-2 border-[#22C55E] rounded-2xl" />
+
+                <img src="images/step.png" alt="入校から内定を獲得するまでの流れを表した時系列画像"
+                    class="hidden md:block w-full h-auto drop-shadow-lg border-2 border-[#22C55E] rounded-2xl" />
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
+                    卒業生の就職実績</h2>
+            </div>
+        </div>
+
+        <section class="py-7 lg:py-16 px-4">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 md:gap-20">
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">未経験から40日で転職</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-16.png" alt="機械エンジニアに転職した大橋さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：大橋さん（24歳）前職：風力発電機の部品検査
+                                ➔ 転職：機械エンジニア】</span>
+                            現場で図面を見ながら部品を検査するなかで、「自分も設計側（上流工程）に挑戦したい」と思い、未経験からキャドガクで学習を決意。働きながらでもスキマ時間で、いつでもオンライン上で講師と学べたので、入校から40日間で機械エンジニアとして正社員転職ができました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">20代最後の異業種キャリアチェンジ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-2.png" alt="建築CADオペレーターに転職した佐々木さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：佐々木さん（29歳）前職：アパレル店長
+                                ➔ 転職：建築CADオペレーター】</span>
+                            販売職を5年間経験し、20代最後に「将来のために、手に職をつけたい」と一念発起。完全未経験からでしたが、キャドガクの平日10時〜22時までいつでも講師に質問できる環境が大きな支えになりました。年齢や職歴の不安も、専任のアドバイザーが企業目線の選考対策でカバーしてくれたおかげで、無事に建築CADオペレーターとして、新しいキャリアへの一歩を踏み出せました！
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">現場経験を活かして上流工程へ</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-15.png" alt="機械エンジニアに転職した黒光さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：黒光さん（26歳）前職：大手住宅設備メーカー（鋳造・成形）
+                                ➔ 転職：機械エンジニア】</span>
+                            高校卒業後、約7年間製造に携わってきましたが、「より上流工程の設計職を目指し、市場価値を高めたい」と考えキャドガクを受講。現場経験という強みと、業界シェアの高い「AutoCAD」の基礎を徹底的に学習したことで、採用企業から高い評価を獲得。プロ2名体制のサポートが自信に繋がり、未経験から憧れの機械エンジニアへ転職ができました！
+                        </blockquote>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="/interview/"
+                    class="text-[#05A85E] font-bold border-b-2 border-[#05A85E] hover:opacity-70 transition inline-flex items-center">
+                    もっと見る <i data-lucide="arrow-right" class="inline-block ml-1 w-4 h-4"></i>
+                </a>
+            </div>
+            <div class="mt-14 w-full max-w-4xl mx-auto">
+                <img src="images/seminar-guidance-2.png" alt="キャドガクの無料オンライン説明会にご参加ください" class="w-full h-auto" />
+                <p class="text-base md:text-lg lg:text-xl text-black text-center">
+                    キャドガクは月～土に（週5～6回・昼／夜）無料オンライン説明会を開催しています。
+                </p>
+            </div>
+
+            <div class="pt-7 lg:pt-10 text-center px-5 lg:px-10 flex flex-col items-center">
+                <a href="/reservation/"
+                    class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-2xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 mb-10 flex flex-col items-center justify-center leading-tight tracking-[0.1vw]">
+                    <span class="text-[14px] lg:text-[20px]">＼ 簡単30秒‼ ／</span>
+                    <span>無料オンライン説明会に予約</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
+                    よくあるご質問</h2>
+            </div>
+        </div>
+
+        <section class="py-10 lg:py-16 bg-white px-4 text-gray-800">
+            <div class="max-w-4xl mx-auto space-y-4">
+
+                <div class="bg-white rounded-xl border shadow-sm overflow-hidden font-bold text-left text-gray-800">
+                    <button class="w-full p-6 text-left flex justify-between items-center group transition"
+                        onclick="toggleFaq(0)">
+                        <span class="flex items-center text-gray-800">
+                            <span class="text-[#05A85E] mr-1">Q</span>：どうして完全無料なのですか？
+                        </span>
+                        <i data-lucide="chevron-down" id="faq-icon-0"
+                            class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-content-0"
+                        class="faq-content px-6 bg-green-50 border-t text-gray-700 font-medium leading-loose">
+                        <p class="py-4">
+                            A：当スクールは、提携する企業様からいただく協賛金や採用手数料によって運営が成り立っています。「専門技術を身につけたいけれど、高額な受講料が払えない」という方でも、無料で受講し、未経験から就職できる仕組みを作りました。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border shadow-sm overflow-hidden font-bold text-left text-gray-800">
+                    <button class="w-full p-6 text-left flex justify-between items-center group transition"
+                        onclick="toggleFaq(1)">
+                        <span class="flex items-center text-gray-800">
+                            <span class="text-[#05A85E] mr-1">Q</span>：なぜ未経験からでも就職できるのですか？
+                        </span>
+                        <i data-lucide="chevron-down" id="faq-icon-1"
+                            class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-content-1"
+                        class="faq-content px-6 bg-green-50 border-t text-gray-700 font-medium leading-loose">
+                        <p class="py-4">
+                            A：業界事情に精通した専任のキャリアアドバイザーが在籍しているからです。企業が求める人物像を把握しており、履歴書・職務経歴書の添削から面接対策まで、あなたに合わせた個別の就職支援を徹底して行うため、高い内定獲得力を持っております。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border shadow-sm overflow-hidden font-bold text-left text-gray-800">
+                    <button class="w-full p-6 text-left flex justify-between items-center group transition"
+                        onclick="toggleFaq(2)">
+                        <span class="flex items-center text-gray-800">
+                            <span class="text-[#05A85E] mr-1">Q</span>：やむを得ず途中で辞めてしまった場合、違約金などはかかりますか？
+                        </span>
+                        <i data-lucide="chevron-down" id="faq-icon-2"
+                            class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-content-2"
+                        class="faq-content px-6 bg-green-50 border-t text-gray-700 font-medium leading-loose">
+                        <p class="py-4">
+                            A：一切かかりません。何かしらの理由で、やむを得ず途中で辞めてしまった場合や、万が一就職に至らなかった場合でも、違約金やその他の費用をご請求することは一切ございませんのでご安心ください。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border shadow-sm overflow-hidden font-bold text-left text-gray-800">
+                    <button class="w-full p-6 text-left flex justify-between items-center group transition"
+                        onclick="toggleFaq(3)">
+                        <span class="flex items-center text-gray-800">
+                            <span class="text-[#05A85E] mr-1">Q</span>：学歴や職歴に自信がないのですが大丈夫でしょうか？
+                        </span>
+                        <i data-lucide="chevron-down" id="faq-icon-3"
+                            class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-content-3"
+                        class="faq-content px-6 bg-green-50 border-t text-gray-700 font-medium leading-loose">
+                        <p class="py-4">A：学歴や職歴に自信がなくても受講可能です。実際にニートやフリーター、他業界の方が未経験から学習し、就職を目指している方がいらっしゃいます。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border shadow-sm overflow-hidden font-bold text-left text-gray-800">
+                    <button class="w-full p-6 text-left flex justify-between items-center group transition"
+                        onclick="toggleFaq(4)">
+                        <span class="flex items-center text-gray-800">
+                            <span class="text-[#05A85E] mr-1">Q</span>：オンラインだと学習のモチベーションが続くか心配です。
+                        </span>
+                        <i data-lucide="chevron-down" id="faq-icon-4"
+                            class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-content-4"
+                        class="faq-content px-6 bg-green-50 border-t text-gray-700 font-medium leading-loose">
+                        <p class="py-4">
+                            A：当スクールでは、平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。「わからない所で立ち止まる」ことがないため、自己学習にありがちなモチベーションの低下を防ぎ、スムーズに学習を進められます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 text-center">
+                <a href="/faq/"
+                    class="text-[#05A85E] font-bold border-b-2 border-[#05A85E] hover:opacity-70 transition">
+                    もっと見る <i data-lucide="arrow-right" class="inline-block ml-1 w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank"
+                                    class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div
+                class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // FAQのアコーディオン機能
+        function toggleFaq(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.classList.remove('rotate-180');
+            } else {
+                content.classList.add('open');
+                icon.classList.add('rotate-180');
+            }
+        }
+    </script>
+</body>
+
+</html>

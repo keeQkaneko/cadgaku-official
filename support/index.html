@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就職サポート | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクの就職サポート。専任のキャリアアドバイザーが履歴書・職務経歴書の添削から面接対策まで、未経験のあなたの内定獲得を徹底サポートします。">
+    <link rel="canonical" href="https://cadgaku.jp/support/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/support/">
+    <meta property="og:title" content="就職サポート | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="専任のキャリアアドバイザーが、未経験のあなたの内定獲得を徹底サポートします。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="就職サポート | キャドガク">
+    <meta name="twitter:description" content="専任のキャリアアドバイザーが、未経験のあなたの内定獲得を徹底サポートします。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    就職サポート
+                </h1>
+            </div>
+        </div>
+
+      <!-- リード見出しセクション（白背景） -->
+        <section class="w-full bg-white pt-12 md:pt-16 pb-8 md:pb-10">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+                    業界経験者のプロが<br class="md:hidden" />内定獲得まで徹底伴走
+                </h2>
+                <!-- 追加：視線誘導のための短い緑のライン -->
+                <div class="w-12 h-1.5 bg-[#09a15a] mx-auto mt-6 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- 4つのサポート特徴セクション（薄緑背景） -->
+        <section class="w-full bg-[#DAF2E7] py-10 md:py-16 mb-16">
+            <div class="w-full max-w-6xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    
+                    <!-- サポート① -->
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="bg-[#09a15a]/10 p-3 rounded-xl text-[#09a15a]">
+                                <i data-lucide="file-edit" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">01. 履歴書・職務経歴書の作成支援</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+                            未経験の方が最も悩む「書類通過しやすい書き方」。当スクールでは、<strong class="text-[#FF8C00]">弊社側でベースとなる7～8割を作成</strong>することが可能です。残りの2～3割をご自身の言葉で修正・追記して完成させるため、負担を減らしつつ<strong class="text-[#FF8C00]">圧倒的な書類通過率</strong>を実現します。
+                        </p>
+                        <!-- 修正：画像サイズを縮小し、カード内に上品な余白を確保 -->
+                        <div class="mt-auto w-4/5 lg:w-3/4 mx-auto rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
+                            <img src="images/support-01.png" alt="履歴書・職務経歴書の作成支援" class="w-full h-auto object-cover aspect-video">
+                        </div>
+                    </div>
+
+                    <!-- サポート② -->
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="bg-[#09a15a]/10 p-3 rounded-xl text-[#09a15a]">
+                                <i data-lucide="mic" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">02. あなた専用の面接対策</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+                            1人1人の経歴に基づいた想定質問を作成し、マンツーマンで実践さながらの模擬面接を実施。<strong class="text-[#FF8C00]">過去の卒業生から収集した企業ごとの面接データ</strong>を活用したピンポイントな対策が可能です。社会人経験がない・短い方にはビジネスマナー研修もご用意しています。
+                        </p>
+                        <!-- 修正：画像サイズを縮小し、カード内に上品な余白を確保 -->
+                        <div class="mt-auto w-4/5 lg:w-3/4 mx-auto rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
+                            <img src="images/support-02.png" alt="あなた専用の面接対策" class="w-full h-auto object-cover aspect-video">
+                        </div>
+                    </div>
+
+                    <!-- サポート③ -->
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="bg-[#09a15a]/10 p-3 rounded-xl text-[#09a15a]">
+                                <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">03. 専門家による適性テスト対策</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+                            現在、企業の約9割が選考に導入し、6〜7割がここでお見送りになると言われる「性格診断」や「能力テスト（学力/IQ）」。当スクールには、国内の適性テスト攻略を熟知した専門アドバイザーが在籍しており、<strong class="text-[#FF8C00]">各企業の適性ツールに合わせた対策</strong>を行えます。
+                        </p>
+                        <!-- 修正：画像サイズを縮小し、カード内に上品な余白を確保 -->
+                        <div class="mt-auto w-4/5 lg:w-3/4 mx-auto rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
+                            <img src="images/support-03.png" alt="専門家による適性テスト対策" class="w-full h-auto object-cover aspect-video">
+                        </div>
+                    </div>
+
+                    <!-- サポート④ -->
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="bg-[#09a15a]/10 p-3 rounded-xl text-[#09a15a]">
+                                <i data-lucide="building" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">04. 企業紹介と面接当日の徹底サポート</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+                            受講生にマッチした企業を厳選してご紹介。個人では情報収集が難しい財務安定性、離職率、企業カルチャーなども包み隠さずお伝えします。さらに、<strong class="text-[#FF8C00]">応募手続きや面接の日程調整など面倒な事務業務はすべて代行する</strong>ため、面接だけに100%集中できます。
+                        </p>
+                        <!-- 修正：画像サイズを縮小し、カード内に上品な余白を確保 -->
+                        <div class="mt-auto w-4/5 lg:w-3/4 mx-auto rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm">
+                            <img src="images/support-04.png" alt="企業紹介と面接当日の徹底サポート" class="w-full h-auto object-cover aspect-video">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- キャリアアドバイザー紹介ページへの導線（変更なし） -->
+        <section class="w-full max-w-4xl mx-auto px-4 mb-10 text-center">
+            <div class="bg-gradient-to-br from-[#F2F6F7] to-[#e6f0ef] rounded-2xl p-8 md:p-12 border border-gray-200 relative overflow-hidden group">
+                <div class="absolute -top-10 -right-10 opacity-5 group-hover:scale-110 transition-transform duration-500">
+                    <i data-lucide="users" class="w-48 h-48 text-[#09a15a]"></i>
+                </div>
+                
+                <div class="relative z-10">
+                    <span class="text-[#09a15a] font-bold text-sm tracking-wider mb-2 block">CAREER ADVISER</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                        あなたのキャリアを導くプロフェッショナル
+                    </h3>
+                    <p class="text-gray-600 mb-8 font-medium">
+                        当スクールが誇る、業界経験豊富なキャリアアドバイザーたちをご紹介します。<br class="hidden md:block">皆さまの強みを引き出し、最適な企業への就職を全力でサポートします。
+                    </p>
+                    
+                    <a href="/support/adviser/" class="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#09a15a] text-[#09a15a] font-bold py-3 px-8 rounded-full hover:bg-[#09a15a] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                        <span>キャリアアドバイザーの紹介を見る</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="w-full max-w-4xl mx-auto flex flex-col items-center px-4 pb-10">
+            <a href="/reservation/"
+                class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-3">
+                <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に参加する</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

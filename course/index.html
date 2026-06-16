@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コース内容 | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクのコース内容のご紹介。未経験から最短30日でAutoCADのスキルを習得し、就職を目指す20代向け完全無料オンラインCADスクールのカリキュラムです。">
+    <link rel="canonical" href="https://cadgaku.jp/course/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/course/">
+    <meta property="og:title" content="コース内容 | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="未経験から最短30日でAutoCADを習得し就職を目指すカリキュラムをご紹介します。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="コース内容 | キャドガク">
+    <meta name="twitter:description" content="未経験から最短30日でAutoCADを習得し就職を目指すカリキュラムをご紹介します。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    コース内容
+                </h1>
+            </div>
+        </div>
+
+        <!-- Section 1: イントロダクション（未経験OK） -->
+        <section class="w-full bg-white pt-12 md:pt-16 pb-8 md:pb-10">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2
+                    class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight lg:leading-normal lg:tracking-wide">
+                    事前学習は一切不要<br>完全未経験から学習スタート
+                </h2>
+                <!-- 追加：視線誘導のための短い緑のライン -->
+                <div class="w-12 h-1.5 bg-[#09a15a] mx-auto mt-6 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: AutoCADを採用する理由 -->
+        <section class="py-8 lg:py-12 bg-[#DAF2E7]">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                    <!-- 左側：画像枠（小さめに設定） -->
+                    <div class="w-full lg:w-2/5 flex justify-center">
+                        <div class="w-full max-w-[260px] lg:max-w-[300px] relative">
+                            <!-- ▼ ご用意いただいた画像のファイル名に変更してください ▼ -->
+                            <img src="images/career-8.png" alt="AutoCADを採用する理由"
+                                class="w-full h-auto rounded-lg shadow-sm" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- 右側：テキストコンテンツ（スマホは見出し等を中央揃え、文章は左揃え） -->
+                    <div class="w-full lg:w-3/5 space-y-5 text-center lg:text-left">
+                        <span
+                            class="inline-block px-4 py-1.5 bg-[#FFD700] text-white font-bold text-xs lg:text-sm rounded-full tracking-wider">
+                            なぜAutoCADなのか
+                        </span>
+                        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight lg:leading-relaxed">
+                            就職に圧倒的に有利な<br class="hidden sm:block">
+                            <span class="text-[#DF1051] border-b-4 border-[#DF1051]/30 pb-1">「AutoCAD」</span>に特化
+                        </h2>
+                        <p class="leading-loose lg:leading-loose text-sm lg:text-base text-left">
+                            当スクールでは、業界を問わず就職に最も有利と言われている「AutoCAD」を使用します。<br>
+                            AutoCADは圧倒的な汎用性を誇り、あらゆる設計業務の基礎となるソフトウェアです。<br
+                                class="hidden lg:block">そのため、AutoCADを習得すれば、入社後に他のCADソフトを使うことになっても<br
+                                class="hidden lg:block">スムーズに対応できる確固たる土台が身に付きます。
+                        </p>
+                        <!-- 強調ボックス -->
+                        <div class="p-4 lg:p-5 bg-orange-50/80 border-l-4 border-[#FF8C00] rounded-r-lg text-left">
+                            <p class="text-sm lg:text-base text-gray-800 font-medium leading-relaxed lg:leading-loose">
+                                <strong class="text-[#FF8C00]">採用企業が未経験者にまず求めているのは「AutoCADを使用した基礎力」です。</strong><br>
+                                <span class="font-medium">キャドガクでは、その現場のニーズに合わせて、最短ルートで徹底的に基礎力を身に付けていきます。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: アウトプット中心の学習メソッド (縦並び) -->
+        <section class="py-12 lg:py-16 bg-gray-50 relative">
+            <div class="max-w-5xl mx-auto px-5 flex flex-col items-center">
+                <div class="text-center mb-8">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-[#FFD700] text-white font-bold text-xs lg:text-sm rounded-full tracking-wider mb-4">
+                        独自の学習メソッド
+                    </span>
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-6 lg:leading-relaxed">
+                        「動画を見るだけ」で終わらせない。<br>
+                        記憶に定着する<span class="text-[#05A85E]">アウトプット型学習</span>
+                    </h2>
+                    <p
+                        class="text-gray-700 leading-loose lg:leading-loose text-sm lg:text-base text-left md:text-center max-w-3xl mx-auto">
+                        多くのCADスクールでは、教材を読んだり解説動画を見たりする「インプット型」の学習が中心です。<br>
+                        しかし、キャドガクは<strong class="text-[#FF8C00]">「各レッスンごとに実際に製図していく」アウトプット型の学習</strong>を採用しています。<br>
+                        脳科学や学習理論においても、インプット型よりもアウトプット型のほうが人間の記憶に定着しやすいことが証明されています。現場で即使えるスキルを確実に手に入れるため、キャドガクでは「手を動かすこと」を最重要視した研修プログラムを組んでいます。
+                    </p>
+                </div>
+
+                <!-- 画像配置エリア（縦並びの下部） -->
+                <div class="w-full max-w-4xl bg-white p-2 lg:p-4 rounded-xl shadow-sm border border-gray-100">
+                    <img src="images/step.png" alt="キャドガクの学習の進め方・時系列ステップ" class="w-full h-auto rounded-lg"
+                        loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: スキマ時間でオンライン完結＆マンツーマン -->
+        <section class="py-4 lg:py-12 bg-[#DAF2E7] relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-[#05A85E] rounded-full opacity-[0.03] pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-5 relative z-10">
+
+                <div class="w-full flex justify-center mb-6 lg:mb-10">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-[#FFD700] text-white font-bold text-xs lg:text-sm rounded-full tracking-wider shadow-sm">
+                        いつでも個別指導
+                    </span>
+                </div>
+
+                <div
+                    class="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 lg:gap-14 max-w-5xl mx-auto">
+
+                    <div class="w-full lg:w-72 flex-shrink-0">
+                        <div class="flex flex-row lg:flex-col gap-3 lg:gap-6 justify-center">
+                            <div
+                                class="flex-1 bg-white p-4 lg:p-6 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 flex flex-col items-center text-center">
+                                <i data-lucide="clock" class="w-8 h-8 lg:w-10 lg:h-10 text-[#FF8C00] mb-2 lg:mb-3"></i>
+                                <h3 class="font-bold text-gray-900 mb-1 lg:mb-1.5 text-xs lg:text-sm">平日 10:00〜22:00
+                                </h3>
+                                <p class="text-[10px] lg:text-xs text-gray-600 leading-relaxed">お仕事終わりでも<br>余裕を持って学べます
+                                </p>
+                            </div>
+                            <div
+                                class="flex-1 bg-white p-4 lg:p-6 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 flex flex-col items-center text-center">
+                                <i data-lucide="users" class="w-8 h-8 lg:w-10 lg:h-10 text-[#05A85E] mb-2 lg:mb-3"></i>
+                                <h3 class="font-bold text-gray-900 mb-1 lg:mb-1.5 text-xs lg:text-sm">マンツーマン指導</h3>
+                                <p class="text-[10px] lg:text-xs text-gray-600 leading-relaxed">プロ講師の指導が<br>オンラインで受け放題
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:flex-1 max-w-2xl space-y-5 lg:space-y-6 text-center lg:text-left">
+                        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight lg:leading-relaxed">
+                            スキマ時間でオンライン完結。<br>
+                            プロの<span class="text-[#FF8C00]">マンツーマン指導が受け放題</span>
+                        </h2>
+                        <p class="text-gray-700 leading-loose lg:leading-loose text-sm lg:text-base text-left">
+                            学習はすべてオンラインで完結します。<br
+                                class="hidden lg:block">平日10:00〜22:00の間であれば、講師とのマンツーマン指導が何度でも受け放題です。<br
+                                class="hidden lg:block">
+                            仕事終わりの帰宅後や、休日のカフェなど、あなたのライフスタイルに合わせて<br
+                                class="hidden lg:block">場所を問わずスキマ時間を有効活用してスキルを習得できます。
+                        </p>
+
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2 lg:pt-4">
+                            <a href="/course/lecturer/"
+                                class="inline-flex items-center justify-center gap-2 bg-white border-2 border-[#09a15a] text-[#09a15a] font-bold py-3 px-8 rounded-full hover:bg-[#09a15a] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                                <span>講師の紹介を見る</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full max-w-4xl mx-auto flex flex-col items-center px-4 py-10">
+            <a href="/reservation/"
+                class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-3">
+                <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に参加する</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

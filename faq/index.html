@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくあるご質問 | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="キャドガクのよくあるご質問。完全無料の理由や、未経験からの就職、学習方法、使用するCADソフトなど、入校前の疑問にお答えします。">
+    <link rel="canonical" href="https://cadgaku.jp/faq/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/faq/">
+    <meta property="og:title" content="よくあるご質問 | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="完全無料の理由や未経験からの就職など、入校前の疑問にお答えします。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="よくあるご質問 | キャドガク">
+    <meta name="twitter:description" content="完全無料の理由や未経験からの就職など、入校前の疑問にお答えします。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #000000;
+        }
+
+        /* 1. メニューの下線アニメーション */
+        .nav-link {
+            text-decoration: none !important;
+            /* ブラウザやTailwindの下線を強制的に消す */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            color: #000000;
+            /* 通常時の文字色（グレー） */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #09a15a;
+            /* キャドガク緑 */
+            /* ↓ ここが重要：最初は「幅を0」にして「透明」にする */
+            transform: scale-x(0);
+            opacity: 0;
+            transform-origin: right;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0d9656;
+            /* ホバー時に文字も緑にするなら */
+        }
+
+        .nav-link:hover::after {
+            /* ↓ ホバー時だけ「幅を1」にして「不透明」にする */
+            transform: scale-x(1);
+            opacity: 1;
+            transform-origin: left;
+        }
+
+        /* 予約ボタンのホバーエフェクト（ご指定のオレンジ仕様） */
+        .btn-reserve {
+            background-color: #FF8C00;
+            border: 2px solid #FF8C00;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 6px;
+            /* 角を立たせる */
+        }
+
+        .btn-reserve:hover {
+            background-color: #fff7ed;
+            /* 薄いオレンジ */
+            color: #FE770D;
+            /* 文字色オレンジ */
+            border-color: #FE770D;
+            /* 枠線オレンジ */
+        }
+
+        /* セクション仕切りの背景画像設定 */
+        .section-divider {
+            position: relative;
+            padding: 1.0rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            .section-divider {
+                padding: 1.5rem 0;
+            }
+        }
+
+        .section-divider .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .section-divider .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            /* 少し暗くして文字を目立たせる */
+            z-index: 1;
+        }
+
+        .section-divider .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "どうして完全無料なのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "当スクールは、提携する企業様からいただく協賛金や採用手数料によって運営が成り立っています。「専門技術を身につけたいけれど、高額な受講料が払えない」という方でも、無料で受講し、未経験から就職できる仕組みを作りました。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ未経験からでも就職できるのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "業界事情に精通した専任のキャリアアドバイザーが在籍しているからです。企業が求める人物像を把握しており、履歴書・職務経歴書の添削から面接対策まで、あなたに合わせた個別の就職支援を徹底して行うため、高い内定獲得力を持っております。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "やむを得ず途中で辞めてしまった場合、違約金などはかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ、かかりません。やむを得ず途中で辞めてしまった場合や、万が一就職に至らなかった場合でも、違約金やその他の費用をご請求することは一切ございませんのでご安心ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "学歴や職歴に自信がないのですが大丈夫でしょうか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "学歴や職歴に自信がなくても受講可能です。実際に高卒や大学中退、ニート、フリーター、他業界の方が未経験から学習し、就職を目指している方がいらっしゃいます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "オンラインだと学習のモチベーションが続くか心配です。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "当スクールでは、平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。「わからない所で立ち止まる」ことがないため、自己学習にありがちなモチベーションの低下を防ぎ、スムーズに学習を進められます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "紹介される企業がブラック企業でないか不安です。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ご安心ください。未経験からでも安心してキャリアを築ける優良企業を厳選してご紹介しています。ただし、人気企業は採用ハードルが高くなる傾向があるため、皆様のご経歴やご希望を丁寧にヒアリングした上で、最適な企業をご提案いたします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "パソコンを持っていないのですが受講可能でしょうか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可能です。パソコンの貸し出し相談もできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "地方に住んでいても入校することはできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "オンラインで完結するので可能です。しかし、未経験から採用する企業のほとんどは、都心（東京／愛知／大阪）で採用しているケースが多いので、お住まいによって就職時に転居していただく可能性があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "研修中のCADソフトは何を使いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AutoCADです。業界を問わず就職に有利と言われており、圧倒的な汎用性と、あらゆる設計業務の基礎となるソフトなので、AutoCADを使用しています。AutoCADで基礎を学べば、他のCADソフトにもスムーズに対応できる土台が身に付きます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AutoCADの利用料金はかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "かかりません。受講生からは一切お金をいただきません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "研修はいつから開始できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "月に2回入校日を設けております。毎月1日、15日から参加可能です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "就職はせず、CADの学習だけを目的で、受講することはできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "申し訳ございませんが、当スクールは就職を目的としておりますので、学習だけしたい方は入校をお断わりしております。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "正社員の経験がないのですが、受講できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、正社員経験がなくても、就職の意欲があれば受講することができます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "在学中の学生でも受講することはできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "受講可能です。しかし最終学年の方しか受けて付けておりません。※中退を検討されている方や通信制に通われている方は、受講案内が可能ですのでご相談ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "働きながら受講できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、できます。平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。なので仕事おわりや、休憩中のスキマ時間などを使い、学習をしている方がほとんどです。"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    よくあるご質問
+                </h1>
+            </div>
+        </div>
+
+        <section class="py-16 lg:py-24 px-4">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="space-y-12 lg:space-y-16">
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                どうして完全無料なのですか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                当スクールは、提携する企業様からいただく協賛金や採用手数料によって運営が成り立っています。「専門技術を身につけたいけれど、高額な受講料が払えない」という方でも、無料で受講し、未経験から就職できる仕組みを作りました。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                なぜ未経験からでも就職できるのですか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                業界事情に精通した専任のキャリアアドバイザーが在籍しているからです。企業が求める人物像を把握しており、履歴書・職務経歴書の添削から面接対策まで、あなたに合わせた個別の就職支援を徹底して行うため、高い内定獲得力を持っております。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                やむを得ず途中で辞めてしまった場合、違約金などはかかりますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                いいえ、かかりません。やむを得ず途中で辞めてしまった場合や、万が一就職に至らなかった場合でも、違約金やその他の費用をご請求することは一切ございませんのでご安心ください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                学歴や職歴に自信がないのですが大丈夫でしょうか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                学歴や職歴に自信がなくても受講可能です。実際に高卒や大学中退、ニート、フリーター、他業界の方が未経験から学習し、就職を目指している方がいらっしゃいます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                オンラインだと学習のモチベーションが続くか心配です。
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                当スクールでは、平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。「わからない所で立ち止まる」ことがないため、自己学習にありがちなモチベーションの低下を防ぎ、スムーズに学習を進められます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                紹介される企業がブラック企業でないか不安です。
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                ご安心ください。未経験からでも安心してキャリアを築ける優良企業を厳選してご紹介しています。ただし、人気企業は採用ハードルが高くなる傾向があるため、皆様のご経歴やご希望を丁寧にヒアリングした上で、最適な企業をご提案いたします。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                パソコンを持っていないのですが受講可能でしょうか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                可能です。パソコンの貸し出し相談もできます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                地方に住んでいても入校することはできますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                オンラインで完結するので可能です。しかし、未経験から採用する企業のほとんどは、都心（東京／愛知／大阪）で採用しているケースが多いので、お住まいによって就職時に転居していただく可能性があります。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                研修中のCADソフトは何を使いますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                AutoCADです。業界を問わず就職に有利と言われており、圧倒的な汎用性と、あらゆる設計業務の基礎となるソフトなので、AutoCADを使用しています。AutoCADで基礎を学べば、他のCADソフトにもスムーズに対応できる土台が身に付きます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                AutoCADの利用料金はかかりますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                かかりません。受講生からは一切お金をいただきません。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                研修はいつから開始できますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                月に2回入校日を設けております。毎月1日、15日から参加可能です。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                就職はせず、CADの学習だけを目的で、受講することはできますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                申し訳ございませんが、当スクールは就職を目的としておりますので、学習だけしたい方は入校をお断わりしております。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                正社員の経験がないのですが、受講できますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                はい、正社員経験がなくても、就職の意欲があれば受講することができます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                在学中の学生でも受講することはできますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                受講可能です。しかし最終学年の方しか受けて付けておりません。<br>
+                                ※中退を検討されている方や通信制に通われている方は、受講案内が可能ですのでご相談ください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border-b border-gray-100 pb-10">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="text-2xl lg:text-3xl font-black text-[#05A85E] leading-none">Q.</span>
+                            <h2 class="text-lg lg:text-xl font-bold text-[#05A85E] leading-relaxed">
+                                働きながら受講できますか？
+                            </h2>
+                        </div>
+                        <div class="flex items-start gap-4 pl-1">
+                            <span class="text-2xl lg:text-3xl font-black text-gray-300 leading-none">A.</span>
+                            <p class="text-base lg:text-lg text-gray-900 leading-loose">
+                                はい、できます。平日10時～22時の間、予約不要で、いつでも講師とオンラインで繋がり、マンツーマン指導が受けられます。なので仕事おわりや、休憩中のスキマ時間などを使い、学習をしている方がほとんどです。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full max-w-4xl mx-auto flex flex-col items-center mb-4 mt-16 px-4">
+
+                    <img src="images/seminar-guidance-3.png" alt="キャドガクの無料オンライン説明会にご参加ください"
+                        class="w-full h-auto drop-shadow-sm" />
+
+                    <a href="/reservation/"
+                        class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-3">
+                        <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                        <span>無料オンライン説明会に予約する</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank" class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
