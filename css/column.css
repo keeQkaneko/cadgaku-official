@@ -1,0 +1,226 @@
+/* ============================================
+   CADコラム 共通スタイル
+   （/column/ 配下の一覧・カテゴリ・記事ページで読み込む）
+   ============================================ */
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #000000;
+}
+
+/* メニューの下線アニメーション */
+.nav-link {
+    text-decoration: none !important;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #09a15a;
+    transform: scale-x(0);
+    opacity: 0;
+    transform-origin: right;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0d9656;
+}
+
+.nav-link:hover::after {
+    transform: scale-x(1);
+    opacity: 1;
+    transform-origin: left;
+}
+
+/* 予約ボタン */
+.btn-reserve {
+    background-color: #FF8C00;
+    border: 2px solid #FF8C00;
+    color: #FFFFFF;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btn-reserve:hover {
+    background-color: #fff7ed;
+    color: #FE770D;
+    border-color: #FE770D;
+}
+
+/* セクション仕切り（ページ上部の帯） */
+.section-divider {
+    position: relative;
+    padding: 1.0rem 0;
+    overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+    .section-divider {
+        padding: 1.5rem 0;
+    }
+}
+
+.section-divider .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.section-divider .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    z-index: 1;
+}
+
+.section-divider .content {
+    position: relative;
+    z-index: 10;
+}
+
+/* カテゴリ絞り込みボタン（一覧ページ） */
+.col-filter-btn {
+    border: 1.5px solid #d1d5db;
+    color: #4b5563;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.col-filter-btn:hover {
+    border-color: #05A85E;
+    color: #05A85E;
+}
+
+.col-filter-btn.active-filter {
+    background-color: #05A85E;
+    border-color: #05A85E;
+    color: #ffffff;
+}
+
+/* 記事カード */
+.col-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.col-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   記事本文のスタイル（.article-body）
+   ============================================ */
+.article-body h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1.6;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 6px solid #05A85E;
+    background: linear-gradient(90deg, rgba(5, 168, 94, 0.08), rgba(5, 168, 94, 0));
+}
+
+.article-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #05A85E;
+    line-height: 1.6;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px dotted rgba(5, 168, 94, 0.4);
+}
+
+.article-body p {
+    font-size: 1rem;
+    line-height: 2;
+    color: #374151;
+    margin-bottom: 1.5rem;
+}
+
+.article-body ul {
+    margin: 0 0 1.75rem;
+    padding: 1.25rem 1.5rem;
+    list-style: none;
+    background: #f8faf9;
+    border: 1px solid rgba(5, 168, 94, 0.15);
+    border-radius: 0.75rem;
+}
+
+.article-body li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.9;
+    color: #374151;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: #05A85E;
+    border-radius: 50%;
+}
+
+.article-body strong {
+    color: #05A85E;
+    font-weight: 700;
+}
+
+/* 記事内の表（資格の受験料一覧など） */
+.article-body .table-wrap {
+    overflow-x: auto;
+    margin: 0 0 2rem;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 480px;
+}
+
+.article-body th,
+.article-body td {
+    border: 1px solid #e5e7eb;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.article-body thead th {
+    background: #05A85E;
+    color: #ffffff;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.article-body tbody th {
+    background: #f8faf9;
+    font-weight: 700;
+    color: #1f2937;
+}

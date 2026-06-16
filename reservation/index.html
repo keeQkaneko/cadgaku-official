@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRBQ64DXJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KRBQ64DXJC');
+    </script>
     <title>無料オンライン説明会のご予約 | キャドガク完全無料のオンラインCADスクール</title>
     <meta name="description"
         content="キャドガクの無料オンライン説明会のご予約はこちら。未経験から最短30日で就職を目指せる完全無料のCADスクールについて、詳しくご説明します。">
@@ -20,7 +28,7 @@
     <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/tailwind.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <style>
@@ -259,6 +267,8 @@
 
         // 共通の次へ進むアニメーション（Step1, Step2用）
         function next(n) {
+            // GA4: ステップ到達を計測（step-2/step-3 など）
+            gtag('event', 'reservation_step', { step_number: n });
             const el = document.getElementById('step-' + n);
             el.style.display = 'block';
 
@@ -308,6 +318,8 @@
             // 3. 全て入力されていればステップ4を表示
             const s4 = document.getElementById('step-4');
             s4.style.display = 'block';
+            // GA4: ステップ4（日程選択）到達を計測
+            gtag('event', 'reservation_step', { step_number: 4 });
             document.getElementById('btn-to-step4').style.display = 'none';
 
             // 4番目のドットを緑にする
@@ -399,6 +411,8 @@
                     body: JSON.stringify(data)
                 });
 
+                // GA4: 予約完了（コンバージョン）を計測
+                gtag('event', 'generate_lead', { form_name: 'reservation' });
                 window.location.href = "../thanks/";
 
             } catch (e) {
@@ -408,6 +422,9 @@
                 btn.innerText = "この内容で予約する";
             }
         }
+
+        // GA4: ページ読み込み時にステップ1（エリア選択）到達を計測
+        gtag('event', 'reservation_step', { step_number: 1 });
     </script>
 </body>
 

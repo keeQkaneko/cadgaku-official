@@ -2,52 +2,170 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cadgaku.jp/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>1.0</priority>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/course/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cadgaku.jp/column/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/course/lecturer/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.6</priority>
+    <loc>https://cadgaku.jp/column/cad/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/support/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cadgaku.jp/column/cad/what-is-cad/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/support/adviser/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.6</priority>
+    <loc>https://cadgaku.jp/column/cadsoft/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/interview/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cadgaku.jp/column/cadsoft/autocad/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/faq/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.7</priority>
+    <loc>https://cadgaku.jp/column/cadsoft/catia/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
-    <loc>https://cadgaku.jp/reservation/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.9</priority>
+    <loc>https://cadgaku.jp/column/cadsoft/creo/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/cadsoft/jww/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/cadsoft/revit/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/cadsoft/solidworks/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/cadsoft/vectorworks/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/career/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/career/beginner-job-change/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/industry/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/industry/business-model/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/apparel/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/denshi/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/doboku/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/interior/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/kenchiku/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/kikai/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/other/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/sekou-kanri/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/job/setsubi/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/license/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/license/2d-cad/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/license/3d-cad/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/license/autodesk/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/license/kenchiku-cad/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/school/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/column/school/how-to-choose/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
     <loc>https://cadgaku.jp/company/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2026-06-16</lastmod>
   </url>
   <url>
     <loc>https://cadgaku.jp/contact/</loc>
-    <lastmod>2026-06-11</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/course/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/course/lecturer/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/faq/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/interview/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/reservation/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/support/</loc>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cadgaku.jp/support/adviser/</loc>
+    <lastmod>2026-06-16</lastmod>
   </url>
 </urlset>

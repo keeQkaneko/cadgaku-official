@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRBQ64DXJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KRBQ64DXJC');
+    </script>
     <title>卒業生の就職実績 | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
     <meta name="description"
         content="キャドガク卒業生の就職実績・体験談。未経験からCADオペレーターや機械エンジニアへの転職を成功させた20代のリアルなインタビューをご紹介します。">
@@ -22,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
     <!-- Tailwind CSS (デザイン用) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/tailwind.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
@@ -152,6 +160,8 @@
                     <a href="/support/" class="nav-link">就職サポート</a>
                     <span class="text-black font-light">｜</span>
                     <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/column/" class="nav-link">CADコラム</a>
                     
                 </nav>
 
@@ -179,6 +189,7 @@
         <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
         <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
         <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        <a href="/column/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">CADコラム</a>
         
 
         <a href="/reservation/"
@@ -514,7 +525,7 @@
     <footer class="text-left">
         <div class="bg-[#F2F6F7] pt-20 pb-2">
             <div class="max-w-7xl mx-auto px-5">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-16">
                     
                     <div class="lg:col-span-1 space-y-6">
                         <div class="h-14 lg:h-16 w-auto opacity-90">
@@ -537,6 +548,19 @@
                             <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
                             <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
                             <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/column/">CADコラム</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/column/cad/" class="tracking-wider">CADとは</a></li>
+                            <li><a href="/column/cadsoft/" class="tracking-wider">CADソフト</a></li>
+                            <li><a href="/column/job/" class="tracking-wider">CADを使った仕事</a></li>
+                            <li><a href="/column/license/" class="tracking-wider">CADの資格</a></li>
+                            <li><a href="/column/industry/" class="tracking-wider">CAD業界</a></li>
+                            <li><a href="/column/career/" class="tracking-wider">転職ノウハウ</a></li>
+                            <li><a href="/column/school/" class="tracking-wider">CADスクール</a></li>
                         </ul>
                     </div>
 
@@ -610,6 +634,20 @@
         }
     </script>
 
+    <!-- GA4: 予約CTAボタンのクリック計測（予約リンクを自動検出）-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href="/reservation/"]').forEach(function (el, i) {
+                el.addEventListener('click', function () {
+                    gtag('event', 'cta_click', {
+                        cta_page: location.pathname,
+                        cta_position: i + 1,
+                        cta_text: (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

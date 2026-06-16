@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRBQ64DXJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KRBQ64DXJC');
+    </script>
+    <title>CADコラム | キャドガク完全無料のオンラインCADスクール【20代向け就職直結型】</title>
+    <meta name="description"
+        content="CADの基礎知識・CADソフトの種類・仕事内容・資格・業界の仕組み・転職ノウハウまで、未経験者に役立つCAD情報をプロが解説するキャドガクのコラムです。">
+    <link rel="canonical" href="https://cadgaku.jp/column/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cadgaku.jp/column/">
+    <meta property="og:title" content="CADコラム | キャドガク完全無料のオンラインCADスクール">
+    <meta property="og:description" content="CADの基礎知識から資格・仕事・転職ノウハウまで、未経験者に役立つCAD情報をプロが解説します。">
+    <meta property="og:image" content="https://cadgaku.jp/images/ogp.png">
+    <meta property="og:site_name" content="キャドガク">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CADコラム | キャドガク">
+    <meta name="twitter:description" content="CADの基礎知識から資格・仕事・転職ノウハウまで、未経験者に役立つCAD情報をプロが解説します。">
+    <meta name="twitter:image" content="https://cadgaku.jp/images/ogp.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <!-- Tailwind CSS (デザイン用) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="/css/column.css">
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+    <!-- 01. Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 h-20 flex items-center">
+        <div class="w-full pl-2 lg:pl-4 pr-6 lg:pr-10 flex items-center justify-between text-gray-800">
+
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="/images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                    class="h-14 lg:h-15 w-auto object-contain">
+            </a>
+
+            <div class="flex items-center flex-shrink-0">
+                <nav class="text-sm hidden lg:flex items-center space-x-6 uppercase tracking-tight mr-10">
+                    <a href="/course/" class="nav-link">コース内容</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/support/" class="nav-link">就職サポート</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/interview/" class="nav-link">卒業生の就職実績</a>
+                    <span class="text-black font-light">｜</span>
+                    <a href="/column/" class="nav-link">CADコラム</a>
+                </nav>
+
+                <div class="flex items-center">
+                    <a href="/reservation/"
+                        class="btn-reserve hidden sm:flex flex-col items-center justify-center px-11 py-2 font-bold shadow-lg leading-tight rounded-md">
+                        <span class="text-[11px] mb-0.5 opacity-90 tracking-wide">＼簡単予約30秒！！／</span>
+                        <span class="text-[16px] tracking-wider">無料オンライン説明会に予約</span>
+                    </a>
+
+                    <button onclick="toggleMenu()"
+                        class="lg:hidden ml-4 p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-lg">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu"
+        class="hidden fixed inset-0 z-[60] bg-white/40 backdrop-blur-lg pt-24 px-8 flex flex-col space-y-6 text-gray-800 text-left transition-all duration-300">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-gray-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="/course/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">コース内容</a>
+        <a href="/support/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">就職サポート</a>
+        <a href="/interview/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">卒業生の就職実績</a>
+        <a href="/column/" class="text-xl font-normal border-b border-gray-200/50 pb-4 block">CADコラム</a>
+
+        <a href="/reservation/"
+            class="btn-reserve w-full py-5 flex flex-col items-center justify-center rounded-md shadow-lg leading-tight mt-4">
+            <span class="block text-xs mb-1">＼申し込み30秒！！／</span>
+            <span class="text-xl">無料オンライン説明会を予約</span>
+        </a>
+    </div>
+
+    <main class="min-h-screen pt-20">
+
+        <!-- Hero -->
+        <div class="section-divider relative overflow-hidden flex items-center justify-center">
+            <img src="/images/line-site.png" alt="" class="bg-img" />
+            <div class="overlay"></div>
+            <div class="content w-full max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-2xl lg:text-4xl font-bold text-white tracking-[0.1em] leading-none">
+                    CADコラム
+                </h1>
+            </div>
+        </div>
+
+        <!-- イントロ -->
+        <section class="pt-12 lg:pt-16 px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-sm lg:text-base text-gray-600 leading-loose">
+                    CADの基礎知識から、ソフトの種類・仕事内容・資格・業界の仕組み・転職ノウハウまで。<br
+                        class="hidden sm:block">
+                    これからCADを学ぶ方・転職を目指す方に役立つ情報を、プロがわかりやすく解説します。
+                </p>
+            </div>
+        </section>
+
+        <!-- カテゴリ絞り込み -->
+        <section class="pt-10 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-2 lg:gap-3">
+                    <button onclick="filterColumn('all', this)"
+                        class="col-filter-btn active-filter text-sm font-bold px-5 py-2 rounded-full">すべて</button>
+                    <button onclick="filterColumn('cad', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CADとは</button>
+                    <button onclick="filterColumn('cadsoft', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CADソフト</button>
+                    <button onclick="filterColumn('job', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CADを使った仕事</button>
+                    <button onclick="filterColumn('license', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CADの資格</button>
+                    <button onclick="filterColumn('industry', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CAD業界</button>
+                    <button onclick="filterColumn('career', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">転職ノウハウ</button>
+                    <button onclick="filterColumn('school', this)"
+                        class="col-filter-btn text-sm font-bold px-5 py-2 rounded-full">CADスクール</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 記事一覧 -->
+        <section class="py-12 lg:py-16 px-4">
+            <div id="column-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- CADとは -->
+                <a href="/column/cad/what-is-cad/" data-category="cad"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-what-is-cad.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADとは</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            CAD（キャド）とは？初心者が知るべき基礎知識、2D・3Dの違いと将来性をプロが徹底解説！</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">そもそもCADとは何か。2DCADと3DCADの違い、CADオペレーターと設計士の違い、業界の将来性まで初心者向けに解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト① AutoCAD -->
+                <a href="/column/cadsoft/autocad/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-autocad.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類①】AutoCAD｜世界シェアNo.1の汎用CAD！特徴と就職に強い理由</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">世界シェアNo.1の汎用CAD「AutoCAD」。業界標準とされる理由と、就職・転職で最も求められるスキルである背景を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト② Jw_cad -->
+                <a href="/column/cadsoft/jww/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-jww.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類②】Jw_cad｜国内の建築業界で根強い人気を誇る無料の2DCAD</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">完全無料ながら本格機能を備えた国産2DCAD「Jw_cad」。日本の建築業界で根強い人気を持つ理由とメリット・デメリットを紹介。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト③ SolidWorks -->
+                <a href="/column/cadsoft/solidworks/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-solidworks.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類③】SolidWorks｜世界のデファクトスタンダード3DCAD！機械設計の必須ソフト</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">機械設計の世界標準3DCAD「SolidWorks」。直感的なモデリングや強力なアセンブリ機能など、製造業で重宝される理由を解説。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト④ CATIA -->
+                <a href="/column/cadsoft/catia/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-catia.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類④】CATIA｜航空宇宙・自動車業界の頂点に立つハイエンド3DCAD</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">航空宇宙・自動車業界で使われる最高峰のハイエンド3DCAD「CATIA」。巨大アセンブリ処理や美しい曲面設計の強みとは。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト⑤ Creo -->
+                <a href="/column/cadsoft/creo/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-creo.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類⑤】Creo Parametric｜強力なパラメトリック機能を誇る大手製造業向け3DCAD</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">パラメトリックモデリングを世界で初めて確立したハイエンド3DCAD「Creo」。大手製造業で根付く理由を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト⑥ Vectorworks -->
+                <a href="/column/cadsoft/vectorworks/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-vectorworks.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類⑥】Vectorworks｜デザイン性に優れた建築・インテリア業界の定番CAD</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">デザイン性と表現力に優れた汎用CAD「Vectorworks」。建築・インテリア・空間演出の分野で支持される理由を紹介。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADソフト⑦ Revit -->
+                <a href="/column/cadsoft/revit/" data-category="cadsoft"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-revit.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADソフト</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADソフトの種類⑦】Revit｜建築業界の未来を担う最先端のBIMソフト</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">次世代の建築設計を担うBIMソフト「Revit」。情報を持つ3D部品で設計し、図面や数量を自動連動させる仕組みと将来性。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事① 建築 -->
+                <a href="/column/job/kenchiku/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-kenchiku.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            建築CADオペレーターの仕事内容とは？未経験からの転職難易度や具体的な使用場面を解説</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">マンション・ビル・住宅などの図面を作成する建築CADオペレーター。仕事内容・使用場面・未経験からの転職難易度とやりがいを解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事② 土木 -->
+                <a href="/column/job/doboku/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-doboku.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            土木CADオペレーターの仕事内容と将来性｜道路や橋などインフラを支える図面作成</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">道路・橋・ダムなどインフラを支える土木CADオペレーター。仕事内容と、景気に左右されにくい将来性・安定性を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事③ 設備 -->
+                <a href="/column/job/setsubi/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-setsubi.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            設備CADオペレーターの仕事内容と魅力｜建物の生命線を支えるダクトや配管の設計補助</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">空調・給排水・電気配線など建物の生命線を支える設備CADオペレーター。専門性が高く待遇が上がりやすい仕事の魅力を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事④ 施工管理 -->
+                <a href="/column/job/sekou-kanri/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-sekou.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            CADが使える施工管理は最強？建設現場のリーダーにCADスキルが求められる理由</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">現場のリーダー・施工管理にCADスキルが加わると市場価値が激増。その理由と使用場面、年収アップにつながる強みを解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事⑤ 機械 -->
+                <a href="/column/job/kikai/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-kikai.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            機械エンジニア・機械設計の仕事内容｜自動車やIoT機器、家電のモノづくりを支える最先端職種</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">自動車・家電など「動くモノ」を設計する機械エンジニア。最も将来性が高い職種の仕事内容と、未経験からの転職しやすさを解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事⑥ 電子 -->
+                <a href="/column/job/denshi/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-denshi.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            電子設計・電子エンジニアの仕事内容とCADの使用場面｜スマホや基板の心臓部を設計する</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">スマホや家電の基板（プリント配線板）を設計する電子エンジニア。回路設計・基板レイアウトの仕事内容と挑戦のチャンスを解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事⑦ アパレル -->
+                <a href="/column/job/apparel/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-apparel.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            アパレル業界でもCADが必須？洋服の型紙（パターン）を作るアパレルCADオペレーターとは</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">洋服の型紙（パターン）をCADで作るアパレルCADオペレーター。パターンメイキングやグレーディングなど仕事内容を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事⑧ インテリア・家具 -->
+                <a href="/column/job/interior/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-interior.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            インテリア・家具業界におけるCADの仕事内容｜空間や家具を形にするデザイン補助</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">店舗・オフィス・特注家具などを図面化するインテリア・家具系CAD。デザインを正確な数値に変換する仕事の魅力を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの仕事⑨ その他（福祉・物流）-->
+                <a href="/column/job/other/" data-category="job"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-other.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADを使った仕事</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            CADの意外な活用事例｜福祉・介護業界の義肢設計や物流倉庫のレイアウトでの使用場面</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">福祉・介護の義肢設計や物流倉庫のレイアウトなど、意外な業界で広がるCADの活用事例を紹介。CADは一生モノの武器になります。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの資格① 2次元 -->
+                <a href="/column/license/2d-cad/" data-category="license"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-license-2d.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADの資格</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADの資格①】2次元CAD利用技術者試験｜受験料、難易度、就職での活かし方を徹底解説</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">国内最大級の認知度を誇る「2次元CAD利用技術者試験」。等級・受験料・難易度と、就職でのアピール方法を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの資格② 3次元 -->
+                <a href="/column/license/3d-cad/" data-category="license"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-license-3d.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADの資格</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADの資格②】3次元CAD利用技術者試験｜受験料、難易度、製造業への転職に有利な理由</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">製造業で需要が高まる3DCADスキルを証明する「3次元CAD利用技術者試験」。等級・受験料と転職で有利になる理由を紹介。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの資格③ 建築CAD検定 -->
+                <a href="/column/license/kenchiku-cad/" data-category="license"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-license-kenchiku.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADの資格</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADの資格③】建築CAD検定試験｜受験料、難易度、建築業界で最も評価される実践資格</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">実技のみで実践力を測る「建築CAD検定試験」。建築業界で最も評価される理由と、等級・受験料・難易度を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADの資格④ オートデスク認定 -->
+                <a href="/column/license/autodesk/" data-category="license"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-license-autodesk.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADの資格</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【CADの資格④】オートデスク認定ユーザー（AutoCAD）｜受験料、国際資格の強みを活かす</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">AutoCAD公式の国際資格「オートデスク認定ユーザー」。受験料・試験内容と、実務スキルの証明として強い理由を解説。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CAD業界 -->
+                <a href="/column/industry/business-model/" data-category="industry"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-industry.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CAD業界</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            客先常駐型・請負型・自社サービス型とは？CAD業界のビジネスモデルと仕組みを徹底解剖</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">客先常駐型・請負型・自社サービス型という3つのCAD業界のビジネスモデルと、未経験から成功する王道キャリアステップを解説。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- 転職ノウハウ -->
+                <a href="/column/career/beginner-job-change/" data-category="career"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-career.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">転職ノウハウ</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            CAD未経験から正社員転職を成功させる方法！スキルより重要な「人柄」と「キャリア戦略」</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">未経験から正社員のCAD職へ。採用企業が本当に見ているポイントと、転職を成功させるためのキャリア戦略を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- CADスクール -->
+                <a href="/column/school/how-to-choose/" data-category="school"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-school.jpg" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADスクール</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【他社比較】就職に直結するCADスクールの選び方！キャドガクが「完全無料」で提供できる理由</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">失敗しないCADスクールの選び方を3つの視点で解説。キャドガクが完全無料・違約金なしで運営できる仕組みも他社比較で紹介。
+                        </p>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- 該当なしメッセージ -->
+            <p id="no-result" class="hidden text-center text-gray-400 py-16">該当する記事がありません。</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="w-full max-w-4xl mx-auto flex flex-col items-center mb-20 px-4">
+            <a href="/reservation/" class="btn-reserve px-8 py-3 lg:px-20 lg:py-4 rounded-xl font-bold text-base lg:text-2xl
+                shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] w-fit">
+                <span class="text-[12px] lg:text-[16px] mb-0.5 opacity-90">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に予約する</span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-left">
+        <div class="bg-[#F2F6F7] pt-20 pb-2">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-16">
+
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="h-14 lg:h-16 w-auto opacity-90">
+                            <img src="/images/logo-cadgaku.png" alt="キャドガク| 完全無料のCADスクール【20代向け就職直結型スクール】"
+                                class="h-full w-auto object-contain" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/course/">コース内容</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/course/" class="tracking-wider">学習について</a></li>
+                            <li><a href="/course/lecturer/" class="tracking-wider">講師紹介</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/support/">就職サポート</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/support/" class="tracking-wider">サポート内容</a></li>
+                            <li><a href="/support/adviser/" class="tracking-wider">キャリアアドバイザー紹介</a></li>
+                            <li><a href="/interview/" class="tracking-wider">卒業生の就職実績</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-sm w-fit pb-1 tracking-wider"><a href="/column/">CADコラム</a></h5>
+                        <ul class="space-y-1 text-sm">
+                            <li><a href="/column/cad/" class="tracking-wider">CADとは</a></li>
+                            <li><a href="/column/cadsoft/" class="tracking-wider">CADソフト</a></li>
+                            <li><a href="/column/job/" class="tracking-wider">CADを使った仕事</a></li>
+                            <li><a href="/column/license/" class="tracking-wider">CADの資格</a></li>
+                            <li><a href="/column/industry/" class="tracking-wider">CAD業界</a></li>
+                            <li><a href="/column/career/" class="tracking-wider">転職ノウハウ</a></li>
+                            <li><a href="/column/school/" class="tracking-wider">CADスクール</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-2 text-sm font-bold">
+                            <li><a href="/faq/" class="tracking-wider">よくあるご質問</a></li>
+                            <li><a href="/company/" target="_blank" class="tracking-wider">運営会社</a></li>
+                            <li><a href="https://keeq.co.jp/privacy-policy/" target="_blank"
+                                    class="tracking-wider">プライバシーポリシー</a></li>
+                            <li><a href="/contact/" target="_blank" class="tracking-wider text-[#FF8C00]">企業の方へ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div
+                class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-center items-center text-[13px] font-bold tracking-wider">
+                <p>keeQ,inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // モバイルメニューのトグル機能
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // カテゴリ絞り込み
+        function filterColumn(cat, btn) {
+            document.querySelectorAll('.col-filter-btn').forEach(function (b) {
+                b.classList.remove('active-filter');
+            });
+            btn.classList.add('active-filter');
+
+            let visible = 0;
+            document.querySelectorAll('.col-card').forEach(function (card) {
+                if (cat === 'all' || card.dataset.category === cat) {
+                    card.classList.remove('hidden');
+                    visible++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            document.getElementById('no-result').classList.toggle('hidden', visible > 0);
+
+            // GA4: カテゴリ絞り込みを計測
+            gtag('event', 'column_filter', { category: cat });
+        }
+    </script>
+
+    <!-- GA4: 予約CTAボタンのクリック計測（予約リンクを自動検出）-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href="/reservation/"]').forEach(function (el, i) {
+                el.addEventListener('click', function () {
+                    gtag('event', 'cta_click', {
+                        cta_page: location.pathname,
+                        cta_position: i + 1,
+                        cta_text: (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
