@@ -218,7 +218,7 @@
                 <div class="md:pl-14">
                     <div id="calendar-area" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
                         <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-gray-700 text-sm">希望日の選択（15日先まで）</h4>
+                            <h4 class="font-bold text-gray-700 text-sm">希望日の選択（火・木・土）</h4>
                             <div class="flex space-x-1">
                                 <button type="button" onclick="slideCal(-1)"
                                     class="p-2 border rounded-lg bg-gray-50 hover:bg-white text-lg font-bold">←</button>
@@ -231,21 +231,9 @@
                         </div>
 
                         <div id="time-area" style="display:none;" class="space-y-4 fade-in">
-                            <p class="text-sm font-bold text-gray-500">希望の時間帯</p>
-                            <div class="grid grid-cols-2 gap-2">
-                                <button type="button"
-                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
-                                    onclick="setTime(this, '11:00〜')">11:00〜12：30</button>
-                                <button type="button"
-                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
-                                    onclick="setTime(this, '14:00〜')">14:00〜15：30</button>
-                                <button type="button"
-                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
-                                    onclick="setTime(this, '19:00〜')">19:00〜20：30</button>
-                                <button type="button"
-                                    class="time-btn border py-2 rounded-lg text-sm hover:border-[#05A85E]"
-                                    onclick="setTime(this, 'その他')">その他を希望したい</button>
-                            </div>
+                            <p class="text-sm font-bold text-gray-500">開催時間は曜日ごとに決まっています。</p>
+                            <div id="fixed-time-display"
+                                class="border-2 border-[#05A85E] bg-[#F0FDF4] text-[#05A85E] font-bold py-3 rounded-lg text-center"></div>
                             <textarea id="memo" rows="2" placeholder="ご質問などあれば記入してください（任意）"
                                 class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]"></textarea>
                             <button type="button" id="final-submit" onclick="submit()"
@@ -337,26 +325,27 @@
             }, 50);
         }
 
-        // カレンダー自動生成ロジック
+        // 固定スケジュール（火=2 / 木=4 / 土=6）
+        const SLOT_TIMES = { 2: '火曜 19:30〜20:30', 4: '木曜 20:00〜21:00', 6: '土曜 11:00〜12:00' };
+
+        // カレンダー自動生成ロジック（火・木・土のみ表示）
         function generateCalendar() {
             const wrapper = document.getElementById('calendar-wrapper');
             wrapper.innerHTML = "";
             const days = ['日', '月', '火', '水', '木', '金', '土'];
             const today = new Date();
 
-            for (let i = 1; i <= 15; i++) {
+            for (let i = 1; i <= 28; i++) {
                 const date = new Date();
                 date.setDate(today.getDate() + i);
-                const dayName = days[date.getDay()];
-                const isSun = date.getDay() === 0;
+                const dow = date.getDay();
+                if (!(dow in SLOT_TIMES)) continue; // 火・木・土以外はスキップ
+                const dayName = days[dow];
 
                 const div = document.createElement('div');
-                div.className = `date-item p-3 rounded-xl flex flex-col items-center bg-white shadow-sm flex-shrink-0 ${isSun ? 'disabled' : ''}`;
+                div.className = 'date-item p-3 rounded-xl flex flex-col items-center bg-white shadow-sm flex-shrink-0';
                 div.innerHTML = `<span class="text-xs">${date.getMonth() + 1}/${date.getDate()}</span><span class="font-bold">${dayName}</span>`;
-
-                if (!isSun) {
-                    div.onclick = () => selectDate(div, `${date.getMonth() + 1}/${date.getDate()}(${dayName})`);
-                }
+                div.onclick = () => selectDate(div, `${date.getMonth() + 1}/${date.getDate()}(${dayName})`, dow);
                 wrapper.appendChild(div);
             }
         }
@@ -368,17 +357,13 @@
             wrapper.style.transform = `translateX(-${currentPos * itemWidth}px)`;
         }
 
-        function selectDate(el, val) {
+        function selectDate(el, val, dow) {
             document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
             el.classList.add('selected');
             selectedDate = val;
+            selectedTime = SLOT_TIMES[dow] || '';
+            document.getElementById('fixed-time-display').textContent = selectedTime;
             document.getElementById('time-area').style.display = 'block';
-        }
-
-        function setTime(el, val) {
-            document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('bg-[#05A85E]', 'text-white', 'border-[#05A85E]'));
-            el.classList.add('bg-[#05A85E]', 'text-white', 'border-[#05A85E]');
-            selectedTime = val;
         }
 
         // 最終的な送信処理
