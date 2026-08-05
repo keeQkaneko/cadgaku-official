@@ -81,12 +81,12 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        /* カレンダー・スライダー */
+        /* カレンダー（月表示） */
         .date-item {
             cursor: pointer;
             transition: all 0.2s;
             border: 2px solid #F3F4F6;
-            min-width: 70px;
+            font-weight: bold;
         }
 
         .date-item:hover:not(.disabled) {
@@ -105,12 +105,7 @@
             opacity: 0.3;
             cursor: not-allowed;
             background-color: #F9FAFB;
-        }
-
-        .calendar-wrapper {
-            display: flex;
-            transition: transform 0.3s ease;
-            gap: 8px;
+            border-color: transparent;
         }
     </style>
 </head>
@@ -227,24 +222,47 @@
                 </div>
 
                 <div class="md:pl-14">
-                    <div id="calendar-area" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+                    <div id="calendar-area" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-4">
                         <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-gray-700 text-sm">希望日の選択（火・木・土）</h4>
-                            <div class="flex space-x-1">
-                                <button type="button" onclick="slideCal(-1)"
-                                    class="p-2 border rounded-lg bg-gray-50 hover:bg-white text-lg font-bold">←</button>
-                                <button type="button" onclick="slideCal(1)"
-                                    class="p-2 border rounded-lg bg-gray-50 hover:bg-white text-lg font-bold">→</button>
-                            </div>
+                            <button type="button" id="btn-prev-month" onclick="changeMonth(-1)" aria-label="前の月"
+                                class="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-lg font-bold text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-gray-50">‹</button>
+                            <h4 id="calendar-month-label" class="font-bold text-gray-700"></h4>
+                            <button type="button" id="btn-next-month" onclick="changeMonth(1)" aria-label="次の月"
+                                class="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-lg font-bold text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-gray-50">›</button>
                         </div>
-                        <div class="overflow-hidden">
-                            <div id="calendar-wrapper" class="calendar-wrapper"></div>
+                        <p class="text-xs text-[#05A85E] text-center">説明会は火・木・土に開催しています（選択できる日のみクリックできます）</p>
+
+                        <div>
+                            <div class="grid grid-cols-7 gap-1 mb-1 text-center text-xs font-bold text-gray-400">
+                                <div>日</div>
+                                <div>月</div>
+                                <div>火</div>
+                                <div>水</div>
+                                <div>木</div>
+                                <div>金</div>
+                                <div>土</div>
+                            </div>
+                            <div id="calendar-grid" class="grid grid-cols-7 gap-1"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" id="btn-no-date" onclick="noAvailableDate()"
+                                class="text-sm text-[#05A85E] underline hover:opacity-80 transition">ご都合の合う日程がない方はこちら</button>
                         </div>
 
                         <div id="time-area" style="display:none;" class="space-y-4 fade-in">
-                            <p class="text-sm font-bold text-gray-500">開催時間は曜日ごとに決まっています。</p>
+                            <p id="time-area-label" class="text-sm font-bold text-gray-500">開催時間は曜日ごとに決まっています。</p>
                             <div id="fixed-time-display"
                                 class="border-2 border-[#05A85E] bg-[#F0FDF4] text-[#05A85E] font-bold py-3 rounded-lg text-center"></div>
+
+                            <div id="no-date-message" style="display:none;" class="flex items-start space-x-3">
+                                <img src="images/navigator.png"
+                                    class="w-12 h-12 rounded-full border-2 border-[#6CC78B] bg-white shadow-sm flex-shrink-0">
+                                <div class="bubble p-4 border border-gray-100 w-full font-medium text-sm text-gray-700 bg-[#DAF2E7]">
+                                    個別で調整も可能です！<br>下の「ご質問など」欄に候補日をご記入のうえ、「この内容で相談する」ボタンを押してください。
+                                </div>
+                            </div>
+
                             <textarea id="memo" rows="2" placeholder="ご質問などあれば記入してください（任意）"
                                 class="w-full p-4 bg-gray-50 border-0 rounded-xl outline-none focus:ring-2 focus:ring-[#05A85E]"></textarea>
                             <button type="button" id="final-submit" onclick="submit()"
@@ -257,7 +275,7 @@
     </main>
 
     <script>
-        let currentPos = 0;
+        let calendarViewDate = new Date();
         let selectedDate = "";
         let selectedTime = "";
 
@@ -329,7 +347,8 @@
             }
 
             // カレンダーの生成を実行
-            generateCalendar();
+            calendarViewDate = new Date();
+            renderCalendar();
 
             setTimeout(() => {
                 s4.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -338,34 +357,86 @@
 
         // 固定スケジュール（火=2 / 木=4 / 土=6）
         const SLOT_TIMES = { 2: '火曜 19:30〜20:30', 4: '木曜 20:00〜21:00', 6: '土曜 11:00〜12:00' };
+        const DAY_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
 
-        // カレンダー自動生成ロジック（火・木・土のみ表示）
-        function generateCalendar() {
-            const wrapper = document.getElementById('calendar-wrapper');
-            wrapper.innerHTML = "";
-            const days = ['日', '月', '火', '水', '木', '金', '土'];
-            const today = new Date();
+        // 休業期間（この期間は予約不可）
+        const BLOCKED_RANGES = [
+            { start: '2026-08-13', end: '2026-08-16' } // お盆休み
+        ];
 
-            for (let i = 1; i <= 28; i++) {
-                const date = new Date();
-                date.setDate(today.getDate() + i);
-                const dow = date.getDay();
-                if (!(dow in SLOT_TIMES)) continue; // 火・木・土以外はスキップ
-                const dayName = days[dow];
-
-                const div = document.createElement('div');
-                div.className = 'date-item p-3 rounded-xl flex flex-col items-center bg-white shadow-sm flex-shrink-0';
-                div.innerHTML = `<span class="text-xs">${date.getMonth() + 1}/${date.getDate()}</span><span class="font-bold">${dayName}</span>`;
-                div.onclick = () => selectDate(div, `${date.getMonth() + 1}/${date.getDate()}(${dayName})`, dow);
-                wrapper.appendChild(div);
-            }
+        function toISODate(date) {
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const d = String(date.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
         }
 
-        function slideCal(dir) {
-            const wrapper = document.getElementById('calendar-wrapper');
-            const itemWidth = 78; // item(70) + gap(8)
-            currentPos = Math.max(0, Math.min(currentPos + dir, 11));
-            wrapper.style.transform = `translateX(-${currentPos * itemWidth}px)`;
+        function isBlockedDate(date) {
+            const iso = toISODate(date);
+            return BLOCKED_RANGES.some(r => iso >= r.start && iso <= r.end);
+        }
+
+        // 選択可能な日か判定（火・木・土 かつ 明日以降、休業期間を除く）
+        function isSelectableDate(date) {
+            if (!(date.getDay() in SLOT_TIMES)) return false;
+            if (isBlockedDate(date)) return false;
+            const minDate = new Date();
+            minDate.setHours(0, 0, 0, 0);
+            minDate.setDate(minDate.getDate() + 1); // 明日以降を選択可
+            return date >= minDate;
+        }
+
+        // カレンダー自動生成ロジック（月表示・火・木・土のみ選択可）
+        function renderCalendar() {
+            const grid = document.getElementById('calendar-grid');
+            grid.innerHTML = "";
+
+            const year = calendarViewDate.getFullYear();
+            const month = calendarViewDate.getMonth();
+            document.getElementById('calendar-month-label').textContent = `${year}年${month + 1}月`;
+
+            const firstDay = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // 月初までの空白セル
+            for (let i = 0; i < firstDay.getDay(); i++) {
+                grid.appendChild(document.createElement('div'));
+            }
+
+            for (let d = 1; d <= daysInMonth; d++) {
+                const date = new Date(year, month, d);
+                const dow = date.getDay();
+                const dayName = DAY_NAMES[dow];
+
+                const cell = document.createElement('div');
+                cell.textContent = d;
+                cell.className = 'date-item flex items-center justify-center aspect-square rounded-xl text-sm text-gray-600';
+
+                if (isSelectableDate(date)) {
+                    cell.onclick = () => selectDate(cell, `${month + 1}/${d}(${dayName})`, dow);
+                } else {
+                    cell.classList.add('disabled');
+                }
+                grid.appendChild(cell);
+            }
+
+            // 前月・翌月ボタンの有効/無効を更新（当月〜翌月のみ表示）
+            const today = new Date();
+            const minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            const maxMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+            document.getElementById('btn-prev-month').disabled = (year === minMonth.getFullYear() && month === minMonth.getMonth());
+            document.getElementById('btn-next-month').disabled = (year === maxMonth.getFullYear() && month === maxMonth.getMonth());
+        }
+
+        // 月の切り替え（当月〜翌月の範囲内のみ。月が替われば自動的に表示範囲もスライドする）
+        function changeMonth(dir) {
+            const next = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() + dir, 1);
+            const today = new Date();
+            const minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            const maxMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+            if (next < minMonth || next > maxMonth) return;
+            calendarViewDate = next;
+            renderCalendar();
         }
 
         function selectDate(el, val, dow) {
@@ -373,8 +444,35 @@
             el.classList.add('selected');
             selectedDate = val;
             selectedTime = SLOT_TIMES[dow] || '';
+
+            // 「日程がない」導線を選んでいた場合は元の表示に戻す
+            document.getElementById('no-date-message').style.display = 'none';
+            document.getElementById('time-area-label').style.display = 'block';
+            document.getElementById('fixed-time-display').style.display = 'block';
+
             document.getElementById('fixed-time-display').textContent = selectedTime;
             document.getElementById('time-area').style.display = 'block';
+        }
+
+        // 「ご都合の合う日程がない方はこちら」ボタン：個別調整を案内する導線
+        function noAvailableDate() {
+            // GA4: 離脱防止導線の利用を計測
+            gtag('event', 'no_date_available_click');
+
+            document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
+            selectedDate = '個別調整希望';
+            selectedTime = '要調整（個別相談）';
+
+            document.getElementById('time-area-label').style.display = 'none';
+            document.getElementById('fixed-time-display').style.display = 'none';
+            document.getElementById('no-date-message').style.display = 'flex';
+            document.getElementById('time-area').style.display = 'block';
+
+            const memo = document.getElementById('memo');
+            setTimeout(() => {
+                document.getElementById('time-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                memo.focus();
+            }, 50);
         }
 
         // 最終的な送信処理
