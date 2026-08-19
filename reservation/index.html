@@ -176,9 +176,18 @@
                     <label><input type="radio" name="age" value="30-32歳" class="sr-only" onchange="next(3)">
                         <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">30～32歳</div>
                     </label>
-                    <label><input type="radio" name="age" value="33歳以上" class="sr-only" onchange="next(3)">
+                    <label><input type="radio" name="age" value="33歳以上" class="sr-only" onchange="rejectAge()">
                         <div class="option-card p-4 rounded-xl text-center font-bold text-gray-600">33歳以上</div>
                     </label>
+                </div>
+                <div id="age-reject-message" style="display:none;" class="flex items-start space-x-3 fade-in md:pl-14">
+                    <img src="images/navigator.png" alt="キャドガク運営局の担当者"
+                        class="w-16 h-16 rounded-full border-2 border-[#6CC78B] bg-white shadow-sm flex-shrink-0">
+                    <div class="bubble p-5 border border-gray-100 w-full font-medium text-gray-700 bg-[#DAF2E7]">
+                        ご回答ありがとうございます。<br>
+                        大変恐縮ですが、キャドガクの対象年齢は32歳までとさせていただいております。<br>
+                        せっかくご検討いただいたにもかかわらず、ご期待に沿えず誠に申し訳ございません。
+                    </div>
                 </div>
             </section>
 
@@ -284,6 +293,10 @@
 
         // 共通の次へ進むアニメーション（Step1, Step2用）
         function next(n) {
+            // 年齢を選び直した場合に備えてお断り表示を消す
+            const ageRejectMsg = document.getElementById('age-reject-message');
+            if (ageRejectMsg) ageRejectMsg.style.display = 'none';
+
             // GA4: ステップ到達を計測（step-2/step-3 など）
             gtag('event', 'reservation_step', { step_number: n });
             const el = document.getElementById('step-' + n);
@@ -298,6 +311,19 @@
 
             setTimeout(() => {
                 el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+
+        // STEP2内で完結：33歳以上を選択した場合のお断り処理
+        // ※ goToStep4()やstep-4の表示処理には手を入れない（広告の計測に影響するため）
+        function rejectAge() {
+            document.getElementById('age-reject-message').style.display = 'flex';
+
+            // GA4: 対象外年齢での離脱を計測
+            gtag('event', 'reservation_age_reject', { age_range: '33歳以上' });
+
+            setTimeout(() => {
+                document.getElementById('age-reject-message').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 50);
         }
 
