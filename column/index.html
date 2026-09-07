@@ -40,6 +40,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="/css/column.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://cadgaku.jp/" },
+        { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://cadgaku.jp/column/" }
+      ]
+    }
+    </script>
 </head>
 
 <body class="bg-white antialiased overflow-x-hidden">
@@ -156,25 +166,6 @@
             <div id="column-grid" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
                 <!-- CADとは -->
-                <a href="/column/cad/what-is-cad/" data-category="cad"
-                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                    <div
-                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-what-is-cad.webp" alt="" loading="lazy"
-                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
-                    </div>
-                    <div class="p-5">
-                        <span
-                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADとは</span>
-                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            CAD（キャド）とは？初心者が知るべき基礎知識、2D・3Dの違いと将来性をプロが徹底解説！</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">そもそもCADとは何か。2DCADと3DCADの違い、CADオペレーターと設計士の違い、業界の将来性まで初心者向けに解説します。
-                        </p>
-                    </div>
-                </a>
-
-                <!-- CADとは② 建築CADと機械CADの違い -->
                 <a href="/column/cad/architecture-vs-mechanical-cad/" data-category="cad"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
@@ -189,6 +180,24 @@
                         <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
                             建築CADと機械CADの違いとは？「機械CADは難しそう」の誤解を解き、需要急増の理由と学習の基礎を徹底解説</h2>
                         <p class="text-xs text-gray-500 leading-relaxed">「機械CADは難しい」は誤解！建築CADとの違いや、AI・IoT普及による需要急増の理由、共通の基礎となるAutoCADの重要性を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <a href="/column/cad/what-is-cad/" data-category="cad"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-what-is-cad.webp" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADとは</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            CAD（キャド）とは？初心者が知るべき基礎知識、2D・3Dの違いと将来性をプロが徹底解説！</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">そもそもCADとは何か。2DCADと3DCADの違い、CADオペレーターと設計士の違い、業界の将来性まで初心者向けに解説します。
                         </p>
                     </div>
                 </a>
@@ -574,24 +583,6 @@
                 </a>
 
                 <!-- CAD業界 -->
-                <a href="/column/industry/business-model/" data-category="industry"
-                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                    <div
-                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-industry.webp" alt="" loading="lazy"
-                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
-                    </div>
-                    <div class="p-5">
-                        <span
-                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CAD業界</span>
-                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            客先常駐型・請負型・自社サービス型とは？CAD業界のビジネスモデルと仕組みを徹底解剖</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">客先常駐型・請負型・自社サービス型という3つのCAD業界のビジネスモデルと、未経験から成功する王道キャリアステップを解説。
-                        </p>
-                    </div>
-                </a>
-
                 <a href="/column/industry/onsite-strategy/" data-category="industry"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
@@ -610,12 +601,30 @@
                     </div>
                 </a>
 
-                <!-- 転職ノウハウ -->
-                <a href="/column/career/beginner-job-change/" data-category="career"
+                <a href="/column/industry/business-model/" data-category="industry"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
                         class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-career.webp" alt="" loading="lazy"
+                        <img src="/column/images/thumb-industry.webp" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CAD業界</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            客先常駐型・請負型・自社サービス型とは？CAD業界のビジネスモデルと仕組みを徹底解剖</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">客先常駐型・請負型・自社サービス型という3つのCAD業界のビジネスモデルと、未経験から成功する王道キャリアステップを解説。
+                        </p>
+                    </div>
+                </a>
+
+                <!-- 転職ノウハウ -->
+                <a href="/column/career/mechanical-design/" data-category="career"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/career-3.webp" alt="" loading="lazy"
                             class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                         <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
                     </div>
@@ -623,8 +632,26 @@
                         <span
                             class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">転職ノウハウ</span>
                         <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            CAD未経験から正社員転職を成功させる方法！スキルより重要な「人柄」と「キャリア戦略」</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">未経験から正社員のCAD職へ。採用企業が本当に見ているポイントと、転職を成功させるためのキャリア戦略を解説します。
+                            機械設計は未経験から転職できる？20代が知っておくべき現実と準備</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">未経験から機械設計エンジニアになれる？求人のリアルな傾向と、転職成功の3つの壁の乗り越え方を解説します。
+                        </p>
+                    </div>
+                </a>
+
+                <a href="/column/career/aptitude-and-mindset/" data-category="career"
+                    class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                    <div
+                        class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
+                        <img src="/column/images/thumb-job-cad.webp" alt="" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+                        <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
+                    </div>
+                    <div class="p-5">
+                        <span
+                            class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">転職ノウハウ</span>
+                        <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
+                            【徹底解説】向き不向き／未経験から内定を獲得する人の特徴と面接官が見ている評価ポイント</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">CADの仕事に必要なのは技術力より「人柄」。向いている人・向いていない人の特徴と、面接官が本当に見ている評価ポイントを解説します。
                         </p>
                     </div>
                 </a>
@@ -665,11 +692,11 @@
                     </div>
                 </a>
 
-                <a href="/column/career/aptitude-and-mindset/" data-category="career"
+                <a href="/column/career/beginner-job-change/" data-category="career"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
                         class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-job-cad.webp" alt="" loading="lazy"
+                        <img src="/column/images/thumb-career.webp" alt="" loading="lazy"
                             class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                         <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
                     </div>
@@ -677,18 +704,18 @@
                         <span
                             class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">転職ノウハウ</span>
                         <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            【徹底解説】向き不向き／未経験から内定を獲得する人の特徴と面接官が見ている評価ポイント</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">CADの仕事に必要なのは技術力より「人柄」。向いている人・向いていない人の特徴と、面接官が本当に見ている評価ポイントを解説します。
+                            CAD未経験から正社員転職を成功させる方法！スキルより重要な「人柄」と「キャリア戦略」</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">未経験から正社員のCAD職へ。採用企業が本当に見ているポイントと、転職を成功させるためのキャリア戦略を解説します。
                         </p>
                     </div>
                 </a>
 
                 <!-- CADスクール -->
-                <a href="/column/school/how-to-choose/" data-category="school"
+                <a href="/column/school/study-methods/" data-category="school"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
                         class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-school.webp" alt="" loading="lazy"
+                        <img src="/column/images/thumb-school-3.webp" alt="" loading="lazy"
                             class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                         <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
                     </div>
@@ -696,8 +723,8 @@
                         <span
                             class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADスクール</span>
                         <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            【他社比較】就職に直結するCADスクールの選び方！キャドガクが「完全無料」で提供できる理由</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">失敗しないCADスクールの選び方を3つの視点で解説。キャドガクが完全無料・違約金なしで運営できる仕組みも他社比較で紹介。
+                            CADの勉強は何から始める？独学・本・YouTube・スクールを徹底比較！未経験から就職へ繋げる確実な学習手順</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">本・YouTube・独学・スクールのCAD勉強法を徹底比較。就職に必要な基礎に絞り込んだ、失敗しない学習ロードマップを解説。
                         </p>
                     </div>
                 </a>
@@ -720,11 +747,11 @@
                     </div>
                 </a>
 
-                <a href="/column/school/study-methods/" data-category="school"
+                <a href="/column/school/how-to-choose/" data-category="school"
                     class="col-card group block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                     <div
                         class="relative aspect-video bg-gradient-to-br from-[#05A85E]/10 to-[#05A85E]/5 flex items-center justify-center overflow-hidden">
-                        <img src="/column/images/thumb-school-3.webp" alt="" loading="lazy"
+                        <img src="/column/images/thumb-school.webp" alt="" loading="lazy"
                             class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
                         <i data-lucide="image" class="w-9 h-9 text-[#05A85E]/30"></i>
                     </div>
@@ -732,8 +759,8 @@
                         <span
                             class="inline-block text-[11px] font-bold text-white bg-[#05A85E] rounded-full px-3 py-1 mb-3">CADスクール</span>
                         <h2 class="text-base font-bold text-gray-900 leading-snug mb-2 group-hover:text-[#05A85E] transition">
-                            CADの勉強は何から始める？独学・本・YouTube・スクールを徹底比較！未経験から就職へ繋げる確実な学習手順</h2>
-                        <p class="text-xs text-gray-500 leading-relaxed">本・YouTube・独学・スクールのCAD勉強法を徹底比較。就職に必要な基礎に絞り込んだ、失敗しない学習ロードマップを解説。
+                            【他社比較】就職に直結するCADスクールの選び方！キャドガクが「完全無料」で提供できる理由</h2>
+                        <p class="text-xs text-gray-500 leading-relaxed">失敗しないCADスクールの選び方を3つの視点で解説。キャドガクが完全無料・違約金なしで運営できる仕組みも他社比較で紹介。
                         </p>
                     </div>
                 </a>
