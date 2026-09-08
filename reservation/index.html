@@ -390,6 +390,20 @@
             { start: '2026-08-13', end: '2026-08-16' } // お盆休み
         ];
 
+        // 満席で予約不可の個別日程
+        const FULL_DATES = ['2026-09-12', '2026-09-19', '2026-09-22'];
+
+        // 残りわずかな個別日程（選択は可能）
+        const NEARLY_FULL_DATES = ['2026-09-10', '2026-09-17'];
+
+        // 通常の曜日枠に加えて追加する特別枠（日付ごとに時間を個別指定）
+        const SPECIAL_SLOTS = {
+            '2026-09-14': '11:00〜12:00',
+            '2026-09-16': '20:00〜21:00',
+            '2026-09-28': '13:30〜14:30',
+            '2026-09-30': '20:00〜21:00'
+        };
+
         function toISODate(date) {
             const y = date.getFullYear();
             const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -402,10 +416,19 @@
             return BLOCKED_RANGES.some(r => iso >= r.start && iso <= r.end);
         }
 
-        // 選択可能な日か判定（火・木・土 かつ 明日以降、休業期間を除く）
+        function isFullDate(date) {
+            return FULL_DATES.includes(toISODate(date));
+        }
+
+        function isSpecialSlot(date) {
+            return toISODate(date) in SPECIAL_SLOTS;
+        }
+
+        // 選択可能な日か判定（火・木・土、または特別枠の日 かつ 明日以降、休業期間・満席日を除く）
         function isSelectableDate(date) {
-            if (!(date.getDay() in SLOT_TIMES)) return false;
+            if (!(date.getDay() in SLOT_TIMES) && !isSpecialSlot(date)) return false;
             if (isBlockedDate(date)) return false;
+            if (isFullDate(date)) return false;
             const minDate = new Date();
             minDate.setHours(0, 0, 0, 0);
             minDate.setDate(minDate.getDate() + 1); // 明日以降を選択可
@@ -424,6 +447,11 @@
             const firstDay = new Date(year, month, 1);
             const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+            // 明日以降かどうかの基準日（これより前の日には満席等のラベルを出さない）
+            const minDate = new Date();
+            minDate.setHours(0, 0, 0, 0);
+            minDate.setDate(minDate.getDate() + 1);
+
             // 月初までの空白セル
             for (let i = 0; i < firstDay.getDay(); i++) {
                 grid.appendChild(document.createElement('div'));
@@ -433,13 +461,26 @@
                 const date = new Date(year, month, d);
                 const dow = date.getDay();
                 const dayName = DAY_NAMES[dow];
+                const iso = toISODate(date);
+                const isPast = date < minDate;
 
                 const cell = document.createElement('div');
-                cell.textContent = d;
-                cell.className = 'date-item flex items-center justify-center aspect-square rounded-xl text-sm text-gray-600';
+                cell.className = 'date-item flex flex-col items-center justify-center aspect-square rounded-xl text-sm text-gray-600';
+
+                if (isPast) {
+                    cell.textContent = d;
+                } else if (isFullDate(date)) {
+                    cell.innerHTML = `<span>${d}</span><span class="text-[9px] text-red-400 leading-none mt-0.5">満席</span>`;
+                } else if (NEARLY_FULL_DATES.includes(iso)) {
+                    cell.innerHTML = `<span>${d}</span><span class="text-[9px] text-orange-500 leading-none mt-0.5">残り1枠</span>`;
+                } else if (iso in SPECIAL_SLOTS) {
+                    cell.innerHTML = `<span>${d}</span><span class="text-[9px] text-[#05A85E] leading-none mt-0.5">特別枠</span>`;
+                } else {
+                    cell.textContent = d;
+                }
 
                 if (isSelectableDate(date)) {
-                    cell.onclick = () => selectDate(cell, `${month + 1}/${d}(${dayName})`, dow);
+                    cell.onclick = () => selectDate(cell, `${month + 1}/${d}(${dayName})`, dow, iso);
                 } else {
                     cell.classList.add('disabled');
                 }
@@ -465,11 +506,11 @@
             renderCalendar();
         }
 
-        function selectDate(el, val, dow) {
+        function selectDate(el, val, dow, iso) {
             document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
             el.classList.add('selected');
             selectedDate = val;
-            selectedTime = SLOT_TIMES[dow] || '';
+            selectedTime = SPECIAL_SLOTS[iso] || SLOT_TIMES[dow] || '';
 
             // 「日程がない」導線を選んでいた場合は元の表示に戻す
             document.getElementById('no-date-message').style.display = 'none';
