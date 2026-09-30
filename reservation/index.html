@@ -286,6 +286,7 @@
     <script>
         let calendarViewDate = new Date();
         let selectedDate = "";
+        let selectedDateISO = ""; // スプレッドシートでの日付フィルター用（例：2026-09-08）
         let selectedTime = "";
 
         // ★金子代表のGAS URLをセット済み
@@ -510,6 +511,7 @@
             document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
             el.classList.add('selected');
             selectedDate = val;
+            selectedDateISO = iso;
             selectedTime = SPECIAL_SLOTS[iso] || SLOT_TIMES[dow] || '';
 
             // 「日程がない」導線を選んでいた場合は元の表示に戻す
@@ -528,6 +530,7 @@
 
             document.querySelectorAll('.date-item').forEach(i => i.classList.remove('selected'));
             selectedDate = '個別調整希望';
+            selectedDateISO = '';
             selectedTime = '要調整（個別相談）';
 
             document.getElementById('time-area-label').style.display = 'none';
@@ -560,6 +563,7 @@
                 tel: document.getElementById('tel').value,
                 email: document.getElementById('email').value,
                 selectedDate: selectedDate,
+                selectedDateISO: selectedDateISO,
                 selectedTime: selectedTime,
                 memo: document.getElementById('memo').value
             };
