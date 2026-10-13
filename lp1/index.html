@@ -612,7 +612,7 @@
                             </p>
                         </div>
                         <div class="lg:w-1/2 w-full order-2">
-                            <img src="images/autocad.webp" alt="未経験からCADオペレーターで就職するために有利なAutoCADを使用しています。" class="w-full h-72 md:h-80 object-cover border-2 border-[#05A85E] rounded-2xl" loading="lazy"/>
+                            <img src="images/autocad.webp" alt="未経験からCADオペレーターで就職するために有利なAutoCADを使用しています。" class="w-full h-72 md:h-80 object-cover object-[55%_center] border-2 border-[#05A85E] rounded-2xl" loading="lazy"/>
                         </div>
                     </div>
                 </div>
@@ -636,7 +636,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 w-full order-2">
-                            <img src="images/reason1.webp" alt="スキマ時間でオンライン完結、平日22時まで個別指導が受けられます" class="w-full h-72 md:h-80 object-cover border-2 border-[#05A85E] rounded-2xl" loading="lazy">
+                            <img src="images/reason1.webp" alt="スキマ時間でオンライン完結、平日22時まで個別指導が受けられます" class="w-full h-72 md:h-80 object-cover object-[55%_center] border-2 border-[#05A85E] rounded-2xl" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -764,14 +764,21 @@
                     var paused = false;
                     var resumeTimer = null;
                     var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
+                    var carry = 0; // 端数の繰り越し（丸めで動きが止まるのを防ぐ）
 
                     function frame() {
                         if (!paused) {
                             var maxScroll = track.scrollWidth - track.clientWidth;
                             if (track.scrollLeft >= maxScroll - 1) {
                                 track.scrollLeft = 0;
+                                carry = 0;
                             } else {
-                                track.scrollLeft += speed;
+                                carry += speed;
+                                var move = Math.floor(carry);
+                                if (move >= 1) {
+                                    track.scrollLeft += move;
+                                    carry -= move;
+                                }
                             }
                         }
                         requestAnimationFrame(frame);
@@ -833,14 +840,21 @@
                     var paused = false;
                     var resumeTimer = null;
                     var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
+                    var carry = 0; // 端数の繰り越し（丸めで動きが止まるのを防ぐ）
 
                     function frame() {
                         if (!paused) {
                             var maxScroll = track.scrollWidth - track.clientWidth;
                             if (track.scrollLeft >= maxScroll - 1) {
                                 track.scrollLeft = 0;
+                                carry = 0;
                             } else {
-                                track.scrollLeft += speed;
+                                carry += speed;
+                                var move = Math.floor(carry);
+                                if (move >= 1) {
+                                    track.scrollLeft += move;
+                                    carry -= move;
+                                }
                             }
                         }
                         requestAnimationFrame(frame);
