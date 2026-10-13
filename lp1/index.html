@@ -147,6 +147,15 @@
             animation-play-state: paused;
         }
 
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
         /* FAQアコーディオン */
         .faq-content {
             transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -733,10 +742,9 @@
                 </p>
             </div>
 
-            <!-- 全デバイス対応 横スライド -->
+            <!-- 全デバイス対応 横スライド（自動再生＋指でのスワイプ操作に対応） -->
             <div class="relative max-w-7xl mx-auto">
-                <div class="flex animate-infinite-scroll w-max">
-                    <!-- 1周目 -->
+                <div id="career-slide-track" class="flex overflow-x-auto no-scrollbar">
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-1.webp" alt="建築CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">建築CADオペレーター</h3></div></div>
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-2.webp" alt="機械設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">機械設計／エンジニア</h3></div></div>
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-3.webp" alt="施工管理" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">施工管理</h3></div></div>
@@ -745,19 +753,43 @@
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-6.webp" alt="電子設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">電子設計／エンジニア</h3></div></div>
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-7.webp" alt="アパレル／インテリア系" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">アパレル／インテリア系</h3></div></div>
                     <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-8.webp" alt="その他" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">その他</h3></div></div>
-                    <!-- 2周目（ループ用複製） -->
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-1.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">建築CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-2.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">機械設計／エンジニア</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-3.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">施工管理</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-4.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">設備CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-5.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">土木CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-6.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">電子設計／エンジニア</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-7.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">アパレル／インテリア系</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-8.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">その他</h3></div></div>
                 </div>
                 <div class="hidden sm:block pointer-events-none absolute inset-y-0 left-0 w-10 md:w-16 bg-gradient-to-r from-gray-50 to-transparent"></div>
                 <div class="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-10 md:w-16 bg-gradient-to-l from-gray-50 to-transparent"></div>
             </div>
+            <script>
+                (function () {
+                    var track = document.getElementById('career-slide-track');
+                    if (!track) return;
+                    var paused = false;
+                    var resumeTimer = null;
+                    var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
+
+                    function frame() {
+                        if (!paused) {
+                            var maxScroll = track.scrollWidth - track.clientWidth;
+                            if (track.scrollLeft >= maxScroll - 1) {
+                                track.scrollLeft = 0;
+                            } else {
+                                track.scrollLeft += speed;
+                            }
+                        }
+                        requestAnimationFrame(frame);
+                    }
+
+                    function pauseForInteraction() {
+                        paused = true;
+                        clearTimeout(resumeTimer);
+                        resumeTimer = setTimeout(function () { paused = false; }, 4000);
+                    }
+
+                    track.addEventListener('pointerdown', pauseForInteraction);
+                    track.addEventListener('touchstart', pauseForInteraction, { passive: true });
+                    track.addEventListener('wheel', pauseForInteraction, { passive: true });
+
+                    requestAnimationFrame(frame);
+                })();
+            </script>
         </section>
 
         <!-- 仕切り：未経験者の声 -->
@@ -770,12 +802,11 @@
             </div>
         </div>
 
-        <!-- ⑦ 未経験者の声（全15名・全デバイス対応スライド） -->
+        <!-- ⑦ 未経験者の声（全15名・自動再生＋指でのスワイプ操作に対応） -->
         <section class="py-12 lg:py-16 px-4 overflow-hidden">
-            <p class="text-center text-sm text-gray-500 mb-8">＼ カードにマウスを乗せると停止します ／</p>
+            <p class="text-center text-sm text-gray-500 mb-8">＼ スワイプすると自由に見られます ／</p>
             <div class="relative max-w-7xl mx-auto">
-                <div class="flex items-stretch animate-infinite-scroll w-max" style="animation-duration:80s">
-                    <!-- 1周目（15名） -->
+                <div id="testimonial-slide-track" class="flex items-stretch overflow-x-auto no-scrollbar">
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">未経験から40日で転職</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-16.webp" alt="機械エンジニアに転職した大橋さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【大橋さん（24歳）前職：風力発電機の部品検査 ➔ 機械エンジニア】</span>現場で図面を見ながら部品を検査するなかで「自分も設計側（上流工程）に挑戦したい」と思い、未経験からキャドガクで学習を決意。働きながらスキマ時間でオンラインで講師と学べたので、入校から40日間で機械エンジニアとして正社員転職ができました！</blockquote></div></article>
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">20代最後の異業種キャリアチェンジ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-2.webp" alt="建築CADオペレーターに転職した佐々木さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【佐々木さん（29歳）前職：アパレル店長 ➔ 建築CADオペレーター】</span>販売職を5年間経験し、20代最後に「将来のために手に職をつけたい」と一念発起。完全未経験でしたが、平日10〜22時いつでも講師に質問できる環境が大きな支えに。年齢や職歴の不安も専任アドバイザーが企業目線の選考対策でカバーしてくれ、建築CADオペレーターへ新しいキャリアの一歩を踏み出せました！</blockquote></div></article>
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">現場経験を活かして上流工程へ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-15.webp" alt="機械エンジニアに転職した黒光さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【黒光さん（26歳）前職：住宅設備メーカー（鋳造・成形）➔ 機械エンジニア】</span>高校卒業後、約7年間製造に携わり「より上流工程の設計職で市場価値を高めたい」と考えキャドガクを受講。現場経験という強みと業界シェアの高い「AutoCAD」の基礎を徹底学習し、採用企業から高評価を獲得。プロ2名体制のサポートが自信に繋がり、未経験から憧れの機械エンジニアへ転職できました！</blockquote></div></article>
@@ -791,26 +822,43 @@
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#FF8C00] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">完全未経験から3社同時内定</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-7.webp" alt="設備CADオペレーターに転職した青柳さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【青柳さん（26歳）前職：管理栄養士 ➔ 設備CADオペレーター】</span>将来のために一生モノの専門職を身につけたいと考え、自分の「細かな作業に集中できる強み」を活かせるCADに出会い入校。完全未経験で不安もありましたが、手厚い就職サポートと個別指導のおかげで、なんと3社から内定を獲得し設備CADオペレーターに転職できました！</blockquote></div></article>
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">営業から需要高の土木CADへ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-10.webp" alt="土木CADオペレーターに転職した遠藤さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【遠藤さん（24歳）前職：人材派遣の営業職 ➔ 土木CADオペレーター】</span>人材派遣の営業でCADやエンジニア案件を多く扱う中で「自分自身がプレイヤーになりたい」と思い入校。市場規模が大きく、未経験から入りやすくて需要も高い「土木CADオペレーター」として戦略的な転職を成功させました。</blockquote></div></article>
                     <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#FF8C00] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">最難関・航空機設計に内定</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-3.webp" alt="航空機系機械エンジニアに転職した高橋さん" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【高橋さん（22歳）前職：雑貨ブランドで営業事務 ➔ 機械エンジニア（航空機設計）】</span>「事務職はいずれAIに代替されるのでは」という危機感から手に職をつけたいと入校。学習や就活に不安がありましたが、手厚いサポートと高い学習意欲で急速に成長。就職難易度の極めて高い、航空機をメインに設計している大手企業に機械エンジニアとして転職できました！</blockquote></div></article>
-                    <!-- 2周目（ループ用複製） -->
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">未経験から40日で転職</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-16.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【大橋さん（24歳）前職：風力発電機の部品検査 ➔ 機械エンジニア】</span>現場で図面を見ながら部品を検査するなかで「自分も設計側（上流工程）に挑戦したい」と思い、未経験からキャドガクで学習を決意。働きながらスキマ時間でオンラインで講師と学べたので、入校から40日間で機械エンジニアとして正社員転職ができました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">20代最後の異業種キャリアチェンジ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-2.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【佐々木さん（29歳）前職：アパレル店長 ➔ 建築CADオペレーター】</span>販売職を5年間経験し、20代最後に「将来のために手に職をつけたい」と一念発起。完全未経験でしたが、平日10〜22時いつでも講師に質問できる環境が大きな支えに。年齢や職歴の不安も専任アドバイザーが企業目線の選考対策でカバーしてくれ、建築CADオペレーターへ新しいキャリアの一歩を踏み出せました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">現場経験を活かして上流工程へ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-15.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【黒光さん（26歳）前職：住宅設備メーカー（鋳造・成形）➔ 機械エンジニア】</span>高校卒業後、約7年間製造に携わり「より上流工程の設計職で市場価値を高めたい」と考えキャドガクを受講。現場経験という強みと業界シェアの高い「AutoCAD」の基礎を徹底学習し、採用企業から高評価を獲得。プロ2名体制のサポートが自信に繋がり、未経験から憧れの機械エンジニアへ転職できました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">機械・建築のW内定獲得</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-8.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【蒲田さん（27歳）前職：冠婚葬祭会社で事務職 ➔ 建築CADオペレーター】</span>事務職を続ける中で「一生モノの手に職をつけ、就職まで一気通貫でサポートしてくれるスクール」を探していました。学習を進めるうちにCADの面白さにのめり込み、機械と建築の両方で内定を獲得！一番家から近く条件の良い建築CADオペレーターへ転職を決めました。</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">派遣から正社員の施工管理へ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-4.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【寺田さん（30歳）前職：接客業（派遣社員）➔ 建築施工管理】</span>大学卒業後は派遣を転々とし、正社員経験がないことに強い焦りを感じていました。需要のある専門職に就くためCADを学習。図面を見る楽しさに触れ、前職の接客で培ったコミュニケーション力を武器に、未経験から施工管理職への正社員就職を勝ち取りました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">AutoCADを再学習しステップアップ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-1.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【三島さん（23歳）前職：半導体製造の製品検査（派遣社員）➔ 機械エンジニア】</span>専門学校卒業後、派遣で半導体製造の検査をしていました。学生時代に触れたAutoCADの楽しさを思い出し「もっと手に職をつけ、上流工程の設計職で働きたい」とキャドガクで再学習。手厚いサポートで見事に機械エンジニアへのキャリアアップを果たしました。</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">服飾CADから機械系CADへ業界チェンジ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-18.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【吉田さん（26歳）前職：アパレルパタンナー（服飾専門卒）➔ インテリアデザイナー】</span>服飾専門卒でパタンナーとしてアパレル用CADを使用していましたが、業界の縮小を感じ転身を決意。汎用性の高いキャドガクでCADを学習しました。CADの経験が評価され、未経験では難関のインテリアデザイナーへ転職を成功させました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#FF8C00] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">スピード転職！入校から32日</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-5.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【杉内さん（29歳）前職：法律事務所の事務職 ➔ 機械エンジニア】</span>激務のわりに将来的なスキルが残らない現状に不満を抱いていました。趣味の3Dプリンターでのモノづくりをきっかけに機械エンジニアを目指して入校。有給消化の期間をフル活用して集中学習した結果、なんと入校からわずか32日間で機械エンジニアへの転職を成功させました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">ITから脱却・AIに負けないモノづくり</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-13.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【中川さん（26歳）前職：ITエンジニア ➔ 大手住宅メーカーの住宅設計職】</span>ITエンジニアをしていましたが、仕事がAIに代替されていくのを実感し将来性に不安を覚えていました。「AIに奪われない現実世界のモノづくり」を求めてCADに出会い入校。ITで培った論理的思考が評価され、大手住宅メーカーから住宅設計職の内定をいただきました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">職歴10年のパティシエから転身</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-17.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【加藤さん（30歳）前職：パティシエ（約10年間）➔ 建築施工管理】</span>パティシエとして10年勤めマネージャーまで昇格しましたが、業界の縮小に不安を感じ「長く続けられる手に職」を求め入校。壮大な建造物を作り上げる施工管理に魅力を感じ転職。現場ではCADの図面修正も多く、キャドガクで身につけたスキルをそのまま活かせています！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">自衛隊の整備から「設計」のプロへ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-6.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【梅岡さん（25歳）前職：海上自衛隊（機械整備員）➔ 機械エンジニア】</span>前職は海上自衛隊で機械整備員としてメンテナンスに従事。「壊れたものを直す現場作業ではなく、1から製品を生み出す設計の領域に行きたい」という熱意で入校。現場の知見とCAD設計スキルを掛け合わせ、憧れの機械エンジニアへの転職を決定させました。</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">単純な工場作業から頭脳派の設計へ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-7.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【野田さん（28歳）前職：部品製造と梱包作業 ➔ 機械エンジニア】</span>工場での単純な現場作業の毎日から「もっと頭を使うクリエイティブな仕事に就きたい」と悩んでいました。現場でCAD図面を見ていた経験から入校。実際のモノづくりを知る現場経験と高い学習意欲が評価され、未経験から機械エンジニアとして転職を果たしました。</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#FF8C00] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">完全未経験から3社同時内定</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-7.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【青柳さん（26歳）前職：管理栄養士 ➔ 設備CADオペレーター】</span>将来のために一生モノの専門職を身につけたいと考え、自分の「細かな作業に集中できる強み」を活かせるCADに出会い入校。完全未経験で不安もありましたが、手厚い就職サポートと個別指導のおかげで、なんと3社から内定を獲得し設備CADオペレーターに転職できました！</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#22C55E] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#22C55E] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">営業から需要高の土木CADへ</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-10.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【遠藤さん（24歳）前職：人材派遣の営業職 ➔ 土木CADオペレーター】</span>人材派遣の営業でCADやエンジニア案件を多く扱う中で「自分自身がプレイヤーになりたい」と思い入校。市場規模が大きく、未経験から入りやすくて需要も高い「土木CADオペレーター」として戦略的な転職を成功させました。</blockquote></div></article>
-                    <article class="testimonial-card flex-none w-[270px] md:w-[330px] mx-3 flex flex-col bg-white overflow-hidden border-2 border-[#FF8C00] relative rounded-2xl shadow-lg"><span class="absolute top-3 left-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">最難関・航空機設計に内定</span><div class="h-44 overflow-hidden bg-gray-100"><img src="images/interview-3.webp" alt="" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-4 md:p-5 flex-grow"><blockquote class="text-xs md:text-sm leading-relaxed text-gray-700"><span class="font-bold text-sm text-gray-900 block mb-2">【高橋さん（22歳）前職：雑貨ブランドで営業事務 ➔ 機械エンジニア（航空機設計）】</span>「事務職はいずれAIに代替されるのでは」という危機感から手に職をつけたいと入校。学習や就活に不安がありましたが、手厚いサポートと高い学習意欲で急速に成長。就職難易度の極めて高い、航空機をメインに設計している大手企業に機械エンジニアとして転職できました！</blockquote></div></article>
                 </div>
                 <div class="hidden sm:block pointer-events-none absolute inset-y-0 left-0 w-10 md:w-16 bg-gradient-to-r from-white to-transparent z-20"></div>
                 <div class="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-10 md:w-16 bg-gradient-to-l from-white to-transparent z-20"></div>
             </div>
+            <script>
+                (function () {
+                    var track = document.getElementById('testimonial-slide-track');
+                    if (!track) return;
+                    var paused = false;
+                    var resumeTimer = null;
+                    var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
+
+                    function frame() {
+                        if (!paused) {
+                            var maxScroll = track.scrollWidth - track.clientWidth;
+                            if (track.scrollLeft >= maxScroll - 1) {
+                                track.scrollLeft = 0;
+                            } else {
+                                track.scrollLeft += speed;
+                            }
+                        }
+                        requestAnimationFrame(frame);
+                    }
+
+                    function pauseForInteraction() {
+                        paused = true;
+                        clearTimeout(resumeTimer);
+                        resumeTimer = setTimeout(function () { paused = false; }, 4000);
+                    }
+
+                    track.addEventListener('pointerdown', pauseForInteraction);
+                    track.addEventListener('touchstart', pauseForInteraction, { passive: true });
+                    track.addEventListener('wheel', pauseForInteraction, { passive: true });
+
+                    requestAnimationFrame(frame);
+                })();
+            </script>
 
             <div class="mt-14 w-full max-w-4xl mx-auto text-center">
                 <img src="images/seminar-guidance-2.webp" alt="キャドガクの無料オンライン説明会にご参加ください" class="w-full h-auto" loading="lazy"/>
