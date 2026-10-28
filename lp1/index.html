@@ -287,7 +287,7 @@
                 <img src="images/logo-cadgaku.webp" alt="キャドガク｜完全無料のCADスクール【20代向け就職直結型】"
                     class="h-8 sm:h-12 lg:h-14 w-auto object-contain">
             </a>
-            <nav class="hidden lg:flex items-center gap-5 xl:gap-8 text-sm font-medium text-gray-700">
+            <nav class="hidden xl:flex items-center gap-5 xl:gap-8 text-sm font-medium text-gray-700">
                 <a href="#free-reason" class="nav-jump hover:text-[#05A85E] transition">完全無料の理由</a>
                 <a href="#features" class="nav-jump hover:text-[#05A85E] transition">キャドガクの特徴</a>
                 <a href="#voice" class="nav-jump hover:text-[#05A85E] transition">卒業生の声</a>
@@ -307,55 +307,149 @@
         <section
             class="relative w-full max-w-7xl mx-auto lg:min-h-[620px] mt-16 sm:mt-20 flex flex-col lg:flex-row lg:items-center justify-start overflow-hidden bg-white">
 
-            <div class="absolute top-0 left-0 lg:left-auto lg:right-0 w-full lg:w-[58%] h-[60vh] lg:h-full z-0">
-                <div class="absolute inset-y-0 left-0 w-full lg:w-[45%] bg-gradient-to-r from-white via-white/95 to-transparent z-10 hidden lg:block"></div>
-                <div class="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-white via-white/95 to-transparent z-10 lg:hidden"></div>
-                <img src="images/firstview-1.webp" alt="キャドガクで未経験からCADを学ぶイメージ画像"
-                    class="w-full h-full object-cover object-[82%_top]" fetchpriority="high" decoding="async">
+            <div class="sm:hidden w-full bg-[#0B894F] px-4 py-[1.5vw]">
+                <h2 class="font-extrabold text-white text-[clamp(22px,6.5vw,32px)] leading-snug text-center [text-shadow:2px_2px_0px_rgba(0,0,0,0.10)]">
+                    未経験から最短30日間で<br>「手に職をつける」
+                </h2>
+            </div>
+
+            <div class="relative lg:absolute top-0 left-0 lg:left-auto lg:right-0 w-full lg:w-[58%] h-[95vw] sm:h-[75vw] lg:h-full z-0">
+                <div class="hidden sm:block absolute inset-y-0 left-0 w-[70%] sm:w-[50%] lg:w-[45%] bg-gradient-to-r from-white via-white lg:via-white/95 to-transparent z-10"></div>
+                <div class="absolute bottom-0 left-0 w-full h-[35%] bg-gradient-to-t from-white via-white/60 to-transparent z-10 hidden"></div>
+                <picture class="block w-full h-full"><source media="(max-width: 1023px)" srcset="images/firstview-2.webp"><img src="images/firstview-1.webp" alt="キャドガクで未経験からCADを学ぶイメージ画像"
+                    class="w-full h-full object-cover object-[60%_42%] translate-x-0 sm:translate-x-0 sm:object-[100%_top] lg:translate-x-0 lg:object-[82%_top]" fetchpriority="high" decoding="async"></picture>
+                <div class="sm:hidden absolute top-[60%] left-0 right-0 bottom-0 bg-white z-[15]"></div>
             </div>
 
             <div
-                class="relative z-20 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-10 mt-[26vh] sm:mt-[34vh] lg:mt-0 pt-8 pb-10 lg:pt-0 lg:pb-0 flex flex-col items-center lg:items-start">
+                class="relative top-[-7vw] -mt-[52.25vw] h-auto sm:h-auto lg:h-auto sm:-mt-[66vw] lg:mt-0 lg:top-auto lg:left-auto lg:right-auto z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:mt-0 pt-0 sm:pt-8 pb-10 lg:pt-0 lg:pb-0 flex flex-col items-start sm:items-start lg:items-start">
+
+                <div class="w-[62%] sm:w-auto flex flex-col items-start sm:items-start lg:items-start">
 
                 <!-- キャッチ吹き出し -->
-                <div class="relative inline-flex items-center justify-center bg-[#0B894F] rounded-xl px-4 py-3 sm:px-8 sm:py-4 shadow-md mb-7 sm:mb-9 mt-2">
-                    <h2 class="font-extrabold text-white text-[clamp(13px,4vw,24px)] lg:text-[24px] tracking-normal sm:tracking-widest [text-shadow:2px_2px_0px_rgba(0,0,0,0.10)] leading-relaxed sm:leading-none text-center whitespace-nowrap">
-                        未経験から最短30日間で「手に職をつける」
+                <div class="hidden sm:inline-flex relative items-center justify-center bg-[#0B894F] border-0 rounded-xl px-[3.05vw] py-[2.04vw] sm:px-8 sm:py-4 shadow-md mb-[3.05vw] sm:mb-9 mt-[10.18vw] sm:mt-2 ml-[6.11vw] sm:ml-0">
+                    <h2 class="font-extrabold text-white text-[clamp(13px,4vw,24px)] sm:text-[clamp(11px,3.4vw,22px)] lg:text-[24px] tracking-normal sm:tracking-widest [text-shadow:2px_2px_0px_rgba(0,0,0,0.10)] leading-relaxed sm:leading-none text-center whitespace-nowrap">
+                        未経験から最短30日間で<br class="lg:hidden"><span class="whitespace-nowrap">「手に職をつける」</span>
                     </h2>
-                    <div class="absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[13px] border-t-[#0B894F]"></div>
+                    <div class="hidden lg:block absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[13px] border-t-[#0B894F]"></div>
                 </div>
 
                 <!-- メインコピー（左にオンライン完結アイコン） -->
-                <div class="flex items-start sm:items-center lg:items-center justify-center lg:justify-start gap-1 sm:gap-3 mb-6 max-w-full">
+                <div class="relative top-[-1vw] sm:top-0 mt-[2.04vw] sm:mt-0 flex items-center justify-start sm:justify-start lg:justify-start flex-wrap gap-x-[1.53vw] gap-y-[1.02vw] sm:gap-3 mb-[2vw] sm:mb-6 max-w-full sm:bg-transparent sm:backdrop-blur-none sm:shadow-none sm:px-0 sm:py-0 lg:bg-transparent lg:backdrop-blur-none lg:shadow-none lg:px-0 lg:py-0">
                     <img src="images/online-icon.webp" alt="学習はすべてオンラインで完結！"
-                        class="h-[68px] min-[390px]:h-[74px] sm:h-[104px] lg:h-[112px] object-contain shrink-0 drop-shadow-md mt-[10px] sm:mt-0 lg:mt-0">
-                    <h1 class="min-w-0 text-left leading-[1.25] tracking-normal sm:tracking-wide text-gray-800 [text-shadow:2px_2px_0px_rgba(0,0,0,0.08)]">
-                        <span class="block text-[clamp(19px,4.9vw,32px)] lg:text-[28px] font-black text-gray-700 mb-2">
-                            20代向け就職直結型
+                        class="h-[23vw] sm:h-[104px] lg:h-[112px] object-contain shrink-0 drop-shadow-md">
+                    <h1 class="contents sm:block lg:block min-w-0 text-left leading-[1.25] tracking-normal sm:tracking-wide text-gray-800 [text-shadow:2px_2px_0px_rgba(0,0,0,0.08)]">
+                        <span class="block text-[clamp(21px,6.3vw,32px)] lg:text-[28px] font-black text-gray-800 sm:text-gray-700 mb-0 sm:mb-2 whitespace-nowrap [text-shadow:0_0_10px_#fff,0_0_10px_#fff,0_0_10px_#fff,0_0_10px_#fff,0_0_5px_#fff] sm:[text-shadow:2px_2px_0px_rgba(0,0,0,0.08)]">
+                            20代向け<br class="sm:hidden">就職直結型
                         </span>
-                        <span class="block bg-gradient-to-t from-[#FFE600]/80 via-[#FFE600]/80 to-transparent bg-[length:100%_38%] bg-no-repeat bg-bottom leading-tight">
-                            <span class="text-[clamp(22px,6.6vw,58px)] lg:text-[56px] font-black">完全無料</span><span class="text-[clamp(15px,3.6vw,28px)] lg:text-[30px] font-black mx-0.5">の</span><span class="text-[clamp(22px,6.6vw,58px)] lg:text-[56px] font-black">CADスクール</span>
+                        <span class="hidden sm:inline-block lg:block whitespace-nowrap mt-[2.04vw] sm:mt-0 lg:mt-0 bg-gradient-to-t from-[#FFE600]/80 via-[#FFE600]/80 to-transparent bg-[length:100%_38%] bg-no-repeat bg-bottom leading-tight">
+                            <span class="text-[clamp(23px,8.2vw,58px)] sm:text-[clamp(18px,5.4vw,58px)] lg:text-[56px] font-black">完全無料</span><span class="text-[clamp(19px,6.4vw,30px)] sm:text-[clamp(12px,3.2vw,30px)] lg:text-[30px] font-black mx-[0.51vw] sm:mx-0.5">の</span><span class="text-[clamp(23px,8.2vw,58px)] sm:text-[clamp(18px,5.4vw,58px)] lg:text-[56px] font-black">CADスクール</span>
                         </span>
-                        <span class="block text-[clamp(16px,4vw,28px)] lg:text-[24px] font-black text-gray-700 mt-4">
-                            未経験から<span class="text-[#FF8C00]">CADオペレーター</span>に転職
+                        <span class="hidden sm:block whitespace-nowrap text-[clamp(16px,4.4vw,28px)] lg:text-[24px] font-black text-gray-700 mt-[4.07vw] sm:mt-4">
+                            未経験から<span class="text-[#FF8C00] whitespace-nowrap">CADオペレーター</span>に転職
                         </span>
                     </h1>
                 </div>
+                </div>
+                <!-- スマホ専用：中央揃え表示（幅62%の枠の外に配置） -->
+                <p class="sm:hidden relative top-[-3vw] w-full text-center whitespace-nowrap mt-[0.5vw] bg-gradient-to-t from-[#FFE600]/80 via-[#FFE600]/80 to-transparent bg-[length:100%_38%] bg-no-repeat bg-bottom leading-tight">
+                    <span class="text-[clamp(23px,8.2vw,58px)] font-black">完全無料</span><span class="text-[clamp(19px,6.4vw,30px)] font-black mx-[0.51vw]">の</span><span class="text-[clamp(23px,8.2vw,58px)] font-black">CADスクール</span>
+                </p>
+                <p class="sm:hidden relative top-[-3vw] w-full text-center whitespace-nowrap text-[clamp(18px,5vw,28px)] font-black text-gray-700 mt-[4.07vw]">
+                    未経験から<span class="text-[#FF8C00] whitespace-nowrap">CADオペレーター</span>に転職
+                </p>
 
                 <!-- 選ばれる理由＋CTA（画像の縦中央ラインに揃える） -->
-                <div class="w-full max-w-3xl lg:max-w-2xl flex flex-col items-center mt-2">
-                    <p class="text-center text-[15px] sm:text-lg font-bold text-gray-700 tracking-widest mb-4">＼ キャドガクが選ばれる理由 ／</p>
-                    <img src="images/cadgaku-lp-fast.webp"
-                        alt="受講生満足度95.2%、追加請求一切なし、就職成功率93.7%、平日22時まで個別指導OK"
-                        class="w-[calc(100%+2rem)] -mx-4 sm:w-full sm:mx-0 h-auto object-contain drop-shadow-md">
+                <div class="relative top-[-3vw] sm:top-0 w-full max-w-3xl lg:max-w-2xl flex flex-col items-center mt-[4vw] sm:-mt-[3.05vw] lg:mt-2">
+                    <p class="text-center text-[clamp(15px,4.33vw,19px)] sm:text-lg font-bold text-black lg:text-gray-700 tracking-widest mb-[1.5vw] sm:mb-4">＼ キャドガクが選ばれる理由 ／</p>
+                    <picture class="w-full sm:w-full sm:mx-0 mt-[0.2vw] sm:mt-0 block">
+                        <source media="(min-width: 640px)" srcset="images/cadgaku-lp-fast.webp">
+                        <img src="images/cadgaku-lp2-fast.webp"
+                            alt="受講生満足度95.2%、追加請求一切なし、就職成功率93.7%、平日22時まで個別指導OK"
+                            class="w-full h-auto object-contain drop-shadow-md">
+                    </picture>
                     <a href="https://cadgaku.jp/reservation/"
-                        class="btn-reserve cta-pulse w-full max-w-md px-8 py-3.5 rounded-2xl font-bold text-base sm:text-xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-7">
+                        class="hidden sm:flex btn-reserve cta-pulse w-full max-w-md px-8 py-3.5 rounded-2xl font-bold text-base sm:text-xl shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw] mt-7">
                         <span class="text-[13px] sm:text-[16px]">＼ 簡単30秒‼ ／</span>
                         <span>無料オンライン説明会に予約する</span>
                     </a>
-                    <p class="text-xs text-gray-500 mt-4 text-center">火・木・土の週3回開催／参加無料</p>
+                    <p class="hidden sm:block text-xs text-gray-500 mt-4 text-center">火・木・土の週3回開催／参加無料</p>
                 </div>
             </div>
+        <!-- スマホ用：予約ボタン（写真の下に独立配置） -->
+        <div class="sm:hidden w-full px-4 flex flex-col items-center -mt-[17vw] pb-8">
+            <a href="https://cadgaku.jp/reservation/"
+                class="btn-reserve cta-pulse w-full max-w-md px-8 py-3.5 rounded-2xl font-bold text-base shadow-2xl active:scale-95 flex flex-col items-center justify-center leading-tight tracking-[0.1vw]">
+                <span class="text-[13px]">＼ 簡単30秒‼ ／</span>
+                <span>無料オンライン説明会に予約する</span>
+            </a>
+            <p class="text-xs text-gray-500 mt-4 text-center">火・木・土の週3回開催／参加無料</p>
+        </div>
+        </section>
+
+        <section class="relative pt-6 pb-14 sm:py-14 lg:py-20 px-4 text-gray-800 overflow-hidden bg-white">
+            <div class="max-w-3xl lg:max-w-4xl mx-auto text-center mb-10">
+                <span class="inline-block bg-[#0B894F] text-white text-sm sm:text-base font-bold tracking-widest px-5 py-1.5 rounded-full mb-4 shadow-sm">卒業生の転職業界・職種</span>
+                <p class="text-lg sm:text-2xl lg:text-3xl font-black text-gray-800 leading-snug">
+                    あなたの「強み」が活きる<span class="text-[#FF8C00]">業界・職種</span>が<br class="sm:hidden">必ず見つかります。
+                </p>
+            </div>
+
+            <!-- 全デバイス対応 横スライド（自動再生＋指でのスワイプ操作に対応） -->
+            <div class="relative max-w-7xl mx-auto">
+                <div id="career-slide-track" class="flex overflow-x-auto no-scrollbar">
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-1.webp" alt="建築CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">建築CADオペレーター</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-2.webp" alt="機械設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">機械設計／エンジニア</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-3.webp" alt="施工管理" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">施工管理</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-4.webp" alt="設備CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">設備CADオペレーター</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-5.webp" alt="土木CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">土木CADオペレーター</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-6.webp" alt="電子設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">電子設計／エンジニア</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-7.webp" alt="アパレル／インテリア系" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">アパレル／インテリア系</h3></div></div>
+                    <div class="career-card snap-start flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-8.webp" alt="その他" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">その他</h3></div></div>
+                </div>
+                <div class="hidden sm:block pointer-events-none absolute inset-y-0 left-0 w-10 md:w-16 bg-gradient-to-r from-white to-transparent"></div>
+                <div class="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-10 md:w-16 bg-gradient-to-l from-white to-transparent"></div>
+            </div>
+            <script>
+                (function () {
+                    var track = document.getElementById('career-slide-track');
+                    if (!track) return;
+                    var paused = false;
+                    var resumeTimer = null;
+                    var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
+                    var carry = 0; // 端数の繰り越し（丸めで動きが止まるのを防ぐ）
+
+                    function frame() {
+                        if (!paused) {
+                            var maxScroll = track.scrollWidth - track.clientWidth;
+                            if (track.scrollLeft >= maxScroll - 1) {
+                                track.scrollLeft = 0;
+                                carry = 0;
+                            } else {
+                                carry += speed;
+                                var move = Math.floor(carry);
+                                if (move >= 1) {
+                                    track.scrollLeft += move;
+                                    carry -= move;
+                                }
+                            }
+                        }
+                        requestAnimationFrame(frame);
+                    }
+
+                    function pauseForInteraction() {
+                        paused = true;
+                        clearTimeout(resumeTimer);
+                        resumeTimer = setTimeout(function () { paused = false; }, 4000);
+                    }
+
+                    track.addEventListener('pointerdown', pauseForInteraction);
+                    track.addEventListener('touchstart', pauseForInteraction, { passive: true });
+                    track.addEventListener('wheel', pauseForInteraction, { passive: true });
+
+                    requestAnimationFrame(frame);
+                })();
+            </script>
         </section>
 
         <!-- ===== ② 悩み共起 ===== -->
@@ -732,81 +826,6 @@
             </div>
         </section>
 
-        <!-- 仕切り：目指せる職種 -->
-        <div class="section-divider">
-            <img src="images/line-site.webp" alt="" class="bg-img" loading="lazy"/>
-            <div class="overlay"></div>
-            <div class="content max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-2xl lg:text-4xl font-semibold text-white tracking-widest leading-tight">
-                    学習後に目指せる職種・業界</h2>
-            </div>
-        </div>
-
-        <section class="py-12 lg:py-16 bg-gray-50 px-4 text-gray-800 overflow-hidden">
-            <div class="max-w-3xl mx-auto text-center mb-10">
-                <p class="text-base lg:text-xl font-bold text-gray-700 leading-relaxed">
-                    CADは<span class="text-[#FF8C00]">業界・職種がとにかく豊富</span>。<br class="sm:hidden">
-                    あなたの「好き」や「強み」を活かせる<br class="hidden sm:block">活躍フィールドが必ず見つかります。
-                </p>
-            </div>
-
-            <!-- 全デバイス対応 横スライド（自動再生＋指でのスワイプ操作に対応） -->
-            <div class="relative max-w-7xl mx-auto">
-                <div id="career-slide-track" class="flex overflow-x-auto no-scrollbar">
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-1.webp" alt="建築CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">建築CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-2.webp" alt="機械設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">機械設計／エンジニア</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-3.webp" alt="施工管理" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">施工管理</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-4.webp" alt="設備CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">設備CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-5.webp" alt="土木CADオペレーター" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">土木CADオペレーター</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-6.webp" alt="電子設計／エンジニア" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">電子設計／エンジニア</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-7.webp" alt="アパレル／インテリア系" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">アパレル／インテリア系</h3></div></div>
-                    <div class="career-card flex-none w-[200px] md:w-[260px] mx-3 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm"><div class="h-32 md:h-44 overflow-hidden"><img src="images/career-8.webp" alt="その他" class="w-full h-full object-cover" loading="lazy"/></div><div class="p-3 text-center"><h3 class="font-bold text-sm md:text-lg text-[#05A85E]">その他</h3></div></div>
-                </div>
-                <div class="hidden sm:block pointer-events-none absolute inset-y-0 left-0 w-10 md:w-16 bg-gradient-to-r from-gray-50 to-transparent"></div>
-                <div class="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-10 md:w-16 bg-gradient-to-l from-gray-50 to-transparent"></div>
-            </div>
-            <script>
-                (function () {
-                    var track = document.getElementById('career-slide-track');
-                    if (!track) return;
-                    var paused = false;
-                    var resumeTimer = null;
-                    var speed = 0.6; // 1フレームあたりの移動量（px）。大きいほど速い
-                    var carry = 0; // 端数の繰り越し（丸めで動きが止まるのを防ぐ）
-
-                    function frame() {
-                        if (!paused) {
-                            var maxScroll = track.scrollWidth - track.clientWidth;
-                            if (track.scrollLeft >= maxScroll - 1) {
-                                track.scrollLeft = 0;
-                                carry = 0;
-                            } else {
-                                carry += speed;
-                                var move = Math.floor(carry);
-                                if (move >= 1) {
-                                    track.scrollLeft += move;
-                                    carry -= move;
-                                }
-                            }
-                        }
-                        requestAnimationFrame(frame);
-                    }
-
-                    function pauseForInteraction() {
-                        paused = true;
-                        clearTimeout(resumeTimer);
-                        resumeTimer = setTimeout(function () { paused = false; }, 4000);
-                    }
-
-                    track.addEventListener('pointerdown', pauseForInteraction);
-                    track.addEventListener('touchstart', pauseForInteraction, { passive: true });
-                    track.addEventListener('wheel', pauseForInteraction, { passive: true });
-
-                    requestAnimationFrame(frame);
-                })();
-            </script>
-        </section>
-
         <!-- 仕切り：未経験者の声 -->
         <div id="voice" class="section-divider scroll-anchor">
             <img src="images/line-site.webp" alt="" class="bg-img" loading="lazy"/>
@@ -1128,7 +1147,7 @@
             document.querySelectorAll('a[href="https://cadgaku.jp/reservation/"]').forEach(function (el, i) {
                 el.addEventListener('click', function () {
                     gtag('event', 'cta_click', {
-                        cta_page: 'lp',
+                        cta_page: 'lp2',
                         cta_position: i + 1,
                         cta_text: (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 60)
                     });
