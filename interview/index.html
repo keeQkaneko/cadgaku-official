@@ -231,6 +231,27 @@
 
             <div id="graduates-page-1" class="grid md:grid-cols-3 gap-8 md:gap-10 transition-all duration-300">
 
+                <a href="/interview/case-01/"
+                    class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
+                    <span
+                        class="absolute top-3 right-3 bg-[#FF8C00] text-white text-[10px] font-bold px-2 py-1 z-10 tracking-wider">未経験で5社から内定獲得！</span>
+                    <div class="h-56 md:h-52 overflow-hidden bg-gray-100">
+                        <img src="images/interview-okutani.webp" alt="機械設計に転職した奥谷さん"
+                            class="w-full h-full object-cover transition group-hover:scale-105 duration-300" />
+                    </div>
+                    <div class="p-4 md:p-6 flex-grow">
+                        <blockquote class="text-xs md:text-sm leading-relaxed text-gray-700">
+                            <span
+                                class="font-bold text-sm md:text-base text-gray-900 block mb-2">【卒業生：奥谷さん（26歳）前職：ホテルスタッフ
+                                ➔ 転職：機械設計】</span>
+                            ホテルスタッフとして働く中、施工管理時代に見たCADの仕事が忘れられず転職を決意。大手エージェントでは思うように進まず、まずは実際に触れて確かめられるキャドガクへ入校しました。週2回程度のマンツーマン研修と1日1レッスンの自己学習を続け、6社の面接を受けて5社から内定を獲得！研修が最も充実した企業への入社を決めました。
+                        </blockquote>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-[#05A85E] mt-3">
+                            詳しいインタビューを読む <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </div>
+                </a>
+
                 <article
                     class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
                     <span
@@ -411,9 +432,6 @@
                     </div>
                 </article>
 
-            </div>
-
-            <div id="graduates-page-2" class="grid md:grid-cols-3 gap-8 md:gap-10 transition-all duration-300 hidden">
 
                 <article
                     class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
@@ -522,9 +540,6 @@
                     </div>
                 </article>
 
-            </div>
-
-            <div id="graduates-page-3" class="grid md:grid-cols-3 gap-8 md:gap-10 transition-all duration-300 hidden">
 
                 <article
                     class="flex flex-col bg-white overflow-hidden transition group border-2 border-[#22C55E] relative rounded-2xl shadow-lg">
@@ -544,21 +559,6 @@
                     </div>
                 </article>
 
-            </div>
-
-            <div class="flex justify-center items-center space-x-3 mt-14 md:mt-20">
-                <button id="btn-page-1" onclick="switchGraduatesPage(1)"
-                    class="w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-[#22C55E] text-white font-bold text-base rounded shadow-sm hover:opacity-90 transition duration-200 focus:outline-none">
-                    1
-                </button>
-                <button id="btn-page-2" onclick="switchGraduatesPage(2)"
-                    class="w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-white text-[#22C55E] font-bold text-base rounded shadow-sm hover:bg-[#22C55E] hover:text-white transition duration-200 focus:outline-none">
-                    2
-                </button>
-                <button id="btn-page-3" onclick="switchGraduatesPage(3)"
-                    class="w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-white text-[#22C55E] font-bold text-base rounded shadow-sm hover:bg-[#22C55E] hover:text-white transition duration-200 focus:outline-none">
-                    3
-                </button>
             </div>
 
         </section>
@@ -656,38 +656,6 @@
             }
         }
 
-        /**
-     * 実績ページの表示・非表示、およびボタンのアクティブ状態をトグルする関数
-     * @param {number} pageNumber - 表示したいページ番号 (1 または 2)
-     */
-        // 卒業生実績のページ数。今後カードが増えてページを追加する場合はこの数値と、
-        // HTML側の graduates-page-N / btn-page-N を増やすだけで対応できます。
-        const GRADUATES_TOTAL_PAGES = 3;
-
-        function switchGraduatesPage(pageNumber) {
-            const section = document.getElementById('interview-section');
-
-            // 各状態のTailwindスタイル（トップページのトンマナ・キャドガク緑に準拠）
-            const activeClass = "w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-[#22C55E] text-white font-bold text-base rounded shadow-sm hover:opacity-90 transition duration-200 focus:outline-none";
-            const inactiveClass = "w-12 h-12 flex items-center justify-center border-2 border-[#22C55E] bg-white text-[#22C55E] font-bold text-base rounded shadow-sm hover:bg-[#22C55E] hover:text-white transition duration-200 focus:outline-none";
-
-            for (let i = 1; i <= GRADUATES_TOTAL_PAGES; i++) {
-                const page = document.getElementById(`graduates-page-${i}`);
-                const btn = document.getElementById(`btn-page-${i}`);
-                const isActive = (i === pageNumber);
-
-                // コンテンツの切り替え
-                if (page) page.classList.toggle('hidden', !isActive);
-
-                // ボタンのアクティブ状態切り替え
-                if (btn) btn.className = isActive ? activeClass : inactiveClass;
-            }
-
-            // クリエイター視点のUX強化：ページ切り替え後、ユーザーを迷わせないために実績の一番上へスムーススクロール
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
     </script>
 
     <!-- GA4: 予約CTAボタンのクリック計測（予約リンクを自動検出）-->
