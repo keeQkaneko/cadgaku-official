@@ -87,6 +87,7 @@
             transition: all 0.2s;
             border: 2px solid #F3F4F6;
             font-weight: bold;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .date-item:hover:not(.disabled) {
@@ -95,10 +96,24 @@
         }
 
         .date-item.selected {
-            background-color: #05A85E;
-            color: white;
-            border-color: #05A85E;
+            background-color: #05A85E !important;
+            color: white !important;
+            border-color: #05A85E !important;
             font-weight: bold;
+        }
+
+        .date-item.selected span {
+            color: white !important;
+        }
+
+        /* 時間選択ボタン */
+        .time-choice-btn {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .time-choice-btn.selected {
+            background-color: #05A85E !important;
+            color: white !important;
         }
 
         .date-item.disabled {
@@ -239,7 +254,7 @@
                             <button type="button" id="btn-next-month" onclick="changeMonth(1)" aria-label="次の月"
                                 class="p-2 rounded-lg bg-gray-50 hover:bg-gray-100 text-lg font-bold text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-gray-50">›</button>
                         </div>
-                        <p class="text-xs text-[#05A85E] text-center">説明会は火・木・土に開催しています（選択できる日のみクリックできます）</p>
+                        <p class="text-xs text-[#05A85E] text-center">説明会の開催日・時間は週によって異なります（選択できる日のみクリックできます）</p>
 
                         <div>
                             <div class="grid grid-cols-7 gap-1 mb-1 text-center text-xs font-bold text-gray-400">
@@ -263,6 +278,7 @@
                             <p id="time-area-label" class="text-sm font-bold text-gray-500">開催時間は曜日ごとに決まっています。</p>
                             <div id="fixed-time-display"
                                 class="border-2 border-[#05A85E] bg-[#F0FDF4] text-[#05A85E] font-bold py-3 rounded-lg text-center"></div>
+                            <div id="time-choice-area" style="display:none;" class="flex gap-3"></div>
 
                             <div id="no-date-message" style="display:none;" class="flex items-start space-x-3">
                                 <img src="images/navigator.webp"
@@ -382,8 +398,18 @@
             }, 50);
         }
 
-        // 固定スケジュール（火=2 / 木=4 / 土=6）
-        const SLOT_TIMES = { 2: '19:30〜20:30', 4: '20:00〜21:00', 6: '11:00〜12:00' };
+        // 固定スケジュール（火・木・土は毎週。月・水の20:00枠は隔週で交互、水・金の12:30と火の12:30は別枠として重ねて開催）
+        const TUE_EVENING = '19:30〜20:30';
+        const THU_EVENING = '20:00〜21:00';
+        const SAT_MORNING = '11:00〜12:00';
+        const MON_WED_EVENING = '20:00〜21:00'; // 月・水で交互に使う20:00枠
+        const WED_NOON = '12:30〜13:30';
+        const FRI_NOON = '12:30〜13:30';
+        const TUE_NOON = '12:30〜13:30'; // 火は2週に1回だけ追加
+
+        // 月・水の交互パターンの基準週（この週の月曜日＝「水曜日が20:00枠になる週」）
+        const WEEK_PARITY_ANCHOR_MONDAY = '2026-11-16';
+
         const DAY_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
 
         // 休業期間（この期間は予約不可）
@@ -428,9 +454,66 @@
             return toISODate(date) in SPECIAL_SLOTS;
         }
 
-        // 選択可能な日か判定（火・木・土、または特別枠の日 かつ 明日以降、休業期間・満席日を除く）
+        // 指定日が属する週の月曜日（ISO形式）を返す
+        function getMondayISO(date) {
+            const d = new Date(date);
+            const day = d.getDay(); // 0=日〜6=土
+            const diffToMonday = (day === 0) ? -6 : 1 - day;
+            d.setDate(d.getDate() + diffToMonday);
+            return toISODate(d);
+        }
+
+        // 2つのISO日付（どちらも月曜日）の間の週数
+        function weeksBetweenMondays(isoA, isoB) {
+            const a = new Date(isoA + 'T00:00:00');
+            const b = new Date(isoB + 'T00:00:00');
+            return Math.round((b - a) / (7 * 24 * 60 * 60 * 1000));
+        }
+
+        // true: その週は「水曜日が20:00枠」になる週 / false: 「月曜日が20:00枠」になる週
+        function isWedEveningWeek(date) {
+            const mondayISO = getMondayISO(date);
+            const diff = weeksBetweenMondays(WEEK_PARITY_ANCHOR_MONDAY, mondayISO);
+            return ((diff % 2) + 2) % 2 === 0;
+        }
+
+        // 火12:30（隔週）が実施される週かどうか。初回は2026-11-24の週（月曜20:00の週）
+        function isTueNoonWeek(date) {
+            return !isWedEveningWeek(date);
+        }
+
+        // 通常スケジュールから、その日に開催される時間を全て配列で返す（複数ありうる）
+        function getRegularSlots(date) {
+            const dow = date.getDay();
+            const slots = [];
+            if (dow === 2) { // 火
+                if (isTueNoonWeek(date)) slots.push(TUE_NOON);
+                slots.push(TUE_EVENING);
+            } else if (dow === 4) { // 木
+                slots.push(THU_EVENING);
+            } else if (dow === 6) { // 土
+                slots.push(SAT_MORNING);
+            } else if (dow === 1) { // 月
+                if (!isWedEveningWeek(date)) slots.push(MON_WED_EVENING);
+            } else if (dow === 3) { // 水
+                slots.push(WED_NOON);
+                if (isWedEveningWeek(date)) slots.push(MON_WED_EVENING);
+            } else if (dow === 5) { // 金
+                slots.push(FRI_NOON);
+            }
+            return slots;
+        }
+
+        // 指定日に開催されるすべての時間枠を返す（特別枠がある日はそちらを優先）
+        function getSlotsForDate(date) {
+            const iso = toISODate(date);
+            if (iso in SPECIAL_SLOTS) return [SPECIAL_SLOTS[iso]];
+            return getRegularSlots(date);
+        }
+
+        // 選択可能な日か判定（開催枠がある日 かつ 明日以降、休業期間・満席日を除く）
         function isSelectableDate(date) {
-            if (!(date.getDay() in SLOT_TIMES) && !isSpecialSlot(date)) return false;
+            if (getSlotsForDate(date).length === 0) return false;
             if (isBlockedDate(date)) return false;
             if (isFullDate(date)) return false;
             const minDate = new Date();
@@ -439,7 +522,7 @@
             return date >= minDate;
         }
 
-        // カレンダー自動生成ロジック（月表示・火・木・土のみ選択可）
+        // カレンダー自動生成ロジック（月表示・開催日のみ選択可）
         function renderCalendar() {
             const grid = document.getElementById('calendar-grid');
             grid.innerHTML = "";
@@ -515,15 +598,40 @@
             el.classList.add('selected');
             selectedDate = val;
             selectedDateISO = iso;
-            selectedTime = SPECIAL_SLOTS[iso] || SLOT_TIMES[dow] || '';
 
             // 「日程がない」導線を選んでいた場合は元の表示に戻す
             document.getElementById('no-date-message').style.display = 'none';
-            document.getElementById('time-area-label').style.display = 'block';
-            document.getElementById('fixed-time-display').style.display = 'block';
-
-            document.getElementById('fixed-time-display').textContent = selectedTime;
             document.getElementById('time-area').style.display = 'block';
+
+            const timeAreaLabel = document.getElementById('time-area-label');
+            const fixedTimeDisplay = document.getElementById('fixed-time-display');
+            const timeChoiceArea = document.getElementById('time-choice-area');
+
+            const slots = getSlotsForDate(new Date(iso + 'T00:00:00'));
+
+            // 時間枠が1つでも複数でも、同じボタンUIで表示する（ラベルの文言のみ件数で出し分け）
+            fixedTimeDisplay.style.display = 'none';
+            timeAreaLabel.textContent = (slots.length === 1) ? '開催時間は以下の通りです。' : 'ご希望の開催時間を選択してください。';
+            timeAreaLabel.style.display = 'block';
+            timeChoiceArea.innerHTML = '';
+            timeChoiceArea.style.display = 'flex';
+            selectedTime = slots.length === 1 ? slots[0] : '';
+
+            slots.forEach(time => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = time;
+                btn.className = 'time-choice-btn flex-1 border-2 border-[#05A85E] text-[#05A85E] font-bold py-3 rounded-lg text-center hover:bg-[#05A85E] hover:text-white transition';
+                if (slots.length === 1) btn.classList.add('selected');
+                btn.onclick = () => {
+                    selectedTime = time;
+                    timeChoiceArea.querySelectorAll('.time-choice-btn').forEach(b => {
+                        b.classList.remove('selected');
+                    });
+                    btn.classList.add('selected');
+                };
+                timeChoiceArea.appendChild(btn);
+            });
         }
 
         // 「ご都合の合う日程がない方はこちら」ボタン：個別調整を案内する導線
@@ -538,6 +646,7 @@
 
             document.getElementById('time-area-label').style.display = 'none';
             document.getElementById('fixed-time-display').style.display = 'none';
+            document.getElementById('time-choice-area').style.display = 'none';
             document.getElementById('no-date-message').style.display = 'flex';
             document.getElementById('time-area').style.display = 'block';
 
