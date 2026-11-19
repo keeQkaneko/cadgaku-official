@@ -434,6 +434,11 @@
             '2026-11-23': '11:00〜12:00' // 勤労感謝の日（祝日）の特別枠
         };
 
+        // その日だけ、通常枠の一部の時間を個別にずらす（他の枠はそのまま残す）
+        const SLOT_TIME_OVERRIDES = {
+            '2026-11-24': { from: '19:30〜20:30', to: '20:00〜21:00' } // 火の夜枠だけ20:00開始に変更
+        };
+
         function toISODate(date) {
             const y = date.getFullYear();
             const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -508,7 +513,12 @@
         function getSlotsForDate(date) {
             const iso = toISODate(date);
             if (iso in SPECIAL_SLOTS) return [SPECIAL_SLOTS[iso]];
-            return getRegularSlots(date);
+            const slots = getRegularSlots(date);
+            const override = SLOT_TIME_OVERRIDES[iso];
+            if (override) {
+                return slots.map(t => (t === override.from ? override.to : t));
+            }
+            return slots;
         }
 
         // 選択可能な日か判定（開催枠がある日 かつ 明日以降、休業期間・満席日を除く）
