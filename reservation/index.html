@@ -399,7 +399,7 @@
         }
 
         // 固定スケジュール（火・木・土は毎週。月・水の20:00枠は隔週で交互、水・金の12:30と火の12:30は別枠として重ねて開催）
-        const TUE_EVENING = '19:30〜20:30';
+        const TUE_EVENING = '20:00〜21:00';
         const THU_EVENING = '20:00〜21:00';
         const SAT_MORNING = '11:00〜12:00';
         const MON_WED_EVENING = '20:00〜21:00'; // 月・水で交互に使う20:00枠
@@ -409,6 +409,9 @@
 
         // 月・水の交互パターンの基準週（この週の月曜日＝「水曜日が20:00枠になる週」）
         const WEEK_PARITY_ANCHOR_MONDAY = '2026-11-16';
+
+        // 予約可能な日数（今日から何日先まで表示するか）
+        const BOOKING_WINDOW_DAYS = 14;
 
         const DAY_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
 
@@ -435,9 +438,7 @@
         };
 
         // その日だけ、通常枠の一部の時間を個別にずらす（他の枠はそのまま残す）
-        const SLOT_TIME_OVERRIDES = {
-            '2026-11-24': { from: '19:30〜20:30', to: '20:00〜21:00' } // 火の夜枠だけ20:00開始に変更
-        };
+        const SLOT_TIME_OVERRIDES = {};
 
         function toISODate(date) {
             const y = date.getFullYear();
@@ -521,15 +522,44 @@
             return slots;
         }
 
-        // 選択可能な日か判定（開催枠がある日 かつ 明日以降、休業期間・満席日を除く）
+        // 「12:30〜13:30」のような文字列から開始時刻を「分」単位で取り出す
+        function getSlotStartMinutes(slotTime) {
+            const match = slotTime.match(/^(\d{1,2}):(\d{2})/);
+            if (!match) return null;
+            return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
+        }
+
+        // 当日の場合は、現在時刻を過ぎた枠を除いた時間枠を返す
+        function getAvailableSlotsForDate(date) {
+            const slots = getSlotsForDate(date);
+            const now = new Date();
+            if (toISODate(date) !== toISODate(now)) return slots;
+            const nowMinutes = now.getHours() * 60 + now.getMinutes();
+            return slots.filter(t => {
+                const start = getSlotStartMinutes(t);
+                return start !== null && start > nowMinutes;
+            });
+        }
+
+        // 予約可能日の下限（今日）と上限（今日から指定日数後）を返す
+        function getBookingMinDate() {
+            const d = new Date();
+            d.setHours(0, 0, 0, 0);
+            return d;
+        }
+
+        function getBookingMaxDate() {
+            const d = getBookingMinDate();
+            d.setDate(d.getDate() + BOOKING_WINDOW_DAYS);
+            return d;
+        }
+
+        // 選択可能な日か判定（開催枠がある日 かつ 予約受付期間内、休業期間・満席日を除く）
         function isSelectableDate(date) {
-            if (getSlotsForDate(date).length === 0) return false;
+            if (getAvailableSlotsForDate(date).length === 0) return false;
             if (isBlockedDate(date)) return false;
             if (isFullDate(date)) return false;
-            const minDate = new Date();
-            minDate.setHours(0, 0, 0, 0);
-            minDate.setDate(minDate.getDate() + 1); // 明日以降を選択可
-            return date >= minDate;
+            return date >= getBookingMinDate() && date <= getBookingMaxDate();
         }
 
         // カレンダー自動生成ロジック（月表示・開催日のみ選択可）
@@ -544,10 +574,9 @@
             const firstDay = new Date(year, month, 1);
             const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-            // 明日以降かどうかの基準日（これより前の日には満席等のラベルを出さない）
-            const minDate = new Date();
-            minDate.setHours(0, 0, 0, 0);
-            minDate.setDate(minDate.getDate() + 1);
+            // 予約受付期間（これより前・後の日には満席等のラベルを出さない）
+            const minDate = getBookingMinDate();
+            const maxDate = getBookingMaxDate();
 
             // 月初までの空白セル
             for (let i = 0; i < firstDay.getDay(); i++) {
@@ -559,12 +588,12 @@
                 const dow = date.getDay();
                 const dayName = DAY_NAMES[dow];
                 const iso = toISODate(date);
-                const isPast = date < minDate;
+                const isOutOfRange = date < minDate || date > maxDate;
 
                 const cell = document.createElement('div');
                 cell.className = 'date-item flex flex-col items-center justify-center aspect-square rounded-xl text-sm text-gray-600';
 
-                if (isPast) {
+                if (isOutOfRange) {
                     cell.textContent = d;
                 } else if (isFullDate(date)) {
                     cell.innerHTML = `<span>${d}</span><span class="text-[9px] text-red-400 leading-none mt-0.5">満席</span>`;
@@ -584,20 +613,20 @@
                 grid.appendChild(cell);
             }
 
-            // 前月・翌月ボタンの有効/無効を更新（当月〜翌月のみ表示）
-            const today = new Date();
-            const minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-            const maxMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+            // 前月・翌月ボタンの有効/無効を更新（予約受付期間が含まれる月のみ表示）
+            const minMonth = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+            const maxMonth = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
             document.getElementById('btn-prev-month').disabled = (year === minMonth.getFullYear() && month === minMonth.getMonth());
             document.getElementById('btn-next-month').disabled = (year === maxMonth.getFullYear() && month === maxMonth.getMonth());
         }
 
-        // 月の切り替え（当月〜翌月の範囲内のみ。月が替われば自動的に表示範囲もスライドする）
+        // 月の切り替え（予約受付期間が含まれる月の範囲内のみ）
         function changeMonth(dir) {
             const next = new Date(calendarViewDate.getFullYear(), calendarViewDate.getMonth() + dir, 1);
-            const today = new Date();
-            const minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-            const maxMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+            const minDate = getBookingMinDate();
+            const maxDate = getBookingMaxDate();
+            const minMonth = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+            const maxMonth = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
             if (next < minMonth || next > maxMonth) return;
             calendarViewDate = next;
             renderCalendar();
@@ -617,7 +646,7 @@
             const fixedTimeDisplay = document.getElementById('fixed-time-display');
             const timeChoiceArea = document.getElementById('time-choice-area');
 
-            const slots = getSlotsForDate(new Date(iso + 'T00:00:00'));
+            const slots = getAvailableSlotsForDate(new Date(iso + 'T00:00:00'));
 
             // 時間枠が1つでも複数でも、同じボタンUIで表示する（ラベルの文言のみ件数で出し分け）
             fixedTimeDisplay.style.display = 'none';
